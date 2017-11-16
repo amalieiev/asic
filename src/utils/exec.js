@@ -7,6 +7,6 @@ export function $exec(expression, context) {
         }
     }
 
-    return Function(expression)()
+    return Function('return ' + expression)()
 }
 
