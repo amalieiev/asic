@@ -1,6 +1,6 @@
 {
   "name": "asic",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.1.1",
   "description": "",
   "main": "dist/asic.js",
   "scripts": {
