@@ -7,6 +7,6 @@ export function $replace(template, data) {
     return template.replace(re, function (match) {
         let expression = $getExpressionFromMatch(match)
 
-        return $exec(data, expression)
+        return $exec(expression, data)
     })
 }
