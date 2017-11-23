@@ -1,5 +1,5 @@
-import { Component } from './decorators/Component'
-import { $bootstrap } from './utils/bootstrap'
+import { Component } from './decorators'
+import { $bootstrap } from './functions'
 
 if (window) {
     window.Component = Component

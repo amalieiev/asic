@@ -1,4 +1,4 @@
-import { $components } from '../services/components'
+import { $components } from './services'
 
 export function Component({template}) {
     return function (target) {

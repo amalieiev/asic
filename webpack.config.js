@@ -3,7 +3,8 @@ module.exports = {
     devtool: 'cheap-module-eval-source-map',
 
     entry: {
-        asic: ["./src/index.js"]
+        asic: ["./src/index.js"],
+        sandbox: ['./src/sandbox.js']
     },
     output: {
         path: path.resolve(__dirname, "dist"),
@@ -21,5 +22,14 @@ module.exports = {
                 }
             }
         ]
+    },
+
+    devServer: {
+        port: 3000,
+        historyApiFallback: true,
+        watchOptions: {
+            aggregateTimeout: 300,
+            poll: 1000
+        }
     }
 };
