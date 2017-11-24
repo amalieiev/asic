@@ -58,7 +58,14 @@ export function $render(element, component) {
         const template = $components[component].template;
         const Component = $components[component].target;
         const instance = new Component();
-        const html = $replace(template, instance);
+        const proxy = new Proxy(instance, {
+            set(target, property, value) {
+                console.log('set', property, value);
+                target[property] = value;
+                return true;
+            }
+        });
+        const html = $replace(template, proxy);
 
         element.innerHTML = $markEvents(html);
 
@@ -70,7 +77,7 @@ export function $render(element, component) {
                 events: {
                     [eventName]: expression
                 },
-                context: instance
+                context: proxy
             };
         });
 
