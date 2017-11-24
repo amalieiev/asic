@@ -1,2 +1,2 @@
-export const $components = {}
-export const $events = {}
+export const $components = {};
+export const $events = {};
