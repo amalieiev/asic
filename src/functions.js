@@ -57,9 +57,22 @@ export function $render(element, component) {
     } else {
         const template = $components[component].template;
         const Component = $components[component].target;
-        const html = $replace(template, new Component());
+        const instance = new Component();
+        const html = $replace(template, instance);
 
-        element.innerHTML = $markEvents(html)
+        element.innerHTML = $markEvents(html);
+
+        element.querySelectorAll('[asic-event]').forEach(el => {
+            const eventName = el.getAttribute('asic-event');
+            const expression = el.getAttribute('asic-event-expression');
+
+            el.$asic = {
+                events: {
+                    [eventName]: expression
+                },
+                context: instance
+            };
+        });
 
         for (let key in $components) {
             element.querySelectorAll(key).forEach(el => {
@@ -80,15 +93,17 @@ export function $getExpressionFromMatch(match) {
 }
 
 export function $exec(expression, context) {
-    for (let key in context) {
-        if (context[key].toUpperCase) {
-            Function(`${key} = "${context[key]}"`)();
-        } else {
-            Function(`${key} = ${context[key]}`)();
-        }
-    }
+    const parts = expression.match(/[a-zA-Z0-9_]+/g);
 
-    return Function('return ' + expression)();
+    parts.forEach(name => {
+        if (name in context) {
+            expression = expression.replace(RegExp(`\\b${name}\\b`), match => {
+                return 'this.' + match;
+            });
+        }
+    });
+
+    return Function('return ' + expression).call(context);
 }
 
 export function $bootstrap() {
@@ -104,7 +119,9 @@ export function $bootstrap() {
             document.addEventListener(eventName, function() {
                 const target = arguments[0].target;
 
-                console.log(target);
+                if (target.$asic) {
+                  $exec(target.$asic.events[eventName], target.$asic.context);
+                }
             });
         }
     })

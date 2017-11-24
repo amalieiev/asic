@@ -13,5 +13,7 @@ class Counter {
 
   increment() {
     this.counter++;
+
+    console.log(this.counter);
   }
 }
