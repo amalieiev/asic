@@ -16,6 +16,18 @@ export function $replaceEvents(template) {
     })
 }
 
+export function $markEvents(template) {
+    const eventRe = /\(.+?\)=/g;
+
+    return template.replace(eventRe, function (match) {
+        const eventName = $getOutputName(match);
+
+        $events[eventName] = true;
+
+        return `asic-event=${eventName} asic-event-expression=`;
+    })
+}
+
 export function $getOutputName(expression) {
     const outputRe = /\(.+?\)/;
     const parenthesesRe = /[(,)]/g;
@@ -47,7 +59,7 @@ export function $render(element, component) {
         const Component = $components[component].target;
         const html = $replace(template, new Component());
 
-        element.innerHTML = $replaceEvents(html)
+        element.innerHTML = $markEvents(html)
 
         for (let key in $components) {
             element.querySelectorAll(key).forEach(el => {
@@ -90,7 +102,9 @@ export function $bootstrap() {
 
         for (let eventName in $events) {
             document.addEventListener(eventName, function() {
-                console.log(arguments[0].target);
+                const target = arguments[0].target;
+
+                console.log(target);
             });
         }
     })

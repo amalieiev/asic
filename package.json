@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/asic.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start",
+    "test:unit": "karma start test/unit/karma.unit.config.js",
     "build": "webpack",
     "start": "webpack-dev-server"
   },
@@ -19,6 +20,10 @@
     "babel-loader": "^7.1.2",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-es2015": "^6.24.1",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.4",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
   }
