@@ -57,9 +57,22 @@ export function $render(element, component) {
     } else {
         const template = $components[component].template;
         const Component = $components[component].target;
-        const html = $replace(template, new Component());
+        const cmp = new Component();
+        const html = $replace(template, cmp);
 
-        element.innerHTML = $markEvents(html)
+        element.innerHTML = $markEvents(html);
+        element.querySelectorAll('[asic-event]').forEach(el => {
+            console.log(el);
+            const eventName = el.getAttribute('asic-event');
+            const eventExpression = el.getAttribute('asic-event-expression');
+
+            el.$asic = {
+                events: {
+                    [eventName]: eventExpression
+                },
+                context: cmp
+            };
+        });
 
         for (let key in $components) {
             element.querySelectorAll(key).forEach(el => {
@@ -80,15 +93,16 @@ export function $getExpressionFromMatch(match) {
 }
 
 export function $exec(expression, context) {
-    for (let key in context) {
-        if (context[key].toUpperCase) {
-            Function(`${key} = "${context[key]}"`)();
-        } else {
-            Function(`${key} = ${context[key]}`)();
-        }
-    }
+    const propertyRe = /\b[a-zA-Z_]+\b/g;
+    const maybeProps = expression.match(propertyRe);
 
-    return Function('return ' + expression)();
+    maybeProps.forEach(key => {
+        if (context[key] !== undefined) {
+            expression = expression.replace(RegExp('\\b' + key + '\\b'), 'this.' + key)
+        }
+    });
+
+    return Function('return ' + expression).call(context);
 }
 
 export function $bootstrap() {
@@ -104,7 +118,9 @@ export function $bootstrap() {
             document.addEventListener(eventName, function() {
                 const target = arguments[0].target;
 
-                console.log(target);
+                if (target.$asic && target.$asic.events[eventName]) {
+                    $exec(target.$asic.events[eventName], target.$asic.context);
+                }
             });
         }
     })
