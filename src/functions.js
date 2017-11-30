@@ -55,6 +55,12 @@ export function $render(element, component) {
 
         element.innerHTML = $markEvents(html);
 
+        element.querySelectorAll('[asic-bind-expression]').forEach(el => {
+            const expression = el.getAttribute('asic-bind-expression');
+
+            el.innerHTML = $exec(expression, proxy);
+        });
+
         element.querySelectorAll('[asic-event]').forEach(el => {
             const eventName = el.getAttribute('asic-event');
             const expression = el.getAttribute('asic-event-expression');

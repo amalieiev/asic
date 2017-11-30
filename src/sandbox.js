@@ -8,7 +8,7 @@
 })
 class Counter {
   constructor() {
-    this.counter = 0;
+    this.counter = 10;
   }
 
   increment() {
