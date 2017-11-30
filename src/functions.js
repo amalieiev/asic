@@ -1,21 +1,6 @@
 import { $components } from './services';
 import { $events } from './services';
 
-export function $replaceEvents(template) {
-    const eventRe = /\(.+?\)=".*?"/g;
-
-    return template.replace(eventRe, function (match) {
-        const eventName = $getOutputName(match);
-        console.log(match);
-        console.log($getOutputName(match));
-        console.log($getOutputExpression(match));
-
-        $events[eventName] = true;
-
-        return '';
-    })
-}
-
 export function $markEvents(template) {
     const eventRe = /\(.+?\)=/g;
 
@@ -35,19 +20,13 @@ export function $getOutputName(expression) {
     return expression.match(outputRe)[0].replace(parenthesesRe, '');
 }
 
-export function $getOutputExpression(expression) {
-    const expressionRe = /".+?"/;
-
-    return expression.match(expressionRe)[0].replace(/^"/, '').replace(/"$/, '');
-}
-
-export function $replace(template, data) {
+export function $replace(template) {
     const re = /\{\{.*?\}\}/g;
 
     return template.replace(re, function (match) {
         let expression = $getExpressionFromMatch(match);
 
-        return $exec(expression, data);
+        return `<span asic-bind-expression="${expression}"></span>`;
     })
 }
 
@@ -58,14 +37,21 @@ export function $render(element, component) {
         const template = $components[component].template;
         const Component = $components[component].target;
         const instance = new Component();
+        const html = $replace(template);
         const proxy = new Proxy(instance, {
             set(target, property, value) {
-                console.log('set', property, value);
                 target[property] = value;
+
+                element.querySelectorAll('[asic-bind-expression]').forEach(el => {
+                    const expression = el.getAttribute('asic-bind-expression');
+
+                    el.innerHTML = $exec(expression, proxy);
+                });
+
                 return true;
             }
         });
-        const html = $replace(template, proxy);
+
 
         element.innerHTML = $markEvents(html);
 
