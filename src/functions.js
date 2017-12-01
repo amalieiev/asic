@@ -1,33 +1,64 @@
 import { $components } from './services';
 import { $events } from './services';
 
-export function $markEvents(template) {
+/**
+ * Replaces '(click)="foo()"' with 'asic-event="click" asic-event-expression="foo()"'
+ * And puts event name to $events variable
+ * @param {string} template
+ */
+export function $replaceEvents(template) {
     const eventRe = /\(.+?\)=/g;
 
     return template.replace(eventRe, function (match) {
-        const eventName = $getOutputName(match);
+        const eventName = $getEventName(match);
 
         $events[eventName] = true;
 
         return `asic-event=${eventName} asic-event-expression=`;
-    })
+    });
 }
 
-export function $getOutputName(expression) {
+export function $getEventName(expression) {
     const outputRe = /\(.+?\)/;
     const parenthesesRe = /[(,)]/g;
 
     return expression.match(outputRe)[0].replace(parenthesesRe, '');
 }
 
-export function $replace(template) {
+/**
+ * Replaces '{{ paramName }}' with '<span asic-bind-expression="paramName"></span>'
+ * @param {string} template
+ */
+export function $replaceInterpolations(template) {
     const re = /\{\{.*?\}\}/g;
 
     return template.replace(re, function (match) {
-        let expression = $getExpressionFromMatch(match);
+        let expression = match.replace(/\{\{/, '')
+            .replace(/\}\}/, '')
+            .trim();
 
         return `<span asic-bind-expression="${expression}"></span>`;
-    })
+    });
+}
+
+/**
+ * Replaces '*for' with 'asic-for'
+ * @param {string} template
+ */
+export function $replaceFor(template) {
+    const forRe = /\*for/g;
+
+    template = template.replace(forRe, 'asic-for');
+
+    return template;
+}
+
+export function $transform(template) {
+    template = $replaceInterpolations(template);
+    template = $replaceFor(template);
+    template = $replaceEvents(template);
+
+    return template;
 }
 
 export function $render(element, component) {
@@ -37,7 +68,9 @@ export function $render(element, component) {
         const template = $components[component].template;
         const Component = $components[component].target;
         const instance = new Component();
-        const html = $replace(template);
+
+        element.innerHTML = $transform(template);
+
         const proxy = new Proxy(instance, {
             set(target, property, value) {
                 target[property] = value;
@@ -51,9 +84,6 @@ export function $render(element, component) {
                 return true;
             }
         });
-
-
-        element.innerHTML = $markEvents(html);
 
         element.querySelectorAll('[asic-bind-expression]').forEach(el => {
             const expression = el.getAttribute('asic-bind-expression');
@@ -79,16 +109,6 @@ export function $render(element, component) {
             })
         }
     }
-}
-
-export function $getExpressionFromMatch(match) {
-    const startRe = /\{\{/;
-    const endRe = /\}\}/;
-
-    return match
-        .replace(startRe, '')
-        .replace(endRe, '')
-        .trim();
 }
 
 export function $exec(expression, context) {
