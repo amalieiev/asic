@@ -7,22 +7,16 @@ import { $events } from './services';
  * @param {string} template
  */
 export function $replaceEvents(template) {
-    const eventRe = /\(.+?\)=/g;
+    const eventRe = /\(.+?\)/g;
+    const parenthesesRe = /[(,)]/g;
 
     return template.replace(eventRe, function (match) {
-        const eventName = $getEventName(match);
+        const eventName = match.replace(parenthesesRe, '');
 
         $events[eventName] = true;
 
-        return `asic-event=${eventName} asic-event-expression=`;
+        return `asic-event=${eventName} asic-event-expression`;
     });
-}
-
-export function $getEventName(expression) {
-    const outputRe = /\(.+?\)/;
-    const parenthesesRe = /[(,)]/g;
-
-    return expression.match(outputRe)[0].replace(parenthesesRe, '');
 }
 
 /**
@@ -48,11 +42,13 @@ export function $replaceInterpolations(template) {
 export function $replaceFor(template) {
     const forRe = /\*for/g;
 
-    template = template.replace(forRe, 'asic-for');
-
-    return template;
+    return template.replace(forRe, 'asic-for');
 }
 
+/**
+ * Makes template transformations.
+ * @param template
+ */
 export function $transform(template) {
     template = $replaceInterpolations(template);
     template = $replaceFor(template);
@@ -111,6 +107,11 @@ export function $render(element, component) {
     }
 }
 
+/**
+ * Evaluates an expression in provided context.
+ * @param { string } expression
+ * @param { Object } context
+ */
 export function $exec(expression, context) {
     const parts = expression.match(/[a-zA-Z0-9_]+/g);
 
@@ -125,6 +126,9 @@ export function $exec(expression, context) {
     return Function('return ' + expression).call(context);
 }
 
+/**
+ * Bootstraps an application.
+ */
 export function $bootstrap() {
     window.addEventListener('load', () => {
         for (let key in $components) {
@@ -135,11 +139,11 @@ export function $bootstrap() {
         }
 
         for (let eventName in $events) {
-            document.addEventListener(eventName, function() {
+            document.addEventListener(eventName, function () {
                 const target = arguments[0].target;
 
                 if (target.$asic) {
-                  $exec(target.$asic.events[eventName], target.$asic.context);
+                    $exec(target.$asic.events[eventName], target.$asic.context);
                 }
             });
         }
