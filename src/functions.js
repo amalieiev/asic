@@ -50,7 +50,13 @@ export function $replaceFor(template) {
  * @param template
  */
 export function $replicateFor(template, data) {
-    return template;
+    const div = document.createElement('div');
+    div.innerHTML = template;
+    div.querySelectorAll('[asic-for]').forEach(element => {
+        const expression = element.getAttribute('asic-for');
+    });
+
+    return div.innerHTML;
 }
 
 /**
