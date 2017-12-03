@@ -49,12 +49,13 @@ export function $replaceFor(template) {
  * Replicates iterateble parts.
  * @param template
  */
-export function $replicateFor(template, data) {
+export function $replicateFor(template, context) {
     const div = document.createElement('div');
     div.innerHTML = template;
     div.querySelectorAll('[asic-for]').forEach(element => {
         const expression = element.getAttribute('asic-for');
     });
+
 
     return div.innerHTML;
 }
@@ -129,7 +130,7 @@ export function $render(element, component) {
  * @param { string } expression
  * @param { Object } context
  */
-export function $exec(expression, context) {
+export function $exec(expression, context, ignoreReturnedValue) {
     const parts = expression.match(/[a-zA-Z0-9_]+/g);
 
     parts.forEach(name => {
@@ -140,7 +141,11 @@ export function $exec(expression, context) {
         }
     });
 
-    return Function('return ' + expression).call(context);
+    if (ignoreReturnedValue) {
+        Function(expression).call(context);
+    } else {
+        return Function('return ' + expression).call(context);
+    }
 }
 
 /**
