@@ -6,15 +6,16 @@
     <span>{{ counter }}</span>
     <User></User>
     <ul>
-        <li *for="let item in items"><a href="#" *for="test in items">link</a></li>
+        <li *for="let item in items"><a href="#" *for="test in data">link</a></li>
     </ul>
-    <a href="#" *for="test in items">link</a>
+    <h2 *for="let text in items">test</h2>
   </div>`
 })
 class Counter {
     constructor() {
         this.counter = 0;
-        this.items = [1, 2, 3]
+        this.items = [1, 2, 3];
+        this.data = ['hello', 'world']
     }
 
     increment() {

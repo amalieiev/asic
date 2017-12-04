@@ -52,8 +52,12 @@ export function $replaceFor(template, context) {
 export function $replicateFor(template, context) {
     const div = document.createElement('div');
     div.innerHTML = template;
-    div.querySelectorAll('[asic-for]').forEach(element => {
+    const element = div.querySelector('[asic-for]');
+
+    if (element) {
         const expression = element.getAttribute('asic-for');
+
+        element.removeAttribute('asic-for');
 
         const result = $exec(`
             [element] = arguments;
@@ -66,10 +70,14 @@ export function $replicateFor(template, context) {
             return result;
         `, context, [element]);
 
-        template = template.replace(element.outerHTML, result);
-    });
+        element.setAttribute('asic-for', expression);
 
-    return template;
+        template = template.replace(element.outerHTML, result);
+    } else {
+        return template;
+    }
+
+    return $replicateFor(template, context);
 }
 
 /**
