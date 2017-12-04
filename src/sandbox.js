@@ -6,8 +6,9 @@
     <span>{{ counter }}</span>
     <User></User>
     <ul>
-        <li *for="let item in items"></li>
+        <li *for="let item in items"><a href="#" *for="test in items">link</a></li>
     </ul>
+    <a href="#" *for="test in items">link</a>
   </div>`
 })
 class Counter {

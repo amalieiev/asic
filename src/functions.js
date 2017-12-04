@@ -36,10 +36,10 @@ export function $replaceInterpolations(template) {
 }
 
 /**
- * Replaces '*for' with 'asic-for'
+ * Replaces '*for=item in items' with 'asic-for=item' 'asic-for-data=items'
  * @param {string} template
  */
-export function $replaceFor(template) {
+export function $replaceFor(template, context) {
     const forRe = /\*for/g;
 
     return template.replace(forRe, 'asic-for');
@@ -54,10 +54,22 @@ export function $replicateFor(template, context) {
     div.innerHTML = template;
     div.querySelectorAll('[asic-for]').forEach(element => {
         const expression = element.getAttribute('asic-for');
+
+        const result = $exec(`
+            [element] = arguments;
+            let result = '';
+            
+            for (${expression}) {
+                result += element.outerHTML;
+            }
+            
+            return result;
+        `, context, [element]);
+
+        template = template.replace(element.outerHTML, result);
     });
 
-
-    return div.innerHTML;
+    return template;
 }
 
 /**
@@ -89,8 +101,9 @@ export function $render(element, component) {
 
                     //TODO: find correct solution
                     try {
-                        el.innerHTML = $exec(expression, proxy);
-                    } catch (err){}
+                        el.innerHTML = $exec('return ' + expression, proxy);
+                    } catch (err) {
+                    }
                 });
 
                 return true;
@@ -102,7 +115,7 @@ export function $render(element, component) {
         element.querySelectorAll('[asic-bind-expression]').forEach(el => {
             const expression = el.getAttribute('asic-bind-expression');
 
-            el.innerHTML = $exec(expression, proxy);
+            el.innerHTML = $exec('return ' + expression, proxy);
         });
 
         element.querySelectorAll('[asic-event]').forEach(el => {
@@ -130,7 +143,7 @@ export function $render(element, component) {
  * @param { string } expression
  * @param { Object } context
  */
-export function $exec(expression, context, ignoreReturnedValue) {
+export function $exec(expression, context, args) {
     const parts = expression.match(/[a-zA-Z0-9_]+/g);
 
     parts.forEach(name => {
@@ -141,11 +154,7 @@ export function $exec(expression, context, ignoreReturnedValue) {
         }
     });
 
-    if (ignoreReturnedValue) {
-        Function(expression).call(context);
-    } else {
-        return Function('return ' + expression).call(context);
-    }
+    return Function(expression).apply(context, args);
 }
 
 /**
