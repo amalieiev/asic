@@ -15,7 +15,7 @@ export function $replaceEvents(template) {
 
         $events[eventName] = true;
 
-        return `asic-event=${eventName} asic-event-expression`;
+        return `asic-event="${eventName}" asic-event-expression`;
     });
 }
 
@@ -79,10 +79,10 @@ export function $replicateFor(template, context) {
  * @param template
  */
 export function $transform(template, context) {
+    template = $replaceEvents(template);
     template = $replaceFor(template);
     template = $replicateFor(template, context);
     template = $replaceInterpolations(template);
-    template = $replaceEvents(template);
 
     return template;
 }

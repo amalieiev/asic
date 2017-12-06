@@ -2,11 +2,12 @@
     template: `
   <div>
     <h2>Counter</h2>
-    <button (click)="increment()">increment</button>
     <span>{{ counter }}</span>
     <User></User>
     <ul>
-        <li *for="let item in items">{{ item }}</li>
+        <li *for="let item in items">
+            <button (click)="increment()">{{ item }}</button>
+        </li>
     </ul>
   </div>`
 })
