@@ -6,7 +6,7 @@
     <span>{{ counter }}</span>
     <User></User>
     <ul>
-        <li *for="let item in items">data</li>
+        <li *for="let item in items">{{ item }}</li>
     </ul>
   </div>`
 })

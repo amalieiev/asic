@@ -51,7 +51,27 @@ export function $replaceFor(template) {
  * @param template
  */
 export function $replicateFor(template, context) {
-    return template;
+    const div = document.createElement('div');
+
+    div.innerHTML = template;
+
+    const element = div.querySelector('[asic-for]');
+    const name = element.getAttribute('asic-for');
+    const data = element.getAttribute('asic-for-data');
+
+    let resultHTML = '';
+
+    for (let index = 0; index < context[data].length; index++) {
+        element.setAttribute('asic-for-index', index);
+
+        resultHTML += element.outerHTML.replace(RegExp(`\\b${name}\\b`, 'g'), match => {
+            return `${data}[${index}]`;
+        });
+    }
+
+    element.removeAttribute('asic-for-index');
+
+    return template.replace(element.outerHTML, resultHTML);
 }
 
 /**
@@ -59,9 +79,9 @@ export function $replicateFor(template, context) {
  * @param template
  */
 export function $transform(template, context) {
-    template = $replaceInterpolations(template);
     template = $replaceFor(template);
     template = $replicateFor(template, context);
+    template = $replaceInterpolations(template);
     template = $replaceEvents(template);
 
     return template;
