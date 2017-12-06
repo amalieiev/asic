@@ -24,25 +24,26 @@ export function $replaceEvents(template) {
  * @param {string} template
  */
 export function $replaceInterpolations(template) {
-    const re = /\{\{.*?\}\}/g;
+    const re = /(?:\{\{)(.*?)(?:\}\})/g;
 
-    return template.replace(re, function (match) {
-        let expression = match.replace(/\{\{/, '')
-            .replace(/\}\}/, '')
-            .trim();
-
-        return `<span asic-bind-expression="${expression}"></span>`;
+    return template.replace(re, function (fullMatch, match) {
+        return `<span asic-bind-expression="${match}"></span>`;
     });
 }
 
 /**
- * Replaces '*for=item in items' with 'asic-for=item' 'asic-for-data=items'
+ * Replaces '*for=item in items' with 'asic-for=item' 'asic-for-in=items'
  * @param {string} template
  */
-export function $replaceFor(template, context) {
-    const forRe = /\*for/g;
+export function $replaceFor(template) {
+    const forRe = /\*for=".*?"/g;
 
-    return template.replace(forRe, 'asic-for');
+    return template.replace(forRe, match => {
+        const name = match.match(/(?:let )(.*)(?: in)/)[1];
+        const data = match.match(/(?: in )(.*)(?:")/)[1];
+
+        return `asic-for="${name}" asic-for-data="${data}"`;
+    });
 }
 
 /**
@@ -50,44 +51,17 @@ export function $replaceFor(template, context) {
  * @param template
  */
 export function $replicateFor(template, context) {
-    const div = document.createElement('div');
-    div.innerHTML = template;
-    const element = div.querySelector('[asic-for]');
-
-    if (element) {
-        const expression = element.getAttribute('asic-for');
-
-        element.removeAttribute('asic-for');
-
-        const result = $exec(`
-            [element] = arguments;
-            let result = '';
-            
-            for (${expression}) {
-                result += element.outerHTML;
-            }
-            
-            return result;
-        `, context, [element]);
-
-        element.setAttribute('asic-for', expression);
-
-        template = template.replace(element.outerHTML, result);
-    } else {
-        return template;
-    }
-
-    return $replicateFor(template, context);
+    return template;
 }
 
 /**
  * Makes template transformations.
  * @param template
  */
-export function $transform(template, data) {
+export function $transform(template, context) {
     template = $replaceInterpolations(template);
     template = $replaceFor(template);
-    template = $replicateFor(template, data);
+    template = $replicateFor(template, context);
     template = $replaceEvents(template);
 
     return template;
