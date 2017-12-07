@@ -66,22 +66,31 @@ export function $replicateFor(template, context) {
     div.innerHTML = template;
 
     const element = div.querySelector('[asic-for]');
+
+    if (!element) {
+        return template;
+    }
+
     const name = element.getAttribute('asic-for');
     const data = element.getAttribute('asic-for-data');
 
     let resultHTML = '';
 
-    for (let index = 0; index < context[data].length; index++) {
-        element.setAttribute('asic-for-index', index);
-
-        resultHTML += element.outerHTML.replace(RegExp(`\\b${name}\\b`, 'g'), match => {
+    for (let index = 0; index < $exec('return ' + data, context).length; index++) {
+        const partHTML = element.outerHTML.replace(RegExp(`\\b${name}\\b`, 'g'), match => {
             return `${data}[${index}]`;
         });
+
+        resultHTML += partHTML;
     }
 
-    element.removeAttribute('asic-for-index');
-
     return template.replace(element.outerHTML, resultHTML);
+}
+
+function $toElement(markup) {
+    const div = document.createElement('div');
+    div.innerHTML = markup;
+    return div.firstElementChild;
 }
 
 /**
@@ -170,6 +179,23 @@ export function $exec(expression, context, args) {
 }
 
 /**
+ * Cleans asic related things form markup
+ */
+function $cleanUp () {
+    [
+        'asic-event',
+        'asic-event-expression',
+        // 'asic-bind-expression',
+        'asic-for',
+        'asic-for-data',
+    ].forEach(value => {
+        document.querySelectorAll(`[${value}]`).forEach(element => {
+            element.removeAttribute(value);
+        });
+    });
+}
+
+/**
  * Bootstraps an application.
  */
 export function $bootstrap() {
@@ -190,5 +216,7 @@ export function $bootstrap() {
                 }
             });
         }
-    })
+
+        $cleanUp();
+    });
 }
