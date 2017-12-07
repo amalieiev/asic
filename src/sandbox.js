@@ -6,7 +6,7 @@
     <User></User>
     <ul>
         <li *for="let item in items">
-            <button (click)="increment()">{{ item }}</button>
+            <button (click)="onClick(item)">{{ item.text }}</button>
         </li>
     </ul>
   </div>`
@@ -14,10 +14,13 @@
 class Counter {
     constructor() {
         this.counter = 0;
-        this.items = [1, 2, 3];
+        this.items = [
+            {text: 'increment'},
+            {text: 'decrement'}
+        ];
     }
 
-    increment() {
-        console.log(this.counter++);
+    onClick(item) {
+        console.log(item, this.counter++);
     }
 }

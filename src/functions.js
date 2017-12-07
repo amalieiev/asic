@@ -7,15 +7,13 @@ import { $events } from './services';
  * @param {string} template
  */
 export function $replaceEvents(template) {
-    const eventRe = /\(.+?\)/g;
-    const parenthesesRe = /[(,)]/g;
+    const eventRe = /(?:\()(.+?)(?:\)=)/g;
 
-    return template.replace(eventRe, function (match) {
-        const eventName = match.replace(parenthesesRe, '');
+    return template.replace(eventRe, function (match, eventName) {
 
         $events[eventName] = true;
 
-        return `asic-event="${eventName}" asic-event-expression`;
+        return `asic-event="${eventName}" asic-event-expression=`;
     });
 }
 
@@ -172,7 +170,7 @@ export function $bootstrap() {
         }
 
         for (let eventName in $events) {
-            document.addEventListener(eventName, function () {
+            document.addEventListener(eventName, function (event) {
                 const target = arguments[0].target;
 
                 if (target.$asic) {
