@@ -23,10 +23,22 @@ export function $replaceEvents(template) {
  */
 export function $replaceInterpolations(template) {
     const re = /(?:\{\{)(.*?)(?:\}\})/g;
-
-    return template.replace(re, function (fullMatch, match) {
+    template = template.replace(re, function (fullMatch, match) {
         return `<span asic-bind-expression="${match}"></span>`;
     });
+
+    const div = document.createElement('div');
+
+    div.innerHTML = template;
+
+    div.querySelectorAll('[asic-bind-expression]').forEach(element => {
+        if (element.parentElement.getAttribute('asic-event')) {
+            element.setAttribute('asic-event', element.parentElement.getAttribute('asic-event'));
+            element.setAttribute('asic-event-expression', element.parentElement.getAttribute('asic-event-expression'));
+        }
+    });
+
+    return div.innerHTML;
 }
 
 /**
