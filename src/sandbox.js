@@ -5,8 +5,8 @@
     <ul>
         <li *for="let item in items">
             <button (click)="increment(item.value)">{{ item.text }} current value: {{ counter }}</button>
-            <p *for="let d in item.data">
-                <button (click)="log(d)">{{ d }}</button>
+            <p (click)="log(d)" *for="let d in item.data">
+                <button>{{ d }}</button>
             </p>
         </li>
     </ul>

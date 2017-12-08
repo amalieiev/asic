@@ -75,6 +75,8 @@ export function $replicateFor(template, context) {
     const name = element.getAttribute('asic-for');
     const data = element.getAttribute('asic-for-data');
 
+    const outerHTML = element.outerHTML;
+
     element.removeAttribute('asic-for-todo');
 
     let resultHTML = '';
@@ -87,9 +89,7 @@ export function $replicateFor(template, context) {
         resultHTML += partHTML;
     }
 
-    element.setAttribute('asic-for-todo', 'true');
-
-    template = template.replace(element.outerHTML, resultHTML);
+    template = template.replace(outerHTML, resultHTML);
 
     return $replicateFor(template, context);
 }
