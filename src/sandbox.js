@@ -1,11 +1,13 @@
 @Component({
     template: `
   <div>
-    <h2>Counter</h2>
+    <h2>Asic</h2>
     <ul>
         <li *for="let item in items">
             <button (click)="increment(item.value)">{{ item.text }} current value: {{ counter }}</button>
-            <span *for="let d in item.data">ddd</span>
+            <p *for="let d in item.data">
+                <button (click)="log(d)">{{ d }}</button>
+            </p>
         </li>
     </ul>
     <Test></Test>
@@ -25,6 +27,10 @@ class Counter {
         this.counter += value;
     }
 
+    log(value) {
+        console.log(value);
+    }
+
     reset() {
         this.counter = 0;
     }
@@ -35,11 +41,13 @@ class Counter {
         <div>
                 <p>Test Component</p>
                 {{ text }}
+                <p *for="let i in data">{{ i }}</p>
         </div>
     `
 })
 class Test {
     constructor() {
         this.text = 'test text';
+        this.data = ['hello', 'world', '!']
     }
 }

@@ -1,5 +1,6 @@
 import { $components } from './services';
 import { $events } from './services';
+import { $forTemplates } from './services';
 
 /**
  * Replaces '(click)="foo()"' with 'asic-event="click" asic-event-expression="foo()"'
@@ -52,7 +53,7 @@ export function $replaceFor(template) {
         const name = match.match(/(?:let )(.*)(?: in)/)[1];
         const data = match.match(/(?: in )(.*)(?:")/)[1];
 
-        return `asic-for="${name}" asic-for-data="${data}"`;
+        return `asic-for="${name}" asic-for-data="${data}" asic-for-todo="true"`;
     });
 }
 
@@ -65,7 +66,7 @@ export function $replicateFor(template, context) {
 
     div.innerHTML = template;
 
-    const element = div.querySelector('[asic-for]');
+    const element = div.querySelector('[asic-for][asic-for-todo]');
 
     if (!element) {
         return template;
@@ -73,6 +74,8 @@ export function $replicateFor(template, context) {
 
     const name = element.getAttribute('asic-for');
     const data = element.getAttribute('asic-for-data');
+
+    element.removeAttribute('asic-for-todo');
 
     let resultHTML = '';
 
@@ -84,13 +87,11 @@ export function $replicateFor(template, context) {
         resultHTML += partHTML;
     }
 
-    return template.replace(element.outerHTML, resultHTML);
-}
+    element.setAttribute('asic-for-todo', 'true');
 
-function $toElement(markup) {
-    const div = document.createElement('div');
-    div.innerHTML = markup;
-    return div.firstElementChild;
+    template = template.replace(element.outerHTML, resultHTML);
+
+    return $replicateFor(template, context);
 }
 
 /**
