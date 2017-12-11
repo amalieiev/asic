@@ -1,53 +1,62 @@
 @Component({
     template: `
-  <div>
-    <h2>Asic</h2>
-    <ul>
-        <li *for="let item in items">
-            <button (click)="increment(item.value)">{{ item.text }} current value: {{ counter }}</button>
-            <p (click)="log(d)" *for="let d in item.data">
-                <button>{{ d }}</button>
-            </p>
-        </li>
-    </ul>
-    <Test></Test>
-    <button (click)="reset()">reset</button>
-  </div>`
+<div>
+    <h2>Interpolation</h2>
+    <p>Text: {{ text }}</p>
+    <SimpleText></SimpleText>
+</div>`
 })
-class Counter {
+class Interpolations {
     constructor() {
-        this.counter = 0;
-        this.items = [
-            {text: 'add 5', value: 5, data: [1,2,3]},
-            {text: 'add 10', value: 10, data: [4,5,6]}
-        ];
-    }
-
-    increment(value) {
-        this.counter += value;
-    }
-
-    log(value) {
-        console.log(value);
-    }
-
-    reset() {
-        this.counter = 0;
+        this.text = 'Hello Asic'
     }
 }
 
 @Component({
     template: `
-        <div>
-                <p>Test Component</p>
-                {{ text }}
-                <p *for="let i in data">{{ i }}</p>
-        </div>
-    `
+<div>
+    <p>{{ text }}</p>
+</div>`
 })
-class Test {
+class SimpleText {
     constructor() {
-        this.text = 'test text';
-        this.data = ['hello', 'world', '!']
+        this.text = 'Simple text'
+    }
+}
+
+@Component({
+    template: `
+<div>
+    <h2>Events</h2>
+    <p>Clicks counter: {{ count }}</p>
+    <button (click)="increment()">click</button>
+</div>`
+})
+class Events {
+    constructor() {
+        this.count = 0;
+    }
+    increment() {
+        this.count++;
+    }
+}
+
+@Component({
+    template: `
+<div>
+    <h2>Loops</h2>
+    <ul>
+        <li *for="item in items">
+            <span>{{ item.name }} skills: <strong *for="skill in item.skills">{{ skill }} </strong></span>
+        </li>
+    </ul>
+</div>`
+})
+class Loops {
+    constructor() {
+        this.items = [
+            {name: 'John', skills: ['javascript', 'java']},
+            {name: 'Adam', skills: ['python', 'ruby', 'html']}
+        ];
     }
 }

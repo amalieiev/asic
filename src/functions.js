@@ -1,6 +1,5 @@
 import { $components } from './services';
 import { $events } from './services';
-import { $forTemplates } from './services';
 
 /**
  * Replaces '(click)="foo()"' with 'asic-event="click" asic-event-expression="foo()"'
@@ -50,7 +49,7 @@ export function $replaceFor(template) {
     const forRe = /\*for=".*?"/g;
 
     return template.replace(forRe, match => {
-        const name = match.match(/(?:let )(.*)(?: in)/)[1];
+        const name = match.match(/(?:\*for=")(.*)(?: in)/)[1];
         const data = match.match(/(?: in )(.*)(?:")/)[1];
 
         return `asic-for="${name}" asic-for-data="${data}" asic-for-todo="true"`;
