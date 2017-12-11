@@ -98,10 +98,24 @@ export function $replicateFor(template, context) {
  * @param template
  */
 export function $transform(template, context) {
+    template = $normalize(template);
     template = $replaceEvents(template);
     template = $replaceFor(template);
     template = $replicateFor(template, context);
     template = $replaceInterpolations(template);
+
+    return template;
+}
+
+/**
+ * Replaces '<SomeComponent></SomeComponent>' with '<somecomponent></somecomponent>'
+ * @param template
+ */
+function $normalize(template) {
+    for (let componentName in $components) {
+        template = template.replace(RegExp(`<${componentName}`, 'g'), `<${componentName.toLowerCase()}`);
+        template = template.replace(RegExp(`</${componentName}`, 'g'), `</${componentName.toLowerCase()}`);
+    }
 
     return template;
 }
