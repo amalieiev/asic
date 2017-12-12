@@ -19,7 +19,7 @@ const webpackConfig = merge(base, {
   output: {
     path: config.bundle.assetsRoot,
     publicPath: config.bundle.assetsPublicPath,
-    filename: 'aisc.min.js',
+    filename: 'asic.min.js',
     library: 'Asic',
     libraryTarget: 'umd'
   },
