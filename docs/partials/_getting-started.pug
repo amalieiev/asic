@@ -1,0 +1,22 @@
+.grid__row
+  .grid__column
+    section#sub-getting-started(data-section)
+      h1.typo__h1 Getting started
+      hr.typo__hr
+
+      h3.typo__h3 Try it on
+        = ' '
+        a.typo__link(href="https://jsfiddle.net/amalieiev/Lvz22js0/", target="_blank") JSFiddle
+
+      .grid__row
+        .grid__column
+          h2.typo__h2 Installation
+          h3.typo__h3 via npm
+          pre.language-bash
+            code.
+              npm install asic --save
+
+          h3.typo__h3 via CDN
+          pre.language-html
+            code
+              | &lt;script src="https://unpkg.com/asic">&lt;/script>
