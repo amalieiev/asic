@@ -46,6 +46,25 @@ class Events {
 @Component({
     template: `
 <div>
+    <h2>Timer</h2>
+    <p>Value: {{ count }}</p>
+</div>`
+})
+class Timer {
+    constructor() {
+        this.count = 0;
+        setInterval(() => {
+            this.increment();
+        }, 1000)
+    }
+    increment() {
+        this.count++;
+    }
+}
+
+@Component({
+    template: `
+<div>
     <h2>Loops</h2>
     <p>Active skill: <strong>{{ activeSkill }}</strong></p>
     <ul>
