@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -35,5 +36,11 @@ module.exports = {
     devServer: {
         contentBase: 'dist',
         port: 5000
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'docs/index.ejs',
+            hash: true
+        })
+    ]
 };
