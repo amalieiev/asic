@@ -126,7 +126,7 @@ export function $render(element, component) {
     } else {
         const template = $components[component].template;
         const Component = $components[component].target;
-        // const instance = new Component();
+
         const proxy = new Proxy(Component.prototype, {
             set(target, property, value) {
                 target[property] = value;
@@ -145,7 +145,7 @@ export function $render(element, component) {
             }
         });
 
-        callConstructor$(proxy);
+        $callConstructor(proxy);
 
         element.innerHTML = $transform(template, proxy);
 
@@ -175,7 +175,7 @@ export function $render(element, component) {
     }
 }
 
-export function callConstructor$(instance) {
+export function $callConstructor(instance) {
     const entire = instance.constructor.toString();
     const body = entire.slice(entire.indexOf("{") + 1, entire.lastIndexOf("}"))
         .replace(/(?:_classCallCheck\(this,\s)(\S*)/, '');

@@ -3,7 +3,13 @@ const path = require('path');
 module.exports = {
     entry: {
         main: ['./src/index.js'],
-        sandbox: ['./src/sandbox.js']
+        samples: [
+            './samples/Events.js',
+            './samples/Interpolation.js',
+            './samples/Loops.js',
+            './samples/SimpleText.js',
+            './samples/Timer.js',
+        ]
     },
     mode: 'development',
     output: {
