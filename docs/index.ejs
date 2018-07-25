@@ -9,45 +9,23 @@
 </head>
 <body>
 
-<%= require('!!raw-loader!../samples/Timer.html') %>
-<pre><code class="html">
-<%- require('!!raw-loader!../samples/Timer.html') %>
-</code></pre>
-<pre><code class="javascript">
-<%- require('!!raw-loader!../samples/Timer.js') %>
-</code></pre>
+<% const Examples = [
+    'Events',
+    'Timer',
+    'Loops',
+    'SimpleText',
+    'Interpolation'
+] %>
 
-<%= require('!!raw-loader!../samples/Events.html') %>
+<% Examples.forEach(function(name){ %>
+<%= require(`!!raw-loader!../samples/${name}.html`) %>
 <pre><code class="html">
-<%- require('!!raw-loader!../samples/Events.html') %>
+<%- require(`!!raw-loader!../samples/${name}.html`) %>
 </code></pre>
 <pre><code class="javascript">
-<%- require('!!raw-loader!../samples/Events.js') %>
+<%- require(`!!raw-loader!../samples/${name}.js`) %>
 </code></pre>
-
-<%= require('!!raw-loader!../samples/Interpolation.html') %>
-<pre><code class="html">
-<%- require('!!raw-loader!../samples/Interpolation.html') %>
-</code></pre>
-<pre><code class="javascript">
-<%- require('!!raw-loader!../samples/Interpolation.js') %>
-</code></pre>
-
-<%= require('!!raw-loader!../samples/Loops.html') %>
-<pre><code class="html">
-<%- require('!!raw-loader!../samples/Loops.html') %>
-</code></pre>
-<pre><code class="javascript">
-<%- require('!!raw-loader!../samples/Loops.js') %>
-</code></pre>
-
-<%= require('!!raw-loader!../samples/SimpleText.html') %>
-<pre><code class="html">
-<%- require('!!raw-loader!../samples/SimpleText.html') %>
-</code></pre>
-<pre><code class="javascript">
-<%- require('!!raw-loader!../samples/SimpleText.js') %>
-</code></pre>
+<% }); %>
 
 </body>
 </html>
