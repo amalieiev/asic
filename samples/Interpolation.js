@@ -6,7 +6,7 @@
     <SimpleText></SimpleText>
 </div>`
 })
-class Interpolations {
+class Interpolation {
     constructor() {
         this.text = 'Hello Asic'
     }

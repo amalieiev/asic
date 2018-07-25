@@ -6,32 +6,48 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/agate.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="main-bundle.js"></script>
-    <script src="samples-bundle.js"></script>
 </head>
 <body>
-<pre><code class="javascript">
-@Component({
-template: `
-    &lt;div&gt;
-        &lt;h2&gt;Events&lt;/h2&gt;
-        &lt;p&gt;Clicks counter: {{ count }}&lt;/p&gt;
-        &lt;button (click)="increment()"&gt;click&lt;/button&gt;
-    &lt;/div&gt;`
-})
-class Events {
-    constructor() {
-        this.count = 0;
-    }
-    increment() {
-        this.count++;
-    }
-}
+
+<%= require('!!raw-loader!../samples/Timer.html') %>
+<pre><code class="html">
+<%- require('!!raw-loader!../samples/Timer.html') %>
 </code></pre>
-<SimpleText></SimpleText>
-<Events></Events>
-<Timer></Timer>
-<Interpolations></Interpolations>
-<Loops></Loops>
+<pre><code class="javascript">
+<%- require('!!raw-loader!../samples/Timer.js') %>
+</code></pre>
+
+<%= require('!!raw-loader!../samples/Events.html') %>
+<pre><code class="html">
+<%- require('!!raw-loader!../samples/Events.html') %>
+</code></pre>
+<pre><code class="javascript">
+<%- require('!!raw-loader!../samples/Events.js') %>
+</code></pre>
+
+<%= require('!!raw-loader!../samples/Interpolation.html') %>
+<pre><code class="html">
+<%- require('!!raw-loader!../samples/Interpolation.html') %>
+</code></pre>
+<pre><code class="javascript">
+<%- require('!!raw-loader!../samples/Interpolation.js') %>
+</code></pre>
+
+<%= require('!!raw-loader!../samples/Loops.html') %>
+<pre><code class="html">
+<%- require('!!raw-loader!../samples/Loops.html') %>
+</code></pre>
+<pre><code class="javascript">
+<%- require('!!raw-loader!../samples/Loops.js') %>
+</code></pre>
+
+<%= require('!!raw-loader!../samples/SimpleText.html') %>
+<pre><code class="html">
+<%- require('!!raw-loader!../samples/SimpleText.html') %>
+</code></pre>
+<pre><code class="javascript">
+<%- require('!!raw-loader!../samples/SimpleText.js') %>
+</code></pre>
+
 </body>
 </html>

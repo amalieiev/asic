@@ -1,9 +1,5 @@
 @Component({
-    template: `
-<div>
-    <h2>Timer</h2>
-    <p>Value: {{ count }}</p>
-</div>`
+    template: `<p>Value: {{ count }}</p>`
 })
 class Timer {
     constructor() {
