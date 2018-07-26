@@ -74,19 +74,37 @@ const Samples = [
     <div class="row">
         <!-- Side navigation -->
         <div class="col-sm-2">
+            <h3>
+                <a class="anchor" href="#Setup" aria-hidden="true"><span class="octicon octicon-link">Setup</span></a>
+            </h3>
+            <ul>
+                <li>
+                    <h4>
+                        <a class="anchor" href="#GettingStarted" aria-hidden="true"><span class="octicon octicon-link">Getting Started</span></a>
+                    </h4>
+                </li>
+            </ul>
+            <h3>
+                <a class="anchor" href="#Basics" aria-hidden="true"><span class="octicon octicon-link">Basics</span></a>
+            </h3>
             <ul>
                 <% Basics.forEach(function(sample){ %>
                 <li>
-                    <h3>
+                    <h4>
                         <a class="anchor" href="#<%- sample.name %>" aria-hidden="true"><span class="octicon octicon-link"><%- sample.title %></span></a>
-                    </h3>
+                    </h4>
                 </li>
                 <% }); %>
+            </ul>
+            <h3>
+                <a class="anchor" href="#Samples" aria-hidden="true"><span class="octicon octicon-link">Samples</span></a>
+            </h3>
+            <ul>
                 <% Samples.forEach(function(sample){ %>
                 <li>
-                    <h3>
+                    <h4>
                         <a class="anchor" href="#<%- sample.name %>" aria-hidden="true"><span class="octicon octicon-link"><%- sample.title %></span></a>
-                    </h3>
+                    </h4>
                 </li>
                 <% }); %>
             </ul>
@@ -96,7 +114,7 @@ const Samples = [
         <!-- Main content -->
         <div class="col-sm-10">
             <h2>
-                <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basics
+                <a id="Basics" class="anchor" href="#Basics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basics
             </h2>
 
             <% Basics.forEach(function(sample){ %>
@@ -131,7 +149,7 @@ const Samples = [
             <% }); %>
 
             <h2>
-                <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Samples
+                <a id="Samples" class="anchor" href="#Samples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Samples
             </h2>
 
             <% Samples.forEach(function(sample){ %>
