@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -130,7 +130,7 @@ eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Loops = (_dec = Component({\n  template: \"\\n<ul>\\n    <li *for=\\\"item in items\\\">\\n        {{ item }}\\n    </li>\\n</ul>\"\n}), _dec(_class = function Loops() {\n  _classCallCheck(this, Loops);\n\n  this.items = ['javascript', 'java', 'python', 'ruby', 'html'];\n}) || _class);\n\n//# sourceURL=webpack:///./samples/Loops.js?");
+eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Loops = (_dec = Component({\n  template: \"\\n<ul>\\n    <li *for=\\\"item in items\\\">\\n        {{ item }}\\n    </li>\\n</ul>\"\n}), _dec(_class = function Loops() {\n  _classCallCheck(this, Loops);\n\n  this.items = ['javascript', 'python', 'ruby'];\n}) || _class);\n\n//# sourceURL=webpack:///./samples/Loops.js?");
 
 /***/ }),
 
@@ -158,7 +158,7 @@ eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*****************************************************************************************************************************************************!*\
   !*** multi ./samples/Events.js ./samples/ComplexComponent.js ./samples/Loops.js ./samples/InnerLoops.js ./samples/SimpleText.js ./samples/Timer.js ***!
   \*****************************************************************************************************************************************************/
