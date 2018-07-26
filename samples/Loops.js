@@ -8,6 +8,6 @@
 })
 class Loops {
     constructor() {
-        this.items = ['javascript', 'java', 'python', 'ruby', 'html'];
+        this.items = ['javascript', 'python', 'ruby'];
     }
 }

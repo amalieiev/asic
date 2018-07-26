@@ -1,6 +1,6 @@
 @Component({
     template:`
-<div>
+<section class="main-content">
     <h3>
         <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span
                     class="octicon octicon-link"></span></a>Authors and Contributors</h3>
@@ -26,7 +26,7 @@
                     href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a
                     href="https://twitter.com/jasonlong">Jason Long</a>.</span>
     </footer>
-</div>
+</section>
     `
 })
 class Footer {
