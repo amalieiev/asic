@@ -72,6 +72,7 @@ const Samples = [
 
 <section class="main-content">
     <div class="row">
+        <!-- Side navigation -->
         <div class="col-sm-2">
             <ul>
                 <% Basics.forEach(function(sample){ %>
@@ -90,18 +91,16 @@ const Samples = [
                 <% }); %>
             </ul>
         </div>
+        <!-- Side navigation end -->
+
+        <!-- Main content -->
         <div class="col-sm-10">
             <h2>
                 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basics
             </h2>
-        </div>
-    </div>
 
-<% Basics.forEach(function(sample){ %>
+            <% Basics.forEach(function(sample){ %>
 
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-10">
             <div class="row">
                 <div class="col-sm">
                     <h3>
@@ -123,25 +122,15 @@ const Samples = [
                     </code></pre>
                 </div>
             </div>
-        </div>
-    </div>
 
-<% }); %>
+            <% }); %>
 
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-10">
             <h2>
                 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Samples
             </h2>
-        </div>
-    </div>
 
-<% Samples.forEach(function(sample){ %>
+            <% Samples.forEach(function(sample){ %>
 
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-10">
             <div class="row">
                 <div class="col-sm">
                     <h3>
@@ -163,10 +152,14 @@ const Samples = [
                     </code></pre>
                 </div>
             </div>
+
+            <% }); %>
+
         </div>
+        <!-- Main content end -->
+
     </div>
 
-<% }); %>
 </section>
 
 <Footer></Footer>
