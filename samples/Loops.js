@@ -1,7 +1,6 @@
 @Component({
     template: `
 <div>
-    <h2>Loops</h2>
     <p>Active skill: <strong>{{ activeSkill }}</strong></p>
     <ul>
         <li *for="item in items">

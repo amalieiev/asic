@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
+        styles: ['./docs/styles.js'],
         main: ['./src/index.js'],
         samples: [
             './samples/Events.js',
@@ -30,12 +31,16 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.css$/,
+                loaders: 'style-loader!css-loader'
             }
         ]
     },
     devServer: {
         contentBase: 'dist',
-        port: 5000
+        port: 5500
     },
     plugins: [
         new HtmlWebpackPlugin({

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="https://amalieiev.github.io/asic/static/asic-logo.png" type="image/x-icon">
+    <title>Asic | Javascript Framework</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <meta name="description" content="Progressive javascript web framework without jQuery.">
+    <meta name="og:title" content="Asic | Javascript Framework">
+    <meta name="og:site_name" content="Asic | Javascript Framework">
+    <meta name="og:url" content="https://amalieiev.github.io/asic">
+    <meta name="og:description" content="Progressive javascript web framework without jQuery.">
+    <meta name="og:image" content="https://amalieiev.github.io/asic/static/asic-logo.png">
+    <meta name="twitter:image" content="https://amalieiev.github.io/asic/static/asic-logo.png">
+    <meta name="twitter:title" content="Asic | Javascript Framework">
+    <meta name="twitter:description" content="Progressive javascript web framework without jQuery.">
+
+    <!--highlight.js-->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/agate.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+
+
+
+<Events></Events>
+<pre><code class="html">
+&lt;Events&gt;&lt;/Events&gt;
+</code></pre>
+<pre><code class="javascript">
+@Component({
+    template: `
+&lt;div&gt;
+    &lt;h2&gt;Events&lt;/h2&gt;
+    &lt;p&gt;Clicks counter: {{ count }}&lt;/p&gt;
+    &lt;button (click)=&quot;increment()&quot;&gt;click&lt;/button&gt;
+&lt;/div&gt;`
+})
+class Events {
+    constructor() {
+        this.count = 0;
+    }
+    increment() {
+        this.count++;
+    }
+}
+</code></pre>
+
+<Timer></Timer>
+<pre><code class="html">
+&lt;Timer&gt;&lt;/Timer&gt;
+</code></pre>
+<pre><code class="javascript">
+@Component({
+    template: `&lt;p&gt;Value: {{ count }}&lt;/p&gt;`
+})
+class Timer {
+    constructor() {
+        this.count = 0;
+        setInterval(() =&gt; {
+            this.increment();
+        }, 1000)
+    }
+    increment() {
+        this.count++;
+    }
+}
+</code></pre>
+
+<Loops></Loops>
+<pre><code class="html">
+&lt;Loops&gt;&lt;/Loops&gt;
+</code></pre>
+<pre><code class="javascript">
+@Component({
+    template: `
+&lt;div&gt;
+    &lt;h2&gt;Loops&lt;/h2&gt;
+    &lt;p&gt;Active skill: &lt;strong&gt;{{ activeSkill }}&lt;/strong&gt;&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li *for=&quot;item in items&quot;&gt;
+            &lt;span&gt;{{ item.name }} skills: &lt;strong *for=&quot;skill in item.skills&quot; (click)=&quot;setActive(skill)&quot;&gt;{{ skill }} &lt;/strong&gt;&lt;/span&gt;
+            &lt;SimpleText&gt;&lt;/SimpleText&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;`
+})
+class Loops {
+    constructor() {
+        this.activeSkill = &#39;&#39;;
+        this.items = [
+            {name: &#39;John&#39;, skills: [&#39;javascript&#39;, &#39;java&#39;]},
+            {name: &#39;Adam&#39;, skills: [&#39;python&#39;, &#39;ruby&#39;, &#39;html&#39;]}
+        ];
+    }
+    setActive(skill) {
+        this.activeSkill = skill;
+    }
+}
+</code></pre>
+
+<SimpleText></SimpleText>
+<pre><code class="html">
+&lt;SimpleText&gt;&lt;/SimpleText&gt;
+</code></pre>
+<pre><code class="javascript">
+@Component({
+    template: `
+&lt;div&gt;
+    &lt;h2&gt;Simple Text&lt;/h2&gt;
+    &lt;p&gt;Inner component&lt;/p&gt;
+    &lt;p&gt;{{ text }}&lt;/p&gt;
+&lt;/div&gt;`
+})
+class SimpleText {
+    constructor() {
+        this.text = &#39;Simple text&#39;
+    }
+}
+</code></pre>
+
+<Interpolation></Interpolation>
+<pre><code class="html">
+&lt;Interpolation&gt;&lt;/Interpolation&gt;
+</code></pre>
+<pre><code class="javascript">
+@Component({
+    template: `
+&lt;div&gt;
+    &lt;h2&gt;Interpolation&lt;/h2&gt;
+    &lt;p&gt;Text: {{ text }}&lt;/p&gt;
+    &lt;SimpleText&gt;&lt;/SimpleText&gt;
+&lt;/div&gt;`
+})
+class Interpolation {
+    constructor() {
+        this.text = &#39;Hello Asic&#39;
+    }
+}
+</code></pre>
+
+
+<script type="text/javascript" src="/main-bundle.js?14f803a03c53a749b875"></script><script type="text/javascript" src="/styles-bundle.js?14f803a03c53a749b875"></script><script type="text/javascript" src="/samples-bundle.js?14f803a03c53a749b875"></script></body>
+</html>

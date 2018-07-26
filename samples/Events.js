@@ -1,7 +1,6 @@
 @Component({
     template: `
 <div>
-    <h2>Events</h2>
     <p>Clicks counter: {{ count }}</p>
     <button (click)="increment()">click</button>
 </div>`
