@@ -242,3 +242,15 @@ a:hover {
 @media screen and (max-width: 42em) {
     .site-footer {
         font-size: 0.9rem; } }
+
+ul {
+    list-style: none;
+}
+
+label.label {
+    display: block;
+    font-weight: 300;
+    font-size: .9rem;
+    color: #bbb;
+    margin: 1.25rem 0 .625rem;
+}

@@ -78,14 +78,14 @@ const Samples = [
                 <% Basics.forEach(function(sample){ %>
                 <li>
                     <h3>
-                        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"><%- sample.title %></span></a>
+                        <a class="anchor" href="#<%- sample.name %>" aria-hidden="true"><span class="octicon octicon-link"><%- sample.title %></span></a>
                     </h3>
                 </li>
                 <% }); %>
                 <% Samples.forEach(function(sample){ %>
                 <li>
                     <h3>
-                        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"><%- sample.title %></span></a>
+                        <a class="anchor" href="#<%- sample.name %>" aria-hidden="true"><span class="octicon octicon-link"><%- sample.title %></span></a>
                     </h3>
                 </li>
                 <% }); %>
@@ -104,21 +104,26 @@ const Samples = [
             <div class="row">
                 <div class="col-sm">
                     <h3>
-                        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a><%- sample.title %>
+                        <a id="<%- sample.name %>" class="anchor" href="#<%- sample.name %>" aria-hidden="true"><span class="octicon octicon-link"></span></a><%- sample.title %>
                     </h3>
                     <p><%= sample.description %></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
+
+                    <label class="label"><%- sample.name %></label>
+
                     <%= require(`!!raw-loader!../samples/${sample.name}.html`) %>
                 </div>
                 <div class="col-sm-8">
-                    <pre><code class="html">
-<%- require(`!!raw-loader!../samples/${sample.name}.html`) %>
-                    </code></pre>
+                    <label class="label">Code Sample</label>
+
                     <pre><code class="javascript">
 <%- require(`!!raw-loader!../samples/${sample.name}.js`) %>
+                    </code></pre>
+                    <pre><code class="html">
+<%- require(`!!raw-loader!../samples/${sample.name}.html`) %>
                     </code></pre>
                 </div>
             </div>
@@ -134,21 +139,25 @@ const Samples = [
             <div class="row">
                 <div class="col-sm">
                     <h3>
-                        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a><%- sample.title %>
+                        <a id="<%- sample.name %>" class="anchor" href="#<%- sample.name %>" aria-hidden="true"><span class="octicon octicon-link"></span></a><%- sample.title %>
                     </h3>
                     <p><%= sample.description %></p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
+                    <label class="label"><%- sample.name %></label>
+
                     <%= require(`!!raw-loader!../samples/${sample.name}.html`) %>
                 </div>
                 <div class="col-sm-8">
-                    <pre><code class="html">
-<%- require(`!!raw-loader!../samples/${sample.name}.html`) %>
-                    </code></pre>
+                    <label class="label">Code Sample</label>
+
                     <pre><code class="javascript">
 <%- require(`!!raw-loader!../samples/${sample.name}.js`) %>
+                    </code></pre>
+                    <pre><code class="html">
+<%- require(`!!raw-loader!../samples/${sample.name}.html`) %>
                     </code></pre>
                 </div>
             </div>
