@@ -1,12 +1,12 @@
 @Component({
     template: `
 <div>
-    <p>Text: {{ text }}</p>
+    <p>{{ text }}</p>
     <SimpleText></SimpleText>
 </div>`
 })
-class Interpolation {
+class ComplexComponent {
     constructor() {
-        this.text = 'Hello Asic'
+        this.text = 'Parent component'
     }
 }

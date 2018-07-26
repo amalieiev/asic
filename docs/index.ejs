@@ -22,13 +22,54 @@
 </head>
 <body>
 
-<% const Examples = [
-    'Events',
-    'Timer',
-    'Loops',
-    'SimpleText',
-    'Interpolation'
-] %>
+<%
+
+const Basics = [
+    {
+        name: 'SimpleText',
+        title: 'Data Biding',
+        description: `
+            Data binding in Asic is the synchronization between the model and the view.`
+    },
+    {
+        name: 'ComplexComponent',
+        title: 'Composition',
+        description: `
+            This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your
+            page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After
+            your page is generated, you can check out the new branch:`
+    },
+    {
+        name: 'Events',
+        title: 'Events',
+        description: `
+            You can add mouse events on any HTML element.`
+    },
+    {
+        name: 'Loops',
+        title: 'Loops',
+        description: `
+            The <strong>*for</strong> directive repeats an HTML element`
+    }
+];
+
+const Samples = [
+    {
+        name: 'Timer',
+        title: 'Timer',
+        description: `
+            Javascript <strong>setInterval</strong> and <strong>setTimeout</strong> works fine.`
+    },
+    {
+        name: 'InnerLoops',
+        title: 'Inner Loops',
+        description: `
+            This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your
+            page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After
+            your page is generated, you can check out the new branch:`
+    }
+];
+%>
 
 <section class="page-header">
     <h1 class="project-name">Asic</h1>
@@ -42,24 +83,43 @@
 <section class="main-content">
     <h2>
         <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
-                    class="octicon octicon-link"></span></a>Samples</h2>
+                    class="octicon octicon-link"></span></a>Basics</h2>
 
-<% Examples.forEach(function(name){ %>
+<% Basics.forEach(function(sample){ %>
 
     <h3>
         <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
-                    class="octicon octicon-link"></span></a><%- name %></h3>
+                    class="octicon octicon-link"></span></a><%- sample.title %></h3>
 
-    <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your
-        page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After
-        your page is generated, you can check out the new branch:</p>
+    <p><%= sample.description %></p>
 
-<%= require(`!!raw-loader!../samples/${name}.html`) %>
+<%= require(`!!raw-loader!../samples/${sample.name}.html`) %>
 <pre><code class="html">
-<%- require(`!!raw-loader!../samples/${name}.html`) %>
+<%- require(`!!raw-loader!../samples/${sample.name}.html`) %>
 </code></pre>
 <pre><code class="javascript">
-<%- require(`!!raw-loader!../samples/${name}.js`) %>
+<%- require(`!!raw-loader!../samples/${sample.name}.js`) %>
+</code></pre>
+<% }); %>
+
+    <h2>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Samples</h2>
+
+<% Samples.forEach(function(sample){ %>
+
+    <h3>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a><%- sample.title %></h3>
+
+    <p><%= sample.description %></p>
+
+<%= require(`!!raw-loader!../samples/${sample.name}.html`) %>
+<pre><code class="html">
+<%- require(`!!raw-loader!../samples/${sample.name}.html`) %>
+</code></pre>
+<pre><code class="javascript">
+<%- require(`!!raw-loader!../samples/${sample.name}.js`) %>
 </code></pre>
 <% }); %>
 

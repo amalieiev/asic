@@ -7,8 +7,9 @@ module.exports = {
         main: ['./src/index.js'],
         samples: [
             './samples/Events.js',
-            './samples/Interpolation.js',
+            './samples/ComplexComponent.js',
             './samples/Loops.js',
+            './samples/InnerLoops.js',
             './samples/SimpleText.js',
             './samples/Timer.js',
         ]
