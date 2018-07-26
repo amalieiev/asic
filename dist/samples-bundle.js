@@ -81,10 +81,22 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
+
+/***/ "./samples/ComplexComponent.js":
+/*!*************************************!*\
+  !*** ./samples/ComplexComponent.js ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar ComplexComponent = (_dec = Component({\n  template: \"\\n<div>\\n    <p>{{ text }}</p>\\n    <SimpleText></SimpleText>\\n</div>\"\n}), _dec(_class = function ComplexComponent() {\n  _classCallCheck(this, ComplexComponent);\n\n  this.text = 'Parent component';\n}) || _class);\n\n//# sourceURL=webpack:///./samples/ComplexComponent.js?");
+
+/***/ }),
 
 /***/ "./samples/Events.js":
 /*!***************************!*\
@@ -94,19 +106,19 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Events = (_dec = Component({\n  template: \"\\n<div>\\n    <h2>Events</h2>\\n    <p>Clicks counter: {{ count }}</p>\\n    <button (click)=\\\"increment()\\\">click</button>\\n</div>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function Events() {\n    _classCallCheck(this, Events);\n\n    this.count = 0;\n  }\n\n  _createClass(Events, [{\n    key: \"increment\",\n    value: function increment() {\n      this.count++;\n    }\n  }]);\n\n  return Events;\n}()) || _class);\n\n//# sourceURL=webpack:///./samples/Events.js?");
+eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Events = (_dec = Component({\n  template: \"\\n<div>\\n    <p>Clicks counter: {{ count }}</p>\\n    <button (click)=\\\"increment()\\\">click</button>\\n</div>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function Events() {\n    _classCallCheck(this, Events);\n\n    this.count = 0;\n  }\n\n  _createClass(Events, [{\n    key: \"increment\",\n    value: function increment() {\n      this.count++;\n    }\n  }]);\n\n  return Events;\n}()) || _class);\n\n//# sourceURL=webpack:///./samples/Events.js?");
 
 /***/ }),
 
-/***/ "./samples/Interpolation.js":
-/*!**********************************!*\
-  !*** ./samples/Interpolation.js ***!
-  \**********************************/
+/***/ "./samples/InnerLoops.js":
+/*!*******************************!*\
+  !*** ./samples/InnerLoops.js ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Interpolation = (_dec = Component({\n  template: \"\\n<div>\\n    <h2>Interpolation</h2>\\n    <p>Text: {{ text }}</p>\\n    <SimpleText></SimpleText>\\n</div>\"\n}), _dec(_class = function Interpolation() {\n  _classCallCheck(this, Interpolation);\n\n  this.text = 'Hello Asic';\n}) || _class);\n\n//# sourceURL=webpack:///./samples/Interpolation.js?");
+eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar InnerLoops = (_dec = Component({\n  template: \"\\n<div>\\n    <p>Active skill: <strong>{{ activeSkill }}</strong></p>\\n    <ul>\\n        <li *for=\\\"item in items\\\">\\n            <span>{{ item.name }} skills: <strong *for=\\\"skill in item.skills\\\" (click)=\\\"setActive(skill)\\\">{{ skill }} </strong></span>\\n            <SimpleText></SimpleText>\\n        </li>\\n    </ul>\\n</div>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function InnerLoops() {\n    _classCallCheck(this, InnerLoops);\n\n    this.activeSkill = '';\n    this.items = [{\n      name: 'John',\n      skills: ['javascript', 'java']\n    }, {\n      name: 'Adam',\n      skills: ['python', 'ruby', 'html']\n    }];\n  }\n\n  _createClass(InnerLoops, [{\n    key: \"setActive\",\n    value: function setActive(skill) {\n      this.activeSkill = skill;\n    }\n  }]);\n\n  return InnerLoops;\n}()) || _class);\n\n//# sourceURL=webpack:///./samples/InnerLoops.js?");
 
 /***/ }),
 
@@ -118,7 +130,7 @@ eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Loops = (_dec = Component({\n  template: \"\\n<div>\\n    <h2>Loops</h2>\\n    <p>Active skill: <strong>{{ activeSkill }}</strong></p>\\n    <ul>\\n        <li *for=\\\"item in items\\\">\\n            <span>{{ item.name }} skills: <strong *for=\\\"skill in item.skills\\\" (click)=\\\"setActive(skill)\\\">{{ skill }} </strong></span>\\n            <SimpleText></SimpleText>\\n        </li>\\n    </ul>\\n</div>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function Loops() {\n    _classCallCheck(this, Loops);\n\n    this.activeSkill = '';\n    this.items = [{\n      name: 'John',\n      skills: ['javascript', 'java']\n    }, {\n      name: 'Adam',\n      skills: ['python', 'ruby', 'html']\n    }];\n  }\n\n  _createClass(Loops, [{\n    key: \"setActive\",\n    value: function setActive(skill) {\n      this.activeSkill = skill;\n    }\n  }]);\n\n  return Loops;\n}()) || _class);\n\n//# sourceURL=webpack:///./samples/Loops.js?");
+eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Loops = (_dec = Component({\n  template: \"\\n<ul>\\n    <li *for=\\\"item in items\\\">\\n        {{ item }}\\n    </li>\\n</ul>\"\n}), _dec(_class = function Loops() {\n  _classCallCheck(this, Loops);\n\n  this.items = ['javascript', 'java', 'python', 'ruby', 'html'];\n}) || _class);\n\n//# sourceURL=webpack:///./samples/Loops.js?");
 
 /***/ }),
 
@@ -130,7 +142,7 @@ eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar SimpleText = (_dec = Component({\n  template: \"\\n<div>\\n    <h2>Simple Text</h2>\\n    <p>Inner component</p>\\n    <p>{{ text }}</p>\\n</div>\"\n}), _dec(_class = function SimpleText() {\n  _classCallCheck(this, SimpleText);\n\n  this.text = 'Simple text';\n}) || _class);\n\n//# sourceURL=webpack:///./samples/SimpleText.js?");
+eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar SimpleText = (_dec = Component({\n  template: \"\\n<div>\\n    <p>Inner component</p>\\n    <p>{{ text }}</p>\\n</div>\"\n}), _dec(_class = function SimpleText() {\n  _classCallCheck(this, SimpleText);\n\n  this.text = 'Simple text';\n}) || _class);\n\n//# sourceURL=webpack:///./samples/SimpleText.js?");
 
 /***/ }),
 
@@ -146,14 +158,14 @@ eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) {
 
 /***/ }),
 
-/***/ 2:
-/*!**************************************************************************************************************************!*\
-  !*** multi ./samples/Events.js ./samples/Interpolation.js ./samples/Loops.js ./samples/SimpleText.js ./samples/Timer.js ***!
-  \**************************************************************************************************************************/
+/***/ 3:
+/*!*****************************************************************************************************************************************************!*\
+  !*** multi ./samples/Events.js ./samples/ComplexComponent.js ./samples/Loops.js ./samples/InnerLoops.js ./samples/SimpleText.js ./samples/Timer.js ***!
+  \*****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./samples/Events.js */\"./samples/Events.js\");\n__webpack_require__(/*! ./samples/Interpolation.js */\"./samples/Interpolation.js\");\n__webpack_require__(/*! ./samples/Loops.js */\"./samples/Loops.js\");\n__webpack_require__(/*! ./samples/SimpleText.js */\"./samples/SimpleText.js\");\nmodule.exports = __webpack_require__(/*! ./samples/Timer.js */\"./samples/Timer.js\");\n\n\n//# sourceURL=webpack:///multi_./samples/Events.js_./samples/Interpolation.js_./samples/Loops.js_./samples/SimpleText.js_./samples/Timer.js?");
+eval("__webpack_require__(/*! ./samples/Events.js */\"./samples/Events.js\");\n__webpack_require__(/*! ./samples/ComplexComponent.js */\"./samples/ComplexComponent.js\");\n__webpack_require__(/*! ./samples/Loops.js */\"./samples/Loops.js\");\n__webpack_require__(/*! ./samples/InnerLoops.js */\"./samples/InnerLoops.js\");\n__webpack_require__(/*! ./samples/SimpleText.js */\"./samples/SimpleText.js\");\nmodule.exports = __webpack_require__(/*! ./samples/Timer.js */\"./samples/Timer.js\");\n\n\n//# sourceURL=webpack:///multi_./samples/Events.js_./samples/ComplexComponent.js_./samples/Loops.js_./samples/InnerLoops.js_./samples/SimpleText.js_./samples/Timer.js?");
 
 /***/ })
 

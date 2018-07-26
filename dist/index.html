@@ -24,6 +24,84 @@
 
 
 
+<section class="page-header">
+    <h1 class="project-name">Asic</h1>
+
+    <h2 class="project-tagline">Progressive JavaScript Framework</h2>
+    <a href="https://github.com/amalieiev/flexbox-layout" class="btn">View on GitHub</a>
+    <a href="https://jsfiddle.net/amalieiev/171kzqL6/" class="btn">Try on JSFiddle</a>
+    <a href="https://github.com/amalieiev/asic/zipball/master" class="btn">Download .zip</a>
+</section>
+
+<section class="main-content">
+    <h2>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Basics</h2>
+
+
+
+    <h3>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Data Biding</h3>
+
+    <p>
+            Data binding in Asic is the synchronization between the model and the view.</p>
+
+<SimpleText></SimpleText>
+<pre><code class="html">
+&lt;SimpleText&gt;&lt;/SimpleText&gt;
+</code></pre>
+<pre><code class="javascript">
+@Component({
+    template: `
+&lt;div&gt;
+    &lt;p&gt;Inner component&lt;/p&gt;
+    &lt;p&gt;{{ text }}&lt;/p&gt;
+&lt;/div&gt;`
+})
+class SimpleText {
+    constructor() {
+        this.text = &#39;Simple text&#39;
+    }
+}
+</code></pre>
+
+
+    <h3>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Composition</h3>
+
+    <p>
+            This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your
+            page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After
+            your page is generated, you can check out the new branch:</p>
+
+<ComplexComponent></ComplexComponent>
+<pre><code class="html">
+&lt;ComplexComponent&gt;&lt;/ComplexComponent&gt;
+</code></pre>
+<pre><code class="javascript">
+@Component({
+    template: `
+&lt;div&gt;
+    &lt;p&gt;{{ text }}&lt;/p&gt;
+    &lt;SimpleText&gt;&lt;/SimpleText&gt;
+&lt;/div&gt;`
+})
+class ComplexComponent {
+    constructor() {
+        this.text = &#39;Parent component&#39;
+    }
+}
+</code></pre>
+
+
+    <h3>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Events</h3>
+
+    <p>
+            You can add mouse events on any HTML element.</p>
 
 <Events></Events>
 <pre><code class="html">
@@ -33,7 +111,6 @@
 @Component({
     template: `
 &lt;div&gt;
-    &lt;h2&gt;Events&lt;/h2&gt;
     &lt;p&gt;Clicks counter: {{ count }}&lt;/p&gt;
     &lt;button (click)=&quot;increment()&quot;&gt;click&lt;/button&gt;
 &lt;/div&gt;`
@@ -47,6 +124,48 @@ class Events {
     }
 }
 </code></pre>
+
+
+    <h3>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Loops</h3>
+
+    <p>
+            The <strong>*for</strong> directive repeats an HTML element</p>
+
+<Loops></Loops>
+<pre><code class="html">
+&lt;Loops&gt;&lt;/Loops&gt;
+</code></pre>
+<pre><code class="javascript">
+@Component({
+    template: `
+&lt;ul&gt;
+    &lt;li *for=&quot;item in items&quot;&gt;
+        {{ item }}
+    &lt;/li&gt;
+&lt;/ul&gt;`
+})
+class Loops {
+    constructor() {
+        this.items = [&#39;javascript&#39;, &#39;java&#39;, &#39;python&#39;, &#39;ruby&#39;, &#39;html&#39;];
+    }
+}
+</code></pre>
+
+
+    <h2>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Samples</h2>
+
+
+
+    <h3>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Timer</h3>
+
+    <p>
+            Javascript <strong>setInterval</strong> and <strong>setTimeout</strong> works fine.</p>
 
 <Timer></Timer>
 <pre><code class="html">
@@ -69,15 +188,24 @@ class Timer {
 }
 </code></pre>
 
-<Loops></Loops>
+
+    <h3>
+        <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Inner Loops</h3>
+
+    <p>
+            This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your
+            page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After
+            your page is generated, you can check out the new branch:</p>
+
+<InnerLoops></InnerLoops>
 <pre><code class="html">
-&lt;Loops&gt;&lt;/Loops&gt;
+&lt;InnerLoops&gt;&lt;/InnerLoops&gt;
 </code></pre>
 <pre><code class="javascript">
 @Component({
     template: `
 &lt;div&gt;
-    &lt;h2&gt;Loops&lt;/h2&gt;
     &lt;p&gt;Active skill: &lt;strong&gt;{{ activeSkill }}&lt;/strong&gt;&lt;/p&gt;
     &lt;ul&gt;
         &lt;li *for=&quot;item in items&quot;&gt;
@@ -87,7 +215,7 @@ class Timer {
     &lt;/ul&gt;
 &lt;/div&gt;`
 })
-class Loops {
+class InnerLoops {
     constructor() {
         this.activeSkill = &#39;&#39;;
         this.items = [
@@ -101,46 +229,34 @@ class Loops {
 }
 </code></pre>
 
-<SimpleText></SimpleText>
-<pre><code class="html">
-&lt;SimpleText&gt;&lt;/SimpleText&gt;
-</code></pre>
-<pre><code class="javascript">
-@Component({
-    template: `
-&lt;div&gt;
-    &lt;h2&gt;Simple Text&lt;/h2&gt;
-    &lt;p&gt;Inner component&lt;/p&gt;
-    &lt;p&gt;{{ text }}&lt;/p&gt;
-&lt;/div&gt;`
-})
-class SimpleText {
-    constructor() {
-        this.text = &#39;Simple text&#39;
-    }
-}
-</code></pre>
 
-<Interpolation></Interpolation>
-<pre><code class="html">
-&lt;Interpolation&gt;&lt;/Interpolation&gt;
-</code></pre>
-<pre><code class="javascript">
-@Component({
-    template: `
-&lt;div&gt;
-    &lt;h2&gt;Interpolation&lt;/h2&gt;
-    &lt;p&gt;Text: {{ text }}&lt;/p&gt;
-    &lt;SimpleText&gt;&lt;/SimpleText&gt;
-&lt;/div&gt;`
-})
-class Interpolation {
-    constructor() {
-        this.text = &#39;Hello Asic&#39;
-    }
-}
-</code></pre>
+    <h3>
+        <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
+    <p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a
+        link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub
+        Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>),
+        PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a
+                href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
 
-<script type="text/javascript" src="/main-bundle.js?14f803a03c53a749b875"></script><script type="text/javascript" src="/styles-bundle.js?14f803a03c53a749b875"></script><script type="text/javascript" src="/samples-bundle.js?14f803a03c53a749b875"></script></body>
+    <h3>
+        <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span
+                    class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+    <p>Having trouble with Pages? Check out the documentation at <a href="https://help.github.com/pages">https://help.github.com/pages</a>
+        or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+
+    <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/amalieiev/asic">Asic</a> is maintained by <a
+                    href="https://github.com/amalieiev">amalieiev</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a
+                    href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a
+                    href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    </footer>
+
+</section>
+
+<script type="text/javascript" src="/styles-bundle.js?d642c420fae6b9d2737e"></script><script type="text/javascript" src="/main-bundle.js?d642c420fae6b9d2737e"></script><script type="text/javascript" src="/docs-bundle.js?d642c420fae6b9d2737e"></script><script type="text/javascript" src="/samples-bundle.js?d642c420fae6b9d2737e"></script></body>
 </html>

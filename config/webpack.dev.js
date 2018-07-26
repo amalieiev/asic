@@ -3,8 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: {
-        styles: ['./docs/styles.js'],
         main: ['./src/index.js'],
+        docs: [
+            './docs/Header.js',
+            './docs/Footer.js'
+        ],
         samples: [
             './samples/Events.js',
             './samples/ComplexComponent.js',
