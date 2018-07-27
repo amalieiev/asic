@@ -145,7 +145,7 @@ export function $render(element, component) {
             }
         });
 
-        $callConstructor(proxy);
+        $callConstructor(proxy, Component);
 
         element.innerHTML = $transform(template, proxy);
 
@@ -175,14 +175,17 @@ export function $render(element, component) {
     }
 }
 
-export function $callConstructor(instance) {
-    const entire = instance.constructor.toString();
-    const body = entire.slice(entire.indexOf("{") + 1, entire.lastIndexOf("}"))
-        .replace(/(?:_classCallCheck\(this,\s)(\S*)/, '');
+export function $callConstructor(proxy, Component) {
+    const constructorString = Component.toString();
 
-    const constructor = Function(body);
+    if (/_classCallCheck/.test(constructorString)) {
+        const body = constructorString.slice(constructorString.indexOf("{") + 1, constructorString.lastIndexOf("}"))
+            .replace(/(?:_classCallCheck\(this,\s)(\S*)/, '');
 
-    constructor.call(instance);
+        Function(body).call(proxy);
+    } else {
+        Component.call(proxy);
+    }
 }
 
 /**
