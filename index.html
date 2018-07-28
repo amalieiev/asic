@@ -21,80 +21,158 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/agate.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
+    <script>
+        function adjustNav() {
+            const $sideNav = document.getElementById('side-nav');
+            const $header = document.getElementById('header');
+            const initialYOffset = $header.offsetHeight;
+
+            if (window.pageYOffset > initialYOffset) {
+                $sideNav.classList.add('nav-sticky');
+            } else {
+                $sideNav.classList.remove('nav-sticky');
+            }
+        }
+
+        window.addEventListener('scroll', adjustNav)
+    </script>
 </head>
 <body>
 
 
 
-<Header></Header>
+<Header id="header"></Header>
 
 <section class="main-content">
     <div class="row">
         <!-- Side navigation -->
         <div class="col-sm-2">
-            <h3>
-                <a class="anchor" href="#Setup" aria-hidden="true"><span class="octicon octicon-link">Setup</span></a>
-            </h3>
-            <ul>
-                <li>
-                    <h4>
-                        <a class="anchor" href="#GettingStarted" aria-hidden="true"><span class="octicon octicon-link">Getting Started</span></a>
-                    </h4>
-                </li>
-            </ul>
-            <h3>
-                <a class="anchor" href="#Basics" aria-hidden="true"><span class="octicon octicon-link">Basics</span></a>
-            </h3>
-            <ul>
-                
-                <li>
-                    <h4>
-                        <a class="anchor" href="#SimpleText" aria-hidden="true"><span class="octicon octicon-link">Data Biding</span></a>
-                    </h4>
-                </li>
-                
-                <li>
-                    <h4>
-                        <a class="anchor" href="#ComplexComponent" aria-hidden="true"><span class="octicon octicon-link">Composition</span></a>
-                    </h4>
-                </li>
-                
-                <li>
-                    <h4>
-                        <a class="anchor" href="#Events" aria-hidden="true"><span class="octicon octicon-link">Events</span></a>
-                    </h4>
-                </li>
-                
-                <li>
-                    <h4>
-                        <a class="anchor" href="#Loops" aria-hidden="true"><span class="octicon octicon-link">Loops</span></a>
-                    </h4>
-                </li>
-                
-            </ul>
-            <h3>
-                <a class="anchor" href="#Samples" aria-hidden="true"><span class="octicon octicon-link">Samples</span></a>
-            </h3>
-            <ul>
-                
-                <li>
-                    <h4>
-                        <a class="anchor" href="#Timer" aria-hidden="true"><span class="octicon octicon-link">Timer</span></a>
-                    </h4>
-                </li>
-                
-                <li>
-                    <h4>
-                        <a class="anchor" href="#InnerLoops" aria-hidden="true"><span class="octicon octicon-link">Inner Loops</span></a>
-                    </h4>
-                </li>
-                
-            </ul>
+            <div id="side-nav">
+                <h3>
+                    <a class="anchor" href="#GettingStarted" aria-hidden="true"><span class="octicon octicon-link">Getting Started</span></a>
+                </h3>
+                <ul>
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#Instalation" aria-hidden="true"><span class="octicon octicon-link">Instalation</span></a>
+                        </h4>
+                    </li>
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#BasicUsage" aria-hidden="true"><span class="octicon octicon-link">Basic Usage</span></a>
+                        </h4>
+                    </li>
+                </ul>
+                <h3>
+                    <a class="anchor" href="#Basics" aria-hidden="true"><span class="octicon octicon-link">Basics</span></a>
+                </h3>
+                <ul>
+                    
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#SimpleText" aria-hidden="true"><span class="octicon octicon-link">Data Biding</span></a>
+                        </h4>
+                    </li>
+                    
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#ComplexComponent" aria-hidden="true"><span class="octicon octicon-link">Composition</span></a>
+                        </h4>
+                    </li>
+                    
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#Events" aria-hidden="true"><span class="octicon octicon-link">Events</span></a>
+                        </h4>
+                    </li>
+                    
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#Loops" aria-hidden="true"><span class="octicon octicon-link">Loops</span></a>
+                        </h4>
+                    </li>
+                    
+                </ul>
+                <h3>
+                    <a class="anchor" href="#Samples" aria-hidden="true"><span class="octicon octicon-link">Samples</span></a>
+                </h3>
+                <ul>
+                    
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#Timer" aria-hidden="true"><span class="octicon octicon-link">Timer</span></a>
+                        </h4>
+                    </li>
+                    
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#InnerLoops" aria-hidden="true"><span class="octicon octicon-link">Inner Loops</span></a>
+                        </h4>
+                    </li>
+                    
+                </ul>
+            </div>
         </div>
         <!-- Side navigation end -->
 
         <!-- Main content -->
         <div class="col-sm-10">
+            <h2>
+                <a id="GettingStarted" class="anchor" href="#Setup" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started
+            </h2>
+
+            <div class="row">
+                <div class="col-sm">
+                    <h3>
+                        <a id="Instalation" class="anchor" href="#GettingStarted" aria-hidden="true"><span class="octicon octicon-link"></span></a>Instalation
+                    </h3>
+
+                    <p>via npm</p>
+                    <div class="show-language">
+                        <div class="show-language-label">bash</div>
+                    </div>
+                    <pre><code class="bash">
+npm i asic --save
+                    </code></pre>
+
+                    <p>via CDN</p>
+                    <div class="show-language">
+                        <div class="show-language-label">HTML</div>
+                    </div>
+                    <pre><code class="html">
+&lt;script src="https://unpkg.com/vue-crosstab"&gt;&lt;/script&gt;
+                    </code></pre>
+
+                    <h3>
+                        <a id="BasicUsage" class="anchor" href="#GettingStarted" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic Usage
+                    </h3>
+
+                    <div class="show-language">
+                        <div class="show-language-label">JavaScript</div>
+                    </div>
+                    <pre><code class="javascript">
+@Component({
+    template: `
+&lt;div&gt;
+    &lt;p&gt;My Component&lt;/p&gt;
+    &lt;p&gt;{{ text }}&lt;/p&gt;
+&lt;/div&gt;`
+})
+class BasicUsage {
+    constructor() {
+        this.text = &#39;Some Text&#39;
+    }
+}
+                    </code></pre>
+                    <div class="show-language">
+                        <div class="show-language-label">HTML</div>
+                    </div>
+                    <pre><code class="html">
+&lt;BasicUsage&gt;&lt;/BasicUsage&gt;
+                    </code></pre>
+                </div>
+            </div>
+
             <h2>
                 <a id="Basics" class="anchor" href="#Basics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basics
             </h2>
@@ -413,5 +491,5 @@ class InnerLoops {
 
 <Footer></Footer>
 
-<script type="text/javascript" src="asic.js?d388d309577cd01107ba"></script><script type="text/javascript" src="docs.js?d388d309577cd01107ba"></script><script type="text/javascript" src="samples.js?d388d309577cd01107ba"></script></body>
+<script type="text/javascript" src="asic.min.js?19d8663ee8153a72597b"></script><script type="text/javascript" src="docs.min.js?19d8663ee8153a72597b"></script><script type="text/javascript" src="samples.min.js?19d8663ee8153a72597b"></script></body>
 </html>
