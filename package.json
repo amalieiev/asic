@@ -1,12 +1,12 @@
 {
   "name": "asic",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "",
   "main": "dist/asic.js",
   "unpkg": "dist/asic.js",
   "scripts": {
     "start": "webpack-dev-server --config=config/webpack.dev.js",
-    "build": "npm run build:dev && npm run build:prod",
+    "build": "npm run build:prod && npm run build:dev",
     "build:prod": "webpack --config=config/webpack.prod.js",
     "build:dev": "webpack --config=config/webpack.dev.js",
     "prod": "npm run build:dev && npm publish",

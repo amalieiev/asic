@@ -127,7 +127,7 @@ export function $render(element, component) {
         const template = $components[component].template;
         const Component = $components[component].target;
 
-        const proxy = new Proxy(Component.prototype, {
+        const proxy = new Proxy(new Component(), {
             set(target, property, value) {
                 target[property] = value;
 
@@ -144,8 +144,6 @@ export function $render(element, component) {
                 return true;
             }
         });
-
-        $callConstructor(proxy, Component);
 
         element.innerHTML = $transform(template, proxy);
 
