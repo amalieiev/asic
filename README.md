@@ -1,4 +1,4 @@
-# asic
+# Asic
 Progressive JavaScript Framework
 
 ## Features & characteristics:
