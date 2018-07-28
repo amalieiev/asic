@@ -12,8 +12,30 @@ https://amalieiev.github.io/asic/
 
 ## Install & basic usage
 
+#### npm
 ```bash
 npm install asic
+```
+
+#### javascript
+```javascript
+@Component({
+    template: `
+<div>
+    <p>Inner component</p>
+    <p>{{ text }}</p>
+</div>`
+})
+class SimpleText {
+    constructor() {
+        this.text = 'Simple text'
+    }
+}
+```
+
+#### html
+```html
+<SimpleText></SimpleText>
 ```
 
 ## JSFiddle
