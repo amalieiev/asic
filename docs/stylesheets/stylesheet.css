@@ -292,3 +292,7 @@ label.label {
     list-style-type: circle;
     opacity: 0.9;
 }
+
+.badges {
+    margin-bottom: 20px;
+}

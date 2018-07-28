@@ -1,12 +1,13 @@
 {
   "name": "asic",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "",
   "main": "dist/asic.js",
   "unpkg": "dist/asic.js",
   "scripts": {
     "start": "webpack-dev-server --config=config/webpack.dev.js",
-    "build": "webpack --config=config/webpack.prod.js",
+    "build": "npm run build:dev && npm run build:prod",
+    "build:prod": "webpack --config=config/webpack.prod.js",
     "build:dev": "webpack --config=config/webpack.dev.js",
     "prod": "npm run build:dev && npm publish",
     "pages": "node build/gh-pages.js"
