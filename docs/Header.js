@@ -11,6 +11,19 @@ import './stylesheets/stylesheet.css'
     <a href="https://github.com/amalieiev/asic" class="btn">View on GitHub</a>
     <a href="https://jsfiddle.net/amalieiev/zdmq82ce/" class="btn">Try on JSFiddle</a>
     <a href="https://github.com/amalieiev/asic/zipball/master" class="btn">Download .zip</a>
+    
+    <div class="row">
+        <div class="col-sm-3 offset-md-3">
+            <ul>
+                <li>No boilerplate code</li>
+            </ul>
+        </div>
+        <div class="col-sm-3">
+            <ul>
+                <li>5kb size</li>
+            </ul>
+        </div>
+    </div>
 </section>
     `
 })

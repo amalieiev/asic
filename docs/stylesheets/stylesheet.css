@@ -281,8 +281,14 @@ label.label {
     transform: none;
 }
 
-.list-sticky {
+.nav-sticky {
     position: fixed;
-    top: 0;
+    top: 32px;
     width: calc(16% - 40px);
+}
+
+#header li {
+    text-align: start;
+    list-style-type: circle;
+    opacity: 0.9;
 }
