@@ -280,3 +280,9 @@ label.label {
     -webkit-transform: none;
     transform: none;
 }
+
+.list-sticky {
+    position: fixed;
+    top: 0;
+    width: calc(16% - 40px);
+}
