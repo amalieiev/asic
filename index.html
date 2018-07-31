@@ -97,17 +97,17 @@
                         </h4>
                     </li>
                     
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#Lifecycle" aria-hidden="true"><span class="octicon octicon-link">Lifecycle</span></a>
+                        </h4>
+                    </li>
+                    
                 </ul>
                 <h3>
                     <a class="anchor" href="#Samples" aria-hidden="true"><span class="octicon octicon-link">Samples</span></a>
                 </h3>
                 <ul>
-                    
-                    <li>
-                        <h4>
-                            <a class="anchor" href="#Timer" aria-hidden="true"><span class="octicon octicon-link">Timer</span></a>
-                        </h4>
-                    </li>
                     
                     <li>
                         <h4>
@@ -385,26 +385,22 @@ class Loops {
 
             
 
-            <h2>
-                <a id="Samples" class="anchor" href="#Samples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Samples
-            </h2>
-
-            
-
             <div class="row">
                 <div class="col-sm">
                     <h3>
-                        <a id="Timer" class="anchor" href="#Timer" aria-hidden="true"><span class="octicon octicon-link"></span></a>Timer
+                        <a id="Lifecycle" class="anchor" href="#Lifecycle" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lifecycle
                     </h3>
                     <p>
-            Javascript <strong>setInterval</strong> and <strong>setTimeout</strong> works fine.</p>
+            <strong>initialize</strong> is lifecycle hook. It calls after component is created.
+            All async initialization should be performed here.</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-4">
-                    <label class="label">Timer</label>
 
-                    <Timer></Timer>
+                    <label class="label">Lifecycle</label>
+
+                    <Lifecycle></Lifecycle>
                 </div>
                 <div class="col-sm-8">
                     <label class="label">Code Sample</label>
@@ -416,12 +412,14 @@ class Loops {
 @Component({
     template: `&lt;p&gt;Value: {{ count }}&lt;/p&gt;`
 })
-class Timer {
+class Lifecycle {
     constructor() {
         this.count = 0;
+    }
+    initialize() {
         setInterval(() =&gt; {
             this.increment();
-        }, 1000)
+        }, 1000);
     }
     increment() {
         this.count++;
@@ -432,10 +430,16 @@ class Timer {
                         <div class="show-language-label">HTML</div>
                     </div>
                     <pre><code class="html">
-&lt;Timer&gt;&lt;/Timer&gt;
+&lt;Lifecycle&gt;&lt;/Lifecycle&gt;
                     </code></pre>
                 </div>
             </div>
+
+            
+
+            <h2>
+                <a id="Samples" class="anchor" href="#Samples" aria-hidden="true"><span class="octicon octicon-link"></span></a>Samples
+            </h2>
 
             
 
@@ -505,5 +509,5 @@ class InnerLoops {
 
 <Footer></Footer>
 
-<script type="text/javascript" src="asic.js?1d2deb531c3cfc89686d"></script><script type="text/javascript" src="docs.js?1d2deb531c3cfc89686d"></script><script type="text/javascript" src="samples.js?1d2deb531c3cfc89686d"></script></body>
+<script type="text/javascript" src="asic.js?49258a3f4a807a0ace16"></script><script type="text/javascript" src="docs.js?49258a3f4a807a0ace16"></script><script type="text/javascript" src="samples.js?49258a3f4a807a0ace16"></script></body>
 </html>
