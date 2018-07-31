@@ -11,7 +11,7 @@
 </div>`
 })
 class InnerLoops {
-    constructor() {
+    initialize() {
         this.activeSkill = '';
         this.items = [
             {name: 'John', skills: ['javascript', 'java']},

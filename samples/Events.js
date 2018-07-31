@@ -6,7 +6,7 @@
 </div>`
 })
 class Events {
-    constructor() {
+    initialize() {
         this.count = 0;
     }
     increment() {

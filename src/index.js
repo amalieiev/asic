@@ -1,4 +1,7 @@
-import { Component } from './decorators'
+import {
+    Component
+} from './decorators'
+
 import { $bootstrap } from './functions'
 
 if (window) {

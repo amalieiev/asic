@@ -2,10 +2,8 @@
     template: `<p>Value: {{ count }}</p>`
 })
 class Lifecycle {
-    constructor() {
-        this.count = 0;
-    }
     initialize() {
+        this.count = 0;
         setInterval(() => {
             this.increment();
         }, 1000);

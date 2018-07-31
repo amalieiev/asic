@@ -120,7 +120,7 @@ function $normalize(template) {
     return template;
 }
 
-export function $render(element, component) {
+export function $render(element, component, parentProxy) {
     if (element.innerHTML) {
 
     } else {
@@ -145,9 +145,7 @@ export function $render(element, component) {
             }
         });
 
-        if (proxy.initialize) {
-            proxy.initialize();
-        }
+        $initialize(proxy, element, parentProxy);
 
         element.innerHTML = $transform(template, proxy);
 
@@ -177,17 +175,24 @@ export function $render(element, component) {
     }
 }
 
-export function $callConstructor(proxy, Component) {
-    const constructorString = Component.toString();
+export function $initialize(proxy, element, parentProxy) {
+    if (!proxy.initialize) return;
 
-    if (/_classCallCheck/.test(constructorString)) {
-        const body = constructorString.slice(constructorString.indexOf("{") + 1, constructorString.lastIndexOf("}"))
-            .replace(/(?:_classCallCheck\(this,\s)(\S*)/, '');
+    const initializeString = proxy.initialize.toString();
+    const params = initializeString.slice(initializeString.indexOf('(') + 1, initializeString.indexOf(')')).split(',').map(v => v.trim());
 
-        Function(body).call(proxy);
-    } else {
-        Component.call(proxy);
-    }
+    const values = params.map(param => {
+        const value = element.getAttribute(param);
+        const expression = element.getAttribute(`[${param}]`);
+
+        if (value !== null) {
+            return value;
+        } else if (expression !== null) {
+            return $exec('return ' + expression, parentProxy);
+        }
+    });
+
+    proxy.initialize(...values);
 }
 
 /**
@@ -196,6 +201,8 @@ export function $callConstructor(proxy, Component) {
  * @param { Object } context
  */
 export function $exec(expression, context, args) {
+    if (!context) context = window;
+
     const parts = expression.match(/[a-zA-Z0-9_]+/g);
 
     parts.forEach(name => {

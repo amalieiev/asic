@@ -6,7 +6,7 @@
 </div>`
 })
 class ComplexComponent {
-    constructor() {
+    initialize() {
         this.text = 'Parent component'
     }
 }

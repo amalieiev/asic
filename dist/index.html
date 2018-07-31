@@ -179,7 +179,7 @@ npm i asic --save
 &lt;/div&gt;`
 })
 class BasicUsage {
-    constructor() {
+    initialize() {
         this.text = &#39;Some Text&#39;
     }
 }
@@ -232,7 +232,7 @@ export { BasicUsage }
 &lt;/div&gt;`
 })
 class SimpleText {
-    constructor() {
+    initialize() {
         this.text = &#39;Simple text&#39;
     }
 }
@@ -264,7 +264,7 @@ export { SimpleText }
 
                     <label class="label">Props</label>
 
-                    <Props [foo]="25" bar="some value"></Props>
+                    <Props bar="text value" [foo]="3 + 5"></Props>
                 </div>
                 <div class="col-sm-8">
                     <label class="label">Code Sample</label>
@@ -277,12 +277,14 @@ export { SimpleText }
     template: `
 &lt;div&gt;
     &lt;p&gt;Props&lt;/p&gt;
+    &lt;p&gt;{{ foo }}&lt;/p&gt;
     &lt;p&gt;{{ text }}&lt;/p&gt;
 &lt;/div&gt;`
 })
 class Props {
-    constructor() {
-        this.text = &#39;Some Text&#39;
+    initialize(foo, bar) {
+        this.text = bar;
+        this.foo = foo;
     }
 }
 
@@ -292,7 +294,7 @@ export { Props }
                         <div class="show-language-label">HTML</div>
                     </div>
                     <pre><code class="html">
-&lt;Props [foo]=&quot;25&quot; bar=&quot;some value&quot;&gt;&lt;/Props&gt;
+&lt;Props bar=&quot;text value&quot; [foo]=&quot;3 + 5&quot;&gt;&lt;/Props&gt;
                     </code></pre>
                 </div>
             </div>
@@ -330,7 +332,7 @@ export { Props }
 &lt;/div&gt;`
 })
 class ComplexComponent {
-    constructor() {
+    initialize() {
         this.text = &#39;Parent component&#39;
     }
 }
@@ -379,7 +381,7 @@ export { ComplexComponent }
 &lt;/div&gt;`
 })
 class Events {
-    constructor() {
+    initialize() {
         this.count = 0;
     }
     increment() {
@@ -432,7 +434,7 @@ export { Events }
 &lt;/ul&gt;`
 })
 class Loops {
-    constructor() {
+    initialize() {
         this.items = [&#39;javascript&#39;, &#39;python&#39;, &#39;ruby&#39;];
     }
 }
@@ -478,10 +480,8 @@ export { Loops }
     template: `&lt;p&gt;Value: {{ count }}&lt;/p&gt;`
 })
 class Lifecycle {
-    constructor() {
-        this.count = 0;
-    }
     initialize() {
+        this.count = 0;
         setInterval(() =&gt; {
             this.increment();
         }, 1000);
@@ -544,7 +544,7 @@ export { Lifecycle }
 &lt;/div&gt;`
 })
 class InnerLoops {
-    constructor() {
+    initialize() {
         this.activeSkill = &#39;&#39;;
         this.items = [
             {name: &#39;John&#39;, skills: [&#39;javascript&#39;, &#39;java&#39;]},
@@ -578,5 +578,5 @@ export { InnerLoops }
 
 <Footer></Footer>
 
-<script type="text/javascript" src="/asic.js?c6d4614d9cf641c7fda2"></script><script type="text/javascript" src="/docs.js?c6d4614d9cf641c7fda2"></script><script type="text/javascript" src="/samples.js?c6d4614d9cf641c7fda2"></script></body>
+<script type="text/javascript" src="asic.js?fdee7d6f89c09dbc2eb2"></script><script type="text/javascript" src="docs.js?fdee7d6f89c09dbc2eb2"></script><script type="text/javascript" src="samples.js?fdee7d6f89c09dbc2eb2"></script></body>
 </html>

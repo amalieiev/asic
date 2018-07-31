@@ -1,5 +1,5 @@
-import { Props } from './Props';
 import { BasicUsage } from './BasicUsage';
+import { Props } from './Props';
 import { ComplexComponent } from './ComplexComponent';
 import { Events } from './Events';
 import { InnerLoops } from './InnerLoops';

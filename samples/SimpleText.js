@@ -6,7 +6,7 @@
 </div>`
 })
 class SimpleText {
-    constructor() {
+    initialize() {
         this.text = 'Simple text'
     }
 }

@@ -7,7 +7,7 @@
 </ul>`
 })
 class Loops {
-    constructor() {
+    initialize() {
         this.items = ['javascript', 'python', 'ruby'];
     }
 }
