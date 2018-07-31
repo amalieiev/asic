@@ -81,6 +81,12 @@
                     
                     <li>
                         <h4>
+                            <a class="anchor" href="#Props" aria-hidden="true"><span class="octicon octicon-link">Props</span></a>
+                        </h4>
+                    </li>
+                    
+                    <li>
+                        <h4>
                             <a class="anchor" href="#ComplexComponent" aria-hidden="true"><span class="octicon octicon-link">Composition</span></a>
                         </h4>
                     </li>
@@ -173,10 +179,12 @@ npm i asic --save
 &lt;/div&gt;`
 })
 class BasicUsage {
-    constructor() {
+    initialize() {
         this.text = &#39;Some Text&#39;
     }
 }
+
+export { BasicUsage }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -224,16 +232,69 @@ class BasicUsage {
 &lt;/div&gt;`
 })
 class SimpleText {
-    constructor() {
+    initialize() {
         this.text = &#39;Simple text&#39;
     }
 }
+
+export { SimpleText }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
                     </div>
                     <pre><code class="html">
 &lt;SimpleText&gt;&lt;/SimpleText&gt;
+                    </code></pre>
+                </div>
+            </div>
+
+            
+
+            <div class="row">
+                <div class="col-sm">
+                    <h3>
+                        <a id="Props" class="anchor" href="#Props" aria-hidden="true"><span class="octicon octicon-link"></span></a>Props
+                    </h3>
+                    <p>
+            Properties is a way how to pass data inside component.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <label class="label">Props</label>
+
+                    <Props bar="text value" [foo]="3 + 5"></Props>
+                </div>
+                <div class="col-sm-8">
+                    <label class="label">Code Sample</label>
+
+                    <div class="show-language">
+                        <div class="show-language-label">JavaScript</div>
+                    </div>
+                    <pre><code class="javascript">
+@Component({
+    template: `
+&lt;div&gt;
+    &lt;p&gt;Props&lt;/p&gt;
+    &lt;p&gt;{{ foo }}&lt;/p&gt;
+    &lt;p&gt;{{ text }}&lt;/p&gt;
+&lt;/div&gt;`
+})
+class Props {
+    initialize(foo, bar) {
+        this.text = bar;
+        this.foo = foo;
+    }
+}
+
+export { Props }
+                    </code></pre>
+                    <div class="show-language">
+                        <div class="show-language-label">HTML</div>
+                    </div>
+                    <pre><code class="html">
+&lt;Props bar=&quot;text value&quot; [foo]=&quot;3 + 5&quot;&gt;&lt;/Props&gt;
                     </code></pre>
                 </div>
             </div>
@@ -271,10 +332,12 @@ class SimpleText {
 &lt;/div&gt;`
 })
 class ComplexComponent {
-    constructor() {
+    initialize() {
         this.text = &#39;Parent component&#39;
     }
 }
+
+export { ComplexComponent }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -318,13 +381,15 @@ class ComplexComponent {
 &lt;/div&gt;`
 })
 class Events {
-    constructor() {
+    initialize() {
         this.count = 0;
     }
     increment() {
         this.count++;
     }
 }
+
+export { Events }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -369,10 +434,12 @@ class Events {
 &lt;/ul&gt;`
 })
 class Loops {
-    constructor() {
+    initialize() {
         this.items = [&#39;javascript&#39;, &#39;python&#39;, &#39;ruby&#39;];
     }
 }
+
+export { Loops }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -413,10 +480,8 @@ class Loops {
     template: `&lt;p&gt;Value: {{ count }}&lt;/p&gt;`
 })
 class Lifecycle {
-    constructor() {
-        this.count = 0;
-    }
     initialize() {
+        this.count = 0;
         setInterval(() =&gt; {
             this.increment();
         }, 1000);
@@ -425,6 +490,8 @@ class Lifecycle {
         this.count++;
     }
 }
+
+export { Lifecycle }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -477,7 +544,7 @@ class Lifecycle {
 &lt;/div&gt;`
 })
 class InnerLoops {
-    constructor() {
+    initialize() {
         this.activeSkill = &#39;&#39;;
         this.items = [
             {name: &#39;John&#39;, skills: [&#39;javascript&#39;, &#39;java&#39;]},
@@ -488,6 +555,8 @@ class InnerLoops {
         this.activeSkill = skill;
     }
 }
+
+export { InnerLoops }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -509,5 +578,5 @@ class InnerLoops {
 
 <Footer></Footer>
 
-<script type="text/javascript" src="asic.js?49258a3f4a807a0ace16"></script><script type="text/javascript" src="docs.js?49258a3f4a807a0ace16"></script><script type="text/javascript" src="samples.js?49258a3f4a807a0ace16"></script></body>
+<script type="text/javascript" src="asic.js?fdee7d6f89c09dbc2eb2"></script><script type="text/javascript" src="docs.js?fdee7d6f89c09dbc2eb2"></script><script type="text/javascript" src="samples.js?fdee7d6f89c09dbc2eb2"></script></body>
 </html>

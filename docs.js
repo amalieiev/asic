@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Footer = (_dec = Component({\n  template: \"\\n<section class=\\\"main-content\\\">\\n    <footer class=\\\"site-footer\\\">\\n        <span class=\\\"site-footer-owner\\\"><a href=\\\"https://github.com/amalieiev/asic\\\">{{ title }}</a> is maintained by <a\\n                    href=\\\"https://github.com/amalieiev\\\">{{ author }}</a>. Our other libraries <a href=\\\"https://amalieiev.github.io/vue-crosstab\\\" target=\\\"_blank\\\" style=\\\"color: #159957;\\\">Vue Crosstab</a>.</span>\\n    </footer>\\n</section>\\n    \"\n}), _dec(_class = function Footer() {\n  _classCallCheck(this, Footer);\n\n  this.title = 'Asic';\n  this.author = 'amalieiev';\n}) || _class);\n\n//# sourceURL=webpack:///./docs/Footer.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Footer = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Footer = (_dec = Component({\n  template: \"\\n<section class=\\\"main-content\\\">\\n    <footer class=\\\"site-footer\\\">\\n        <span class=\\\"site-footer-owner\\\"><a href=\\\"https://github.com/amalieiev/asic\\\">{{ title }}</a> is maintained by <a\\n                    href=\\\"https://github.com/amalieiev\\\">{{ author }}</a>. Our other libraries <a href=\\\"https://amalieiev.github.io/vue-crosstab\\\" target=\\\"_blank\\\" style=\\\"color: #159957;\\\">Vue Crosstab</a>.</span>\\n    </footer>\\n</section>\\n    \"\n}), _dec(_class = function Footer() {\n  _classCallCheck(this, Footer);\n\n  this.title = 'Asic';\n  this.author = 'amalieiev';\n}) || _class);\nexports.Footer = Footer;\n\n//# sourceURL=webpack:///./docs/Footer.js?");
 
 /***/ }),
 
@@ -106,7 +106,19 @@ eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./stylesheets/normalize.css */ \"./docs/stylesheets/normalize.css\");\n\n__webpack_require__(/*! ./stylesheets/github-light.css */ \"./docs/stylesheets/github-light.css\");\n\n__webpack_require__(/*! ./stylesheets/stylesheet.css */ \"./docs/stylesheets/stylesheet.css\");\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Header = (_dec = Component({\n  template: \"\\n<section class=\\\"page-header\\\">\\n    <h1 class=\\\"project-name\\\">Asic</h1>\\n\\n    <h2 class=\\\"project-tagline\\\">Progressive JavaScript Framework</h2>\\n    \\n    <div class=\\\"badges\\\">\\n        <img src=\\\"https://img.shields.io/npm/dm/asic.svg\\\" alt=\\\"shields\\\">\\n        <img src=\\\"https://camo.githubusercontent.com/d0e25b09a82bc4bfde9f1e048a092752eebbb4f3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e7376673f7374796c653d666c6174\\\" alt=\\\"License\\\" data-canonical-src=\\\"https://img.shields.io/badge/license-MIT-blue.svg?style=flat\\\">\\n    </div>\\n\\n    <a href=\\\"https://github.com/amalieiev/asic\\\" target=\\\"_blank\\\" class=\\\"btn\\\">View on GitHub</a>\\n    <a href=\\\"https://jsfiddle.net/amalieiev/zdmq82ce/\\\" target=\\\"_blank\\\" class=\\\"btn\\\">Try on JSFiddle</a>\\n    <a href=\\\"https://github.com/amalieiev/asic/zipball/master\\\" class=\\\"btn\\\">Download .zip</a>\\n    \\n    <div class=\\\"row\\\">\\n        <div class=\\\"col-sm-3 offset-md-3\\\">\\n            <ul>\\n                <li>No boilerplate code</li>\\n            </ul>\\n        </div>\\n        <div class=\\\"col-sm-3\\\">\\n            <ul>\\n                <li>5kb size</li>\\n            </ul>\\n        </div>\\n    </div>\\n</section>\\n    \"\n}), _dec(_class = function Header() {\n  _classCallCheck(this, Header);\n}) || _class);\n\n//# sourceURL=webpack:///./docs/Header.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Header = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Header = (_dec = Component({\n  template: \"\\n<section class=\\\"page-header\\\">\\n    <h1 class=\\\"project-name\\\">Asic</h1>\\n\\n    <h2 class=\\\"project-tagline\\\">Progressive JavaScript Framework</h2>\\n    \\n    <div class=\\\"badges\\\">\\n        <img src=\\\"https://img.shields.io/npm/dm/asic.svg\\\" alt=\\\"shields\\\">\\n        <img src=\\\"https://camo.githubusercontent.com/d0e25b09a82bc4bfde9f1e048a092752eebbb4f3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e7376673f7374796c653d666c6174\\\" alt=\\\"License\\\" data-canonical-src=\\\"https://img.shields.io/badge/license-MIT-blue.svg?style=flat\\\">\\n    </div>\\n\\n    <a href=\\\"https://github.com/amalieiev/asic\\\" target=\\\"_blank\\\" class=\\\"btn\\\">View on GitHub</a>\\n    <a href=\\\"https://jsfiddle.net/amalieiev/zdmq82ce/\\\" target=\\\"_blank\\\" class=\\\"btn\\\">Try on JSFiddle</a>\\n    <a href=\\\"https://github.com/amalieiev/asic/zipball/master\\\" class=\\\"btn\\\">Download .zip</a>\\n    \\n    <div class=\\\"row\\\">\\n        <div class=\\\"col-sm-3 offset-md-3\\\">\\n            <ul>\\n                <li>No boilerplate code</li>\\n            </ul>\\n        </div>\\n        <div class=\\\"col-sm-3\\\">\\n            <ul>\\n                <li>5kb size</li>\\n            </ul>\\n        </div>\\n    </div>\\n</section>\\n    \"\n}), _dec(_class = function Header() {\n  _classCallCheck(this, Header);\n}) || _class);\nexports.Header = Header;\n\n//# sourceURL=webpack:///./docs/Header.js?");
+
+/***/ }),
+
+/***/ "./docs/index.js":
+/*!***********************!*\
+  !*** ./docs/index.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\n__webpack_require__(/*! ./stylesheets/normalize.css */ \"./docs/stylesheets/normalize.css\");\n\n__webpack_require__(/*! ./stylesheets/github-light.css */ \"./docs/stylesheets/github-light.css\");\n\n__webpack_require__(/*! ./stylesheets/stylesheet.css */ \"./docs/stylesheets/stylesheet.css\");\n\nvar _Header = __webpack_require__(/*! ./Header */ \"./docs/Header.js\");\n\nvar _Footer = __webpack_require__(/*! ./Footer */ \"./docs/Footer.js\");\n\n//# sourceURL=webpack:///./docs/index.js?");
 
 /***/ }),
 
@@ -210,13 +222,13 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 /***/ }),
 
 /***/ 1:
-/*!***********************************************!*\
-  !*** multi ./docs/Header.js ./docs/Footer.js ***!
-  \***********************************************/
+/*!*****************************!*\
+  !*** multi ./docs/index.js ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./docs/Header.js */\"./docs/Header.js\");\nmodule.exports = __webpack_require__(/*! ./docs/Footer.js */\"./docs/Footer.js\");\n\n\n//# sourceURL=webpack:///multi_./docs/Header.js_./docs/Footer.js?");
+eval("module.exports = __webpack_require__(/*! ./docs/index.js */\"./docs/index.js\");\n\n\n//# sourceURL=webpack:///multi_./docs/index.js?");
 
 /***/ })
 
