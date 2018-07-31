@@ -11,3 +11,5 @@ class Loops {
         this.items = ['javascript', 'python', 'ruby'];
     }
 }
+
+export { Loops }

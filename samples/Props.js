@@ -1,14 +1,14 @@
 @Component({
     template: `
 <div>
-    <p>My Component</p>
+    <p>Props</p>
     <p>{{ text }}</p>
 </div>`
 })
-class BasicUsage {
+class Props {
     constructor() {
         this.text = 'Some Text'
     }
 }
 
-export { BasicUsage }
+export { Props }

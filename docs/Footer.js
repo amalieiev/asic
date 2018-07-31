@@ -14,3 +14,5 @@ class Footer {
         this.author = 'amalieiev'
     }
 }
+
+export { Footer }

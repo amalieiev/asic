@@ -10,3 +10,5 @@ class SimpleText {
         this.text = 'Simple text'
     }
 }
+
+export { SimpleText }

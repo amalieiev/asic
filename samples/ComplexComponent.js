@@ -10,3 +10,5 @@ class ComplexComponent {
         this.text = 'Parent component'
     }
 }
+
+export { ComplexComponent }

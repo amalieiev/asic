@@ -14,3 +14,5 @@ class Lifecycle {
         this.count++;
     }
 }
+
+export { Lifecycle }

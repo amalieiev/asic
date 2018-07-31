@@ -81,6 +81,12 @@
                     
                     <li>
                         <h4>
+                            <a class="anchor" href="#Props" aria-hidden="true"><span class="octicon octicon-link">Props</span></a>
+                        </h4>
+                    </li>
+                    
+                    <li>
+                        <h4>
                             <a class="anchor" href="#ComplexComponent" aria-hidden="true"><span class="octicon octicon-link">Composition</span></a>
                         </h4>
                     </li>
@@ -177,6 +183,8 @@ class BasicUsage {
         this.text = &#39;Some Text&#39;
     }
 }
+
+export { BasicUsage }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -228,12 +236,63 @@ class SimpleText {
         this.text = &#39;Simple text&#39;
     }
 }
+
+export { SimpleText }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
                     </div>
                     <pre><code class="html">
 &lt;SimpleText&gt;&lt;/SimpleText&gt;
+                    </code></pre>
+                </div>
+            </div>
+
+            
+
+            <div class="row">
+                <div class="col-sm">
+                    <h3>
+                        <a id="Props" class="anchor" href="#Props" aria-hidden="true"><span class="octicon octicon-link"></span></a>Props
+                    </h3>
+                    <p>
+            Properties is a way how to pass data inside component.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <label class="label">Props</label>
+
+                    <Props [foo]="25" bar="some value"></Props>
+                </div>
+                <div class="col-sm-8">
+                    <label class="label">Code Sample</label>
+
+                    <div class="show-language">
+                        <div class="show-language-label">JavaScript</div>
+                    </div>
+                    <pre><code class="javascript">
+@Component({
+    template: `
+&lt;div&gt;
+    &lt;p&gt;Props&lt;/p&gt;
+    &lt;p&gt;{{ text }}&lt;/p&gt;
+&lt;/div&gt;`
+})
+class Props {
+    constructor() {
+        this.text = &#39;Some Text&#39;
+    }
+}
+
+export { Props }
+                    </code></pre>
+                    <div class="show-language">
+                        <div class="show-language-label">HTML</div>
+                    </div>
+                    <pre><code class="html">
+&lt;Props [foo]=&quot;25&quot; bar=&quot;some value&quot;&gt;&lt;/Props&gt;
                     </code></pre>
                 </div>
             </div>
@@ -275,6 +334,8 @@ class ComplexComponent {
         this.text = &#39;Parent component&#39;
     }
 }
+
+export { ComplexComponent }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -325,6 +386,8 @@ class Events {
         this.count++;
     }
 }
+
+export { Events }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -373,6 +436,8 @@ class Loops {
         this.items = [&#39;javascript&#39;, &#39;python&#39;, &#39;ruby&#39;];
     }
 }
+
+export { Loops }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -425,6 +490,8 @@ class Lifecycle {
         this.count++;
     }
 }
+
+export { Lifecycle }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -488,6 +555,8 @@ class InnerLoops {
         this.activeSkill = skill;
     }
 }
+
+export { InnerLoops }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -509,5 +578,5 @@ class InnerLoops {
 
 <Footer></Footer>
 
-<script type="text/javascript" src="asic.js?49258a3f4a807a0ace16"></script><script type="text/javascript" src="docs.js?49258a3f4a807a0ace16"></script><script type="text/javascript" src="samples.js?49258a3f4a807a0ace16"></script></body>
+<script type="text/javascript" src="/asic.js?c6d4614d9cf641c7fda2"></script><script type="text/javascript" src="/docs.js?c6d4614d9cf641c7fda2"></script><script type="text/javascript" src="/samples.js?c6d4614d9cf641c7fda2"></script></body>
 </html>

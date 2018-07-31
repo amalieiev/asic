@@ -13,3 +13,5 @@ class Events {
         this.count++;
     }
 }
+
+export { Events }

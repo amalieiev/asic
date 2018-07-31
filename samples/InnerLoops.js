@@ -22,3 +22,5 @@ class InnerLoops {
         this.activeSkill = skill;
     }
 }
+
+export { InnerLoops }

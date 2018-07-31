@@ -36,3 +36,5 @@ import './stylesheets/stylesheet.css'
 class Header {
 
 }
+
+export { Header }
