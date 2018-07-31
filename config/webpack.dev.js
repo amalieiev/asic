@@ -14,7 +14,7 @@ module.exports = {
             './samples/Loops.js',
             './samples/InnerLoops.js',
             './samples/SimpleText.js',
-            './samples/Timer.js',
+            './samples/Lifecycle.js',
         ]
     },
     mode: 'development',

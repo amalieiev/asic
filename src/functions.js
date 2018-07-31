@@ -145,6 +145,10 @@ export function $render(element, component) {
             }
         });
 
+        if (proxy.initialize) {
+            proxy.initialize();
+        }
+
         element.innerHTML = $transform(template, proxy);
 
         element.querySelectorAll('[asic-bind-expression]').forEach(el => {

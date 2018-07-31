@@ -122,6 +122,18 @@ eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) {
 
 /***/ }),
 
+/***/ "./samples/Lifecycle.js":
+/*!******************************!*\
+  !*** ./samples/Lifecycle.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Lifecycle = (_dec = Component({\n  template: \"<p>Value: {{ count }}</p>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function Lifecycle() {\n    _classCallCheck(this, Lifecycle);\n\n    this.count = 0;\n  }\n\n  _createClass(Lifecycle, [{\n    key: \"initialize\",\n    value: function initialize() {\n      var _this = this;\n\n      setInterval(function () {\n        _this.increment();\n      }, 1000);\n    }\n  }, {\n    key: \"increment\",\n    value: function increment() {\n      this.count++;\n    }\n  }]);\n\n  return Lifecycle;\n}()) || _class);\n\n//# sourceURL=webpack:///./samples/Lifecycle.js?");
+
+/***/ }),
+
 /***/ "./samples/Loops.js":
 /*!**************************!*\
   !*** ./samples/Loops.js ***!
@@ -146,26 +158,14 @@ eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) {
 
 /***/ }),
 
-/***/ "./samples/Timer.js":
-/*!**************************!*\
-  !*** ./samples/Timer.js ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Timer = (_dec = Component({\n  template: \"<p>Value: {{ count }}</p>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function Timer() {\n    var _this = this;\n\n    _classCallCheck(this, Timer);\n\n    this.count = 0;\n    setInterval(function () {\n      _this.increment();\n    }, 1000);\n  }\n\n  _createClass(Timer, [{\n    key: \"increment\",\n    value: function increment() {\n      this.count++;\n    }\n  }]);\n\n  return Timer;\n}()) || _class);\n\n//# sourceURL=webpack:///./samples/Timer.js?");
-
-/***/ }),
-
 /***/ 2:
-/*!*****************************************************************************************************************************************************!*\
-  !*** multi ./samples/Events.js ./samples/ComplexComponent.js ./samples/Loops.js ./samples/InnerLoops.js ./samples/SimpleText.js ./samples/Timer.js ***!
-  \*****************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************!*\
+  !*** multi ./samples/Events.js ./samples/ComplexComponent.js ./samples/Loops.js ./samples/InnerLoops.js ./samples/SimpleText.js ./samples/Lifecycle.js ***!
+  \*********************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! ./samples/Events.js */\"./samples/Events.js\");\n__webpack_require__(/*! ./samples/ComplexComponent.js */\"./samples/ComplexComponent.js\");\n__webpack_require__(/*! ./samples/Loops.js */\"./samples/Loops.js\");\n__webpack_require__(/*! ./samples/InnerLoops.js */\"./samples/InnerLoops.js\");\n__webpack_require__(/*! ./samples/SimpleText.js */\"./samples/SimpleText.js\");\nmodule.exports = __webpack_require__(/*! ./samples/Timer.js */\"./samples/Timer.js\");\n\n\n//# sourceURL=webpack:///multi_./samples/Events.js_./samples/ComplexComponent.js_./samples/Loops.js_./samples/InnerLoops.js_./samples/SimpleText.js_./samples/Timer.js?");
+eval("__webpack_require__(/*! ./samples/Events.js */\"./samples/Events.js\");\n__webpack_require__(/*! ./samples/ComplexComponent.js */\"./samples/ComplexComponent.js\");\n__webpack_require__(/*! ./samples/Loops.js */\"./samples/Loops.js\");\n__webpack_require__(/*! ./samples/InnerLoops.js */\"./samples/InnerLoops.js\");\n__webpack_require__(/*! ./samples/SimpleText.js */\"./samples/SimpleText.js\");\nmodule.exports = __webpack_require__(/*! ./samples/Lifecycle.js */\"./samples/Lifecycle.js\");\n\n\n//# sourceURL=webpack:///multi_./samples/Events.js_./samples/ComplexComponent.js_./samples/Loops.js_./samples/InnerLoops.js_./samples/SimpleText.js_./samples/Lifecycle.js?");
 
 /***/ })
 
