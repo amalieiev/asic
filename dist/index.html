@@ -168,10 +168,10 @@ npm i asic --save
                     </h3>
 
                     <div class="show-language">
-                        <div class="show-language-label">JavaScript</div>
+                        <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component } from &#39;../src/index&#39;
+import { Component } from &#39;asic&#39;
 
 @Component({
     template: `
@@ -180,11 +180,9 @@ import { Component } from &#39;../src/index&#39;
     &lt;p&gt;{{ text }}&lt;/p&gt;
 &lt;/div&gt;`
 })
-class BasicUsage {
+export class BasicUsage {
     text = &#39;Some Text&#39;;
 }
-
-export { BasicUsage }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -221,10 +219,10 @@ export { BasicUsage }
                     <label class="label">Code Sample</label>
 
                     <div class="show-language">
-                        <div class="show-language-label">JavaScript</div>
+                        <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component } from &#39;../src/index&#39;
+import { Component } from &#39;asic&#39;
 
 @Component({
     template: `
@@ -233,11 +231,9 @@ import { Component } from &#39;../src/index&#39;
     &lt;p&gt;{{ text }}&lt;/p&gt;
 &lt;/div&gt;`
 })
-class SimpleText {
+export class SimpleText {
     text = &#39;Simple Text&#39;;
 }
-
-export { SimpleText }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -264,37 +260,36 @@ export { SimpleText }
 
                     <label class="label">Props</label>
 
-                    <Props bar="text value" [foo]="3 + 5"></Props>
+                    <Props title="list of items" [items]="['hello', 'world']"></Props>
                 </div>
                 <div class="col-sm-8">
                     <label class="label">Code Sample</label>
 
                     <div class="show-language">
-                        <div class="show-language-label">JavaScript</div>
+                        <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component } from &#39;../src/index&#39;
+import { Component, Input } from &#39;asic&#39;
 
 @Component({
     template: `
 &lt;div&gt;
-    &lt;p&gt;Props&lt;/p&gt;
-    &lt;p&gt;{{ foo }}&lt;/p&gt;
-    &lt;p&gt;{{ text }}&lt;/p&gt;
+    &lt;p&gt;{{ title }}&lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li *for=&quot;item in items&quot;&gt;{{ item }}&lt;/li&gt;
+    &lt;/ul&gt;
 &lt;/div&gt;`
 })
-class Props {
-    text = &#39;text&#39;;
-    foo = &#39;foo&#39;;
+export class Props {
+    @Input items;
+    @Input title;
 }
-
-export { Props }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
                     </div>
                     <pre><code class="html">
-&lt;Props bar=&quot;text value&quot; [foo]=&quot;3 + 5&quot;&gt;&lt;/Props&gt;
+&lt;Props title=&quot;list of items&quot; [items]=&quot;[&#39;hello&#39;, &#39;world&#39;]&quot;&gt;&lt;/Props&gt;
                     </code></pre>
                 </div>
             </div>
@@ -321,10 +316,10 @@ export { Props }
                     <label class="label">Code Sample</label>
 
                     <div class="show-language">
-                        <div class="show-language-label">JavaScript</div>
+                        <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component } from &#39;../src/index&#39;
+import { Component } from &#39;asic&#39;
 
 @Component({
     template: `
@@ -333,11 +328,9 @@ import { Component } from &#39;../src/index&#39;
     &lt;SimpleText&gt;&lt;/SimpleText&gt;
 &lt;/div&gt;`
 })
-class ComplexComponent {
+export class ComplexComponent {
     text = &#39;Parent component&#39;;
 }
-
-export { ComplexComponent }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -370,10 +363,10 @@ export { ComplexComponent }
                     <label class="label">Code Sample</label>
 
                     <div class="show-language">
-                        <div class="show-language-label">JavaScript</div>
+                        <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component } from &#39;../src/index&#39;
+import { Component } from &#39;asic&#39;
 
 @Component({
     template: `
@@ -382,15 +375,13 @@ import { Component } from &#39;../src/index&#39;
     &lt;button (click)=&quot;increment()&quot;&gt;click&lt;/button&gt;
 &lt;/div&gt;`
 })
-class Events {
+export class Events {
     count = 0;
 
     increment() {
         this.count++;
     }
 }
-
-export { Events }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -423,10 +414,10 @@ export { Events }
                     <label class="label">Code Sample</label>
 
                     <div class="show-language">
-                        <div class="show-language-label">JavaScript</div>
+                        <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component } from &#39;../src/index&#39;
+import { Component } from &#39;asic&#39;
 
 @Component({
     template: `
@@ -436,11 +427,9 @@ import { Component } from &#39;../src/index&#39;
     &lt;/li&gt;
 &lt;/ul&gt;`
 })
-class Loops {
+export class Loops {
     items = [&#39;javascript&#39;, &#39;python&#39;, &#39;ruby&#39;];
 }
-
-export { Loops }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -474,15 +463,15 @@ export { Loops }
                     <label class="label">Code Sample</label>
 
                     <div class="show-language">
-                        <div class="show-language-label">JavaScript</div>
+                        <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component } from &#39;../src/index&#39;
+import { Component } from &#39;asic&#39;
 
 @Component({
     template: `&lt;p&gt;Value: {{ count }}&lt;/p&gt;`
 })
-class Lifecycle {
+export class Lifecycle {
     count = 0;
     initialize() {
         setInterval(() =&gt; {
@@ -493,8 +482,6 @@ class Lifecycle {
         this.count++;
     }
 }
-
-export { Lifecycle }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -531,10 +518,10 @@ export { Lifecycle }
                     <label class="label">Code Sample</label>
 
                     <div class="show-language">
-                        <div class="show-language-label">JavaScript</div>
+                        <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component } from &#39;../src/index&#39;
+import { Component } from &#39;asic&#39;
 
 @Component({
     template: `
@@ -548,7 +535,7 @@ import { Component } from &#39;../src/index&#39;
     &lt;/ul&gt;
 &lt;/div&gt;`
 })
-class InnerLoops {
+export class InnerLoops {
     activeSkill = &#39;&#39;;
     items = [
         {name: &#39;John&#39;, skills: [&#39;javascript&#39;, &#39;java&#39;]},
@@ -559,8 +546,6 @@ class InnerLoops {
         this.activeSkill = skill;
     }
 }
-
-export { InnerLoops }
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -582,5 +567,5 @@ export { InnerLoops }
 
 <Footer></Footer>
 
-<script type="text/javascript" src="/asic.js?1d3c454fd2c4f2b020c9"></script><script type="text/javascript" src="/docs.js?1d3c454fd2c4f2b020c9"></script><script type="text/javascript" src="/samples.js?1d3c454fd2c4f2b020c9"></script></body>
+<script type="text/javascript" src="asic.js?ce23981be8c7d5bad8a1"></script><script type="text/javascript" src="docs.js?ce23981be8c7d5bad8a1"></script><script type="text/javascript" src="samples.js?ce23981be8c7d5bad8a1"></script></body>
 </html>

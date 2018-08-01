@@ -190,7 +190,7 @@ npm i asic --save
                         <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-<%- require(`!!raw-loader!../samples/BasicUsage.ts`) %>
+<%- require(`!!raw-loader!../samples/BasicUsage.ts`).replace(/\.\.\/src\/index/, 'asic') %>
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -229,7 +229,7 @@ npm i asic --save
                         <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-<%- require(`!!raw-loader!../samples/${sample.name}.ts`) %>
+<%- require(`!!raw-loader!../samples/${sample.name}.ts`).replace(/\.\.\/src\/index/, 'asic') %>
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>
@@ -269,7 +269,7 @@ npm i asic --save
                         <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-<%- require(`!!raw-loader!../samples/${sample.name}.ts`) %>
+<%- require(`!!raw-loader!../samples/${sample.name}.ts`).replace(/\.\.\/src\/index/, 'asic') %>
                     </code></pre>
                     <div class="show-language">
                         <div class="show-language-label">HTML</div>

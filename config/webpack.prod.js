@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         asic: ['./src/index.js'],
-        docs: ['./docs/index.js'],
-        samples: ['./samples/index.js']
+        docs: ['./docs/index.ts'],
+        samples: ['./samples/index.ts']
     },
     mode: 'production',
     // devtool: false,
