@@ -86,39 +86,39 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./docs/Footer.js":
+/***/ "./docs/Footer.ts":
 /*!************************!*\
-  !*** ./docs/Footer.js ***!
+  !*** ./docs/Footer.ts ***!
   \************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Footer = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Footer = (_dec = Component({\n  template: \"\\n<section class=\\\"main-content\\\">\\n    <footer class=\\\"site-footer\\\">\\n        <span class=\\\"site-footer-owner\\\"><a href=\\\"https://github.com/amalieiev/asic\\\">{{ title }}</a> is maintained by <a\\n                    href=\\\"https://github.com/amalieiev\\\">{{ author }}</a>. Our other libraries <a href=\\\"https://amalieiev.github.io/vue-crosstab\\\" target=\\\"_blank\\\" style=\\\"color: #159957;\\\">Vue Crosstab</a>.</span>\\n    </footer>\\n</section>\\n    \"\n}), _dec(_class = function Footer() {\n  _classCallCheck(this, Footer);\n\n  this.title = 'Asic';\n  this.author = 'amalieiev';\n}) || _class);\nexports.Footer = Footer;\n\n//# sourceURL=webpack:///./docs/Footer.js?");
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nexports.__esModule = true;\nvar index_1 = __webpack_require__(/*! ../src/index */ \"./src/index.js\");\nvar Footer = /** @class */ (function () {\n    function Footer() {\n        this.title = 'Asic';\n        this.author = 'amalieiev';\n    }\n    Footer = __decorate([\n        index_1.Component({\n            template: \"\\n<section class=\\\"main-content\\\">\\n    <footer class=\\\"site-footer\\\">\\n        <span class=\\\"site-footer-owner\\\"><a href=\\\"https://github.com/amalieiev/asic\\\">{{ title }}</a> is maintained by <a\\n                    href=\\\"https://github.com/amalieiev\\\">{{ author }}</a>. Our other libraries <a href=\\\"https://amalieiev.github.io/vue-crosstab\\\" target=\\\"_blank\\\" style=\\\"color: #159957;\\\">Vue Crosstab</a>.</span>\\n    </footer>\\n</section>\\n    \"\n        })\n    ], Footer);\n    return Footer;\n}());\nexports.Footer = Footer;\n\n\n//# sourceURL=webpack:///./docs/Footer.ts?");
 
 /***/ }),
 
-/***/ "./docs/Header.js":
+/***/ "./docs/Header.ts":
 /*!************************!*\
-  !*** ./docs/Header.js ***!
+  !*** ./docs/Header.ts ***!
   \************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Header = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar Header = (_dec = Component({\n  template: \"\\n<section class=\\\"page-header\\\">\\n    <h1 class=\\\"project-name\\\">Asic</h1>\\n\\n    <h2 class=\\\"project-tagline\\\">Progressive JavaScript Framework</h2>\\n    \\n    <div class=\\\"badges\\\">\\n        <img src=\\\"https://img.shields.io/npm/dm/asic.svg\\\" alt=\\\"shields\\\">\\n        <img src=\\\"https://camo.githubusercontent.com/d0e25b09a82bc4bfde9f1e048a092752eebbb4f3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e7376673f7374796c653d666c6174\\\" alt=\\\"License\\\" data-canonical-src=\\\"https://img.shields.io/badge/license-MIT-blue.svg?style=flat\\\">\\n    </div>\\n\\n    <a href=\\\"https://github.com/amalieiev/asic\\\" target=\\\"_blank\\\" class=\\\"btn\\\">View on GitHub</a>\\n    <a href=\\\"https://jsfiddle.net/amalieiev/zdmq82ce/\\\" target=\\\"_blank\\\" class=\\\"btn\\\">Try on JSFiddle</a>\\n    <a href=\\\"https://github.com/amalieiev/asic/zipball/master\\\" class=\\\"btn\\\">Download .zip</a>\\n    \\n    <div class=\\\"row\\\">\\n        <div class=\\\"col-sm-3 offset-md-3\\\">\\n            <ul>\\n                <li>No boilerplate code</li>\\n            </ul>\\n        </div>\\n        <div class=\\\"col-sm-3\\\">\\n            <ul>\\n                <li>5kb size</li>\\n            </ul>\\n        </div>\\n    </div>\\n</section>\\n    \"\n}), _dec(_class = function Header() {\n  _classCallCheck(this, Header);\n}) || _class);\nexports.Header = Header;\n\n//# sourceURL=webpack:///./docs/Header.js?");
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nexports.__esModule = true;\nvar index_1 = __webpack_require__(/*! ../src/index */ \"./src/index.js\");\nvar Header = /** @class */ (function () {\n    function Header() {\n    }\n    Header = __decorate([\n        index_1.Component({\n            template: \"\\n<section class=\\\"page-header\\\">\\n    <h1 class=\\\"project-name\\\">Asic</h1>\\n\\n    <h2 class=\\\"project-tagline\\\">Progressive JavaScript Framework</h2>\\n    \\n    <div class=\\\"badges\\\">\\n        <img src=\\\"https://img.shields.io/npm/dm/asic.svg\\\" alt=\\\"shields\\\">\\n        <img src=\\\"https://camo.githubusercontent.com/d0e25b09a82bc4bfde9f1e048a092752eebbb4f3/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d4d49542d626c75652e7376673f7374796c653d666c6174\\\" alt=\\\"License\\\" data-canonical-src=\\\"https://img.shields.io/badge/license-MIT-blue.svg?style=flat\\\">\\n    </div>\\n\\n    <a href=\\\"https://github.com/amalieiev/asic\\\" target=\\\"_blank\\\" class=\\\"btn\\\">View on GitHub</a>\\n    <a href=\\\"https://jsfiddle.net/amalieiev/zdmq82ce/\\\" target=\\\"_blank\\\" class=\\\"btn\\\">Try on JSFiddle</a>\\n    <a href=\\\"https://github.com/amalieiev/asic/zipball/master\\\" class=\\\"btn\\\">Download .zip</a>\\n    \\n    <div class=\\\"row\\\">\\n        <div class=\\\"col-sm-3 offset-md-3\\\">\\n            <ul>\\n                <li>No boilerplate code</li>\\n            </ul>\\n        </div>\\n        <div class=\\\"col-sm-3\\\">\\n            <ul>\\n                <li>5kb size</li>\\n            </ul>\\n        </div>\\n    </div>\\n</section>\\n    \"\n        })\n    ], Header);\n    return Header;\n}());\nexports.Header = Header;\n\n\n//# sourceURL=webpack:///./docs/Header.ts?");
 
 /***/ }),
 
-/***/ "./docs/index.js":
+/***/ "./docs/index.ts":
 /*!***********************!*\
-  !*** ./docs/index.js ***!
+  !*** ./docs/index.ts ***!
   \***********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./stylesheets/normalize.css */ \"./docs/stylesheets/normalize.css\");\n\n__webpack_require__(/*! ./stylesheets/github-light.css */ \"./docs/stylesheets/github-light.css\");\n\n__webpack_require__(/*! ./stylesheets/stylesheet.css */ \"./docs/stylesheets/stylesheet.css\");\n\nvar _Header = __webpack_require__(/*! ./Header */ \"./docs/Header.js\");\n\nvar _Footer = __webpack_require__(/*! ./Footer */ \"./docs/Footer.js\");\n\n//# sourceURL=webpack:///./docs/index.js?");
+eval("\nexports.__esModule = true;\n__webpack_require__(/*! ./stylesheets/normalize.css */ \"./docs/stylesheets/normalize.css\");\n__webpack_require__(/*! ./stylesheets/github-light.css */ \"./docs/stylesheets/github-light.css\");\n__webpack_require__(/*! ./stylesheets/stylesheet.css */ \"./docs/stylesheets/stylesheet.css\");\nvar Header_1 = __webpack_require__(/*! ./Header */ \"./docs/Header.ts\");\nexports.Header = Header_1.Header;\nvar Footer_1 = __webpack_require__(/*! ./Footer */ \"./docs/Footer.ts\");\nexports.Footer = Footer_1.Footer;\n\n\n//# sourceURL=webpack:///./docs/index.ts?");
 
 /***/ }),
 
@@ -221,14 +221,62 @@ eval("\n/**\n * When source maps are enabled, `style-loader` uses a link element
 
 /***/ }),
 
+/***/ "./src/decorators.js":
+/*!***************************!*\
+  !*** ./src/decorators.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Component = Component;\nexports.Input = Input;\n\nvar _services = __webpack_require__(/*! ./services */ \"./src/services.js\");\n\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nfunction _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; var ownKeys = Object.keys(source); if (typeof Object.getOwnPropertySymbols === 'function') { ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) { return Object.getOwnPropertyDescriptor(source, sym).enumerable; })); } ownKeys.forEach(function (key) { _defineProperty(target, key, source[key]); }); } return target; }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\nfunction Component(_ref) {\n  var template = _ref.template;\n  return function (target) {\n    if (_services.$components[target.name]) {\n      _services.$components[target.name] = _objectSpread({}, _services.$components[target.name], {\n        target: target,\n        template: template\n      });\n    } else {\n      _services.$components[target.name] = {\n        target: target,\n        template: template\n      };\n    }\n  };\n}\n\nfunction Input(target, property) {\n  var component = target.constructor.name;\n\n  if (_services.$components[component]) {\n    _services.$components[component] = _objectSpread({}, _services.$components[component], {\n      props: _services.$components[component].props ? _toConsumableArray(_services.$components[component].props).concat([property]) : [property]\n    });\n  } else {\n    _services.$components[component] = {\n      props: [property]\n    };\n  }\n}\n\n//# sourceURL=webpack:///./src/decorators.js?");
+
+/***/ }),
+
+/***/ "./src/functions.js":
+/*!**************************!*\
+  !*** ./src/functions.js ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.$replaceEvents = $replaceEvents;\nexports.$replaceInterpolations = $replaceInterpolations;\nexports.$replaceFor = $replaceFor;\nexports.$replicateFor = $replicateFor;\nexports.$transform = $transform;\nexports.$render = $render;\nexports.$initialize = $initialize;\nexports.$exec = $exec;\nexports.$bootstrap = $bootstrap;\n\nvar _services = __webpack_require__(/*! ./services */ \"./src/services.js\");\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n/**\n * Replaces '(click)=\"foo()\"' with 'asic-event=\"click\" asic-event-expression=\"foo()\"'\n * And puts event name to $events variable\n * @param {string} template\n */\nfunction $replaceEvents(template) {\n  var eventRe = /(?:\\()(.+?)(?:\\)=)/g;\n  return template.replace(eventRe, function (match, eventName) {\n    _services.$events[eventName] = true;\n    return \"asic-event=\\\"\".concat(eventName, \"\\\" asic-event-expression=\");\n  });\n}\n/**\n * Replaces '{{ paramName }}' with '<span asic-bind-expression=\"paramName\"></span>'\n * @param {string} template\n */\n\n\nfunction $replaceInterpolations(template) {\n  var re = /(?:\\{\\{)(.*?)(?:\\}\\})/g;\n  template = template.replace(re, function (fullMatch, match) {\n    return \"<span asic-bind-expression=\\\"\".concat(match, \"\\\"></span>\");\n  });\n  var div = document.createElement('div');\n  div.innerHTML = template;\n  div.querySelectorAll('[asic-bind-expression]').forEach(function (element) {\n    if (element.parentElement.getAttribute('asic-event')) {\n      element.setAttribute('asic-event', element.parentElement.getAttribute('asic-event'));\n      element.setAttribute('asic-event-expression', element.parentElement.getAttribute('asic-event-expression'));\n    }\n  });\n  return div.innerHTML;\n}\n/**\n * Replaces '*for=item in items' with 'asic-for=item' 'asic-for-in=items'\n * @param {string} template\n */\n\n\nfunction $replaceFor(template) {\n  var forRe = /\\*for=\".*?\"/g;\n  return template.replace(forRe, function (match) {\n    var name = match.match(/(?:\\*for=\")(.*)(?: in)/)[1];\n    var data = match.match(/(?: in )(.*)(?:\")/)[1];\n    return \"asic-for=\\\"\".concat(name, \"\\\" asic-for-data=\\\"\").concat(data, \"\\\" asic-for-todo=\\\"true\\\"\");\n  });\n}\n/**\n * Replicates iterateble parts.\n * @param template\n */\n\n\nfunction $replicateFor(template, context) {\n  var div = document.createElement('div');\n  div.innerHTML = template;\n  var element = div.querySelector('[asic-for][asic-for-todo]');\n\n  if (!element) {\n    return template;\n  }\n\n  var name = element.getAttribute('asic-for');\n  var data = element.getAttribute('asic-for-data');\n  var outerHTML = element.outerHTML;\n  element.removeAttribute('asic-for-todo');\n  var resultHTML = '';\n\n  var _loop = function _loop(index) {\n    var partHTML = element.outerHTML.replace(RegExp(\"\\\\b\".concat(name, \"\\\\b\"), 'g'), function (match) {\n      return \"\".concat(data, \"[\").concat(index, \"]\");\n    });\n    resultHTML += partHTML;\n  };\n\n  for (var index = 0; index < $exec('return ' + data, context).length; index++) {\n    _loop(index);\n  }\n\n  template = template.replace(outerHTML, resultHTML);\n  return $replicateFor(template, context);\n}\n/**\n * Makes template transformations.\n * @param template\n */\n\n\nfunction $transform(template, context) {\n  template = $normalize(template);\n  template = $replaceEvents(template);\n  template = $replaceFor(template);\n  template = $replicateFor(template, context);\n  template = $replaceInterpolations(template);\n  return template;\n}\n/**\n * Replaces '<SomeComponent></SomeComponent>' with '<somecomponent></somecomponent>'\n * @param template\n */\n\n\nfunction $normalize(template) {\n  for (var componentName in _services.$components) {\n    template = template.replace(RegExp(\"<\".concat(componentName), 'g'), \"<\".concat(componentName.toLowerCase()));\n    template = template.replace(RegExp(\"</\".concat(componentName), 'g'), \"</\".concat(componentName.toLowerCase()));\n  }\n\n  return template;\n}\n\nfunction $render(element, component, parentProxy) {\n  if (element.innerHTML) {} else {\n    var template = _services.$components[component].template;\n    var Component = _services.$components[component].target;\n    var proxy = new Proxy(new Component(), {\n      set: function set(target, property, value) {\n        target[property] = value;\n        element.querySelectorAll('[asic-bind-expression]').forEach(function (el) {\n          var expression = el.getAttribute('asic-bind-expression'); //TODO: find correct solution\n\n          try {\n            el.innerHTML = $exec('return ' + expression, proxy);\n          } catch (err) {}\n        });\n        return true;\n      }\n    });\n    $initialize(proxy, element, parentProxy, _services.$components[component]);\n    element.innerHTML = $transform(template, proxy);\n    element.querySelectorAll('[asic-bind-expression]').forEach(function (el) {\n      var expression = el.getAttribute('asic-bind-expression');\n      el.innerHTML = $exec('return ' + expression, proxy);\n    });\n    element.querySelectorAll('[asic-event]').forEach(function (el) {\n      var eventName = el.getAttribute('asic-event');\n      var expression = el.getAttribute('asic-event-expression');\n      el.$asic = {\n        events: _defineProperty({}, eventName, expression),\n        context: proxy\n      };\n    });\n\n    var _loop2 = function _loop2(key) {\n      element.querySelectorAll(key).forEach(function (el) {\n        $render(el, key);\n      });\n    };\n\n    for (var key in _services.$components) {\n      _loop2(key);\n    }\n  }\n}\n\nfunction $initialize(proxy, element, parentProxy, component) {\n  var props = component.props || [];\n  props.map(function (param) {\n    var value = element.getAttribute(param);\n    var expression = element.getAttribute(\"[\".concat(param, \"]\"));\n\n    if (value !== null) {\n      proxy[param] = value;\n    } else if (expression !== null) {\n      proxy[param] = $exec('return ' + expression, parentProxy);\n    }\n  });\n\n  if (proxy.initialize) {\n    proxy.initialize();\n  }\n}\n/**\n * Evaluates an expression in provided context.\n * @param { string } expression\n * @param { Object } context\n */\n\n\nfunction $exec(expression, context, args) {\n  if (!context) context = window;\n  var parts = expression.match(/[a-zA-Z0-9_]+/g);\n  parts.forEach(function (name) {\n    if (name in context) {\n      expression = expression.replace(RegExp(\"\\\\b\".concat(name, \"\\\\b\")), function (match) {\n        return 'this.' + match;\n      });\n    }\n  });\n  return Function(expression).apply(context, args);\n}\n/**\n * Cleans asic related things form markup\n */\n\n\nfunction $cleanUp() {\n  ['asic-event', 'asic-event-expression', // 'asic-bind-expression',\n  'asic-for', 'asic-for-data'].forEach(function (value) {\n    document.querySelectorAll(\"[\".concat(value, \"]\")).forEach(function (element) {\n      element.removeAttribute(value);\n    });\n  });\n}\n/**\n * Bootstraps an application.\n */\n\n\nfunction $bootstrap() {\n  window.addEventListener('load', function () {\n    var _loop3 = function _loop3(key) {\n      var component = _services.$components[key];\n      document.querySelectorAll(component.target.name).forEach(function (element) {\n        $render(element, component.target.name);\n      });\n    };\n\n    for (var key in _services.$components) {\n      _loop3(key);\n    }\n\n    var _loop4 = function _loop4(eventName) {\n      document.addEventListener(eventName, function (event) {\n        var target = arguments[0].target;\n\n        if (target.$asic) {\n          $exec(target.$asic.events[eventName], target.$asic.context);\n        }\n      });\n    };\n\n    for (var eventName in _services.$events) {\n      _loop4(eventName);\n    }\n\n    $cleanUp();\n  });\n}\n\n//# sourceURL=webpack:///./src/functions.js?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nObject.defineProperty(exports, \"Component\", {\n  enumerable: true,\n  get: function get() {\n    return _decorators.Component;\n  }\n});\nObject.defineProperty(exports, \"Input\", {\n  enumerable: true,\n  get: function get() {\n    return _decorators.Input;\n  }\n});\n\nvar _decorators = __webpack_require__(/*! ./decorators */ \"./src/decorators.js\");\n\nvar _functions = __webpack_require__(/*! ./functions */ \"./src/functions.js\");\n\nif (window) {\n  window.Component = _decorators.Component;\n  window.Input = _decorators.Input;\n}\n\n(0, _functions.$bootstrap)();\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/services.js":
+/*!*************************!*\
+  !*** ./src/services.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.$events = exports.$components = void 0;\nvar $components = {};\nexports.$components = $components;\nvar $events = {};\nexports.$events = $events;\n\n//# sourceURL=webpack:///./src/services.js?");
+
+/***/ }),
+
 /***/ 1:
 /*!*****************************!*\
-  !*** multi ./docs/index.js ***!
+  !*** multi ./docs/index.ts ***!
   \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! ./docs/index.js */\"./docs/index.js\");\n\n\n//# sourceURL=webpack:///multi_./docs/index.js?");
+eval("module.exports = __webpack_require__(/*! ./docs/index.ts */\"./docs/index.ts\");\n\n\n//# sourceURL=webpack:///multi_./docs/index.ts?");
 
 /***/ })
 
