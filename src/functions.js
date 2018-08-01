@@ -97,12 +97,16 @@ export function $replicateFor(template, context) {
  * Makes template transformations.
  * @param template
  */
-export function $transform(template, context) {
+export function $transform(template, context, element) {
     template = $normalize(template);
     template = $replaceEvents(template);
     template = $replaceFor(template);
     template = $replicateFor(template, context);
     template = $replaceInterpolations(template);
+
+    if (element) {
+        element.innerHTML = template;
+    }
 
     return template;
 }
@@ -126,46 +130,28 @@ export function $render(element, component, parentProxy) {
     } else {
         const template = $components[component].template;
         const Component = $components[component].target;
+        const props = $components[component].props || [];
+        const cmp = new Component();
 
-        const proxy = new Proxy(new Component(), {
+        $applyProps(element, props, cmp, parentProxy);
+
+        const proxy = new Proxy(cmp, {
             set(target, property, value) {
                 target[property] = value;
 
-                element.querySelectorAll('[asic-bind-expression]').forEach(el => {
-                    const expression = el.getAttribute('asic-bind-expression');
-
-                    //TODO: find correct solution
-                    try {
-                        el.innerHTML = $exec('return ' + expression, proxy);
-                    } catch (err) {
-                    }
-                });
+                $transform(template, proxy, element);
+                $interpolateExpressions(element, proxy);
+                $bindEvents(element, proxy);
 
                 return true;
             }
         });
 
-        $initialize(proxy, element, parentProxy, $components[component]);
+        $initialize(proxy);
 
-        element.innerHTML = $transform(template, proxy);
-
-        element.querySelectorAll('[asic-bind-expression]').forEach(el => {
-            const expression = el.getAttribute('asic-bind-expression');
-
-            el.innerHTML = $exec('return ' + expression, proxy);
-        });
-
-        element.querySelectorAll('[asic-event]').forEach(el => {
-            const eventName = el.getAttribute('asic-event');
-            const expression = el.getAttribute('asic-event-expression');
-
-            el.$asic = {
-                events: {
-                    [eventName]: expression
-                },
-                context: proxy
-            };
-        });
+        $transform(template, proxy, element);
+        $interpolateExpressions(element, proxy);
+        $bindEvents(element, proxy);
 
         for (let key in $components) {
             element.querySelectorAll(key).forEach(el => {
@@ -175,20 +161,42 @@ export function $render(element, component, parentProxy) {
     }
 }
 
-export function $initialize(proxy, element, parentProxy, component) {
-    const props = component.props || [];
+export function $bindEvents(element, context) {
+    element.querySelectorAll('[asic-event]').forEach(el => {
+        const eventName = el.getAttribute('asic-event');
+        const expression = el.getAttribute('asic-event-expression');
 
+        el.$asic = {
+            events: {
+                [eventName]: expression
+            },
+            context
+        };
+    });
+}
+
+export function $interpolateExpressions(element, proxy) {
+    element.querySelectorAll('[asic-bind-expression]').forEach(el => {
+        const expression = el.getAttribute('asic-bind-expression');
+
+        el.innerHTML = $exec('return ' + expression, proxy);
+    });
+}
+
+export function $applyProps(element, props, context, parentContext) {
     props.map(param => {
         const value = element.getAttribute(param);
         const expression = element.getAttribute(`[${param}]`);
 
         if (value !== null) {
-            proxy[param] = value;
+            context[param] = value;
         } else if (expression !== null) {
-            proxy[param] = $exec('return ' + expression, parentProxy);
+            context[param] = $exec('return ' + expression, parentContext);
         }
     });
+}
 
+export function $initialize(proxy) {
     if (proxy.initialize) {
         proxy.initialize();
     }
