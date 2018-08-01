@@ -1,15 +1,18 @@
 import {
-    Component
+    Component,
+    Input
 } from './decorators'
 
 import { $bootstrap } from './functions'
 
 if (window) {
-    window.Component = Component
+    window.Component = Component;
+    window.Input = Input;
 }
 
 $bootstrap()
 
 export {
-    Component
+    Component,
+    Input
 }

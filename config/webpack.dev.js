@@ -4,14 +4,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     entry: {
         asic: ['./src/index.js'],
-        docs: ['./docs/index.js'],
-        samples: ['./samples/index.js']
+        docs: ['./docs/index.ts'],
+        samples: ['./samples/index.ts']
     },
     mode: 'development',
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/'
+    },
+    resolve: {
+        // Add `.ts` and `.tsx` as a resolvable extension.
+        extensions: [".ts", ".tsx", ".js"]
     },
     module: {
         rules: [
@@ -29,6 +33,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 loaders: 'style-loader!css-loader'
+            },
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader"
             }
         ]
     },

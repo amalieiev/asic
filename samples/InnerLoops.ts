@@ -1,3 +1,5 @@
+import { Component } from '../src/index'
+
 @Component({
     template: `
 <div>
@@ -10,17 +12,14 @@
     </ul>
 </div>`
 })
-class InnerLoops {
-    initialize() {
-        this.activeSkill = '';
-        this.items = [
-            {name: 'John', skills: ['javascript', 'java']},
-            {name: 'Adam', skills: ['python', 'ruby', 'html']}
-        ];
-    }
+export class InnerLoops {
+    activeSkill = '';
+    items = [
+        {name: 'John', skills: ['javascript', 'java']},
+        {name: 'Adam', skills: ['python', 'ruby', 'html']}
+    ];
+
     setActive(skill) {
         this.activeSkill = skill;
     }
 }
-
-export { InnerLoops }

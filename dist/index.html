@@ -171,6 +171,8 @@ npm i asic --save
                         <div class="show-language-label">JavaScript</div>
                     </div>
                     <pre><code class="javascript">
+import { Component } from &#39;../src/index&#39;
+
 @Component({
     template: `
 &lt;div&gt;
@@ -179,9 +181,7 @@ npm i asic --save
 &lt;/div&gt;`
 })
 class BasicUsage {
-    initialize() {
-        this.text = &#39;Some Text&#39;
-    }
+    text = &#39;Some Text&#39;;
 }
 
 export { BasicUsage }
@@ -224,6 +224,8 @@ export { BasicUsage }
                         <div class="show-language-label">JavaScript</div>
                     </div>
                     <pre><code class="javascript">
+import { Component } from &#39;../src/index&#39;
+
 @Component({
     template: `
 &lt;div&gt;
@@ -232,9 +234,7 @@ export { BasicUsage }
 &lt;/div&gt;`
 })
 class SimpleText {
-    initialize() {
-        this.text = &#39;Simple text&#39;
-    }
+    text = &#39;Simple Text&#39;;
 }
 
 export { SimpleText }
@@ -273,6 +273,8 @@ export { SimpleText }
                         <div class="show-language-label">JavaScript</div>
                     </div>
                     <pre><code class="javascript">
+import { Component } from &#39;../src/index&#39;
+
 @Component({
     template: `
 &lt;div&gt;
@@ -282,10 +284,8 @@ export { SimpleText }
 &lt;/div&gt;`
 })
 class Props {
-    initialize(foo, bar) {
-        this.text = bar;
-        this.foo = foo;
-    }
+    text = &#39;text&#39;;
+    foo = &#39;foo&#39;;
 }
 
 export { Props }
@@ -324,6 +324,8 @@ export { Props }
                         <div class="show-language-label">JavaScript</div>
                     </div>
                     <pre><code class="javascript">
+import { Component } from &#39;../src/index&#39;
+
 @Component({
     template: `
 &lt;div&gt;
@@ -332,9 +334,7 @@ export { Props }
 &lt;/div&gt;`
 })
 class ComplexComponent {
-    initialize() {
-        this.text = &#39;Parent component&#39;
-    }
+    text = &#39;Parent component&#39;;
 }
 
 export { ComplexComponent }
@@ -373,6 +373,8 @@ export { ComplexComponent }
                         <div class="show-language-label">JavaScript</div>
                     </div>
                     <pre><code class="javascript">
+import { Component } from &#39;../src/index&#39;
+
 @Component({
     template: `
 &lt;div&gt;
@@ -381,9 +383,8 @@ export { ComplexComponent }
 &lt;/div&gt;`
 })
 class Events {
-    initialize() {
-        this.count = 0;
-    }
+    count = 0;
+
     increment() {
         this.count++;
     }
@@ -425,6 +426,8 @@ export { Events }
                         <div class="show-language-label">JavaScript</div>
                     </div>
                     <pre><code class="javascript">
+import { Component } from &#39;../src/index&#39;
+
 @Component({
     template: `
 &lt;ul&gt;
@@ -434,9 +437,7 @@ export { Events }
 &lt;/ul&gt;`
 })
 class Loops {
-    initialize() {
-        this.items = [&#39;javascript&#39;, &#39;python&#39;, &#39;ruby&#39;];
-    }
+    items = [&#39;javascript&#39;, &#39;python&#39;, &#39;ruby&#39;];
 }
 
 export { Loops }
@@ -476,12 +477,14 @@ export { Loops }
                         <div class="show-language-label">JavaScript</div>
                     </div>
                     <pre><code class="javascript">
+import { Component } from &#39;../src/index&#39;
+
 @Component({
     template: `&lt;p&gt;Value: {{ count }}&lt;/p&gt;`
 })
 class Lifecycle {
+    count = 0;
     initialize() {
-        this.count = 0;
         setInterval(() =&gt; {
             this.increment();
         }, 1000);
@@ -531,6 +534,8 @@ export { Lifecycle }
                         <div class="show-language-label">JavaScript</div>
                     </div>
                     <pre><code class="javascript">
+import { Component } from &#39;../src/index&#39;
+
 @Component({
     template: `
 &lt;div&gt;
@@ -544,13 +549,12 @@ export { Lifecycle }
 &lt;/div&gt;`
 })
 class InnerLoops {
-    initialize() {
-        this.activeSkill = &#39;&#39;;
-        this.items = [
-            {name: &#39;John&#39;, skills: [&#39;javascript&#39;, &#39;java&#39;]},
-            {name: &#39;Adam&#39;, skills: [&#39;python&#39;, &#39;ruby&#39;, &#39;html&#39;]}
-        ];
-    }
+    activeSkill = &#39;&#39;;
+    items = [
+        {name: &#39;John&#39;, skills: [&#39;javascript&#39;, &#39;java&#39;]},
+        {name: &#39;Adam&#39;, skills: [&#39;python&#39;, &#39;ruby&#39;, &#39;html&#39;]}
+    ];
+
     setActive(skill) {
         this.activeSkill = skill;
     }
@@ -578,5 +582,5 @@ export { InnerLoops }
 
 <Footer></Footer>
 
-<script type="text/javascript" src="asic.js?fdee7d6f89c09dbc2eb2"></script><script type="text/javascript" src="docs.js?fdee7d6f89c09dbc2eb2"></script><script type="text/javascript" src="samples.js?fdee7d6f89c09dbc2eb2"></script></body>
+<script type="text/javascript" src="/asic.js?1d3c454fd2c4f2b020c9"></script><script type="text/javascript" src="/docs.js?1d3c454fd2c4f2b020c9"></script><script type="text/javascript" src="/samples.js?1d3c454fd2c4f2b020c9"></script></body>
 </html>

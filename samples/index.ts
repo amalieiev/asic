@@ -6,3 +6,14 @@ import { InnerLoops } from './InnerLoops';
 import { Lifecycle } from './Lifecycle';
 import { Loops } from './Loops';
 import { SimpleText } from './SimpleText';
+
+export {
+    BasicUsage,
+    Props,
+    ComplexComponent,
+    Events,
+    InnerLoops,
+    Lifecycle,
+    Loops,
+    SimpleText
+}

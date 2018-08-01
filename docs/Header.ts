@@ -1,3 +1,5 @@
+import { Component } from '../src/index'
+
 @Component({
     template:`
 <section class="page-header">
@@ -29,8 +31,6 @@
 </section>
     `
 })
-class Header {
+export class Header {
 
 }
-
-export { Header }

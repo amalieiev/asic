@@ -145,7 +145,7 @@ export function $render(element, component, parentProxy) {
             }
         });
 
-        $initialize(proxy, element, parentProxy);
+        $initialize(proxy, element, parentProxy, $components[component]);
 
         element.innerHTML = $transform(template, proxy);
 
@@ -175,24 +175,23 @@ export function $render(element, component, parentProxy) {
     }
 }
 
-export function $initialize(proxy, element, parentProxy) {
-    if (!proxy.initialize) return;
+export function $initialize(proxy, element, parentProxy, component) {
+    const props = component.props || [];
 
-    const initializeString = proxy.initialize.toString();
-    const params = initializeString.slice(initializeString.indexOf('(') + 1, initializeString.indexOf(')')).split(',').map(v => v.trim());
-
-    const values = params.map(param => {
+    props.map(param => {
         const value = element.getAttribute(param);
         const expression = element.getAttribute(`[${param}]`);
 
         if (value !== null) {
-            return value;
+            proxy[param] = value;
         } else if (expression !== null) {
-            return $exec('return ' + expression, parentProxy);
+            proxy[param] = $exec('return ' + expression, parentProxy);
         }
     });
 
-    proxy.initialize(...values);
+    if (proxy.initialize) {
+        proxy.initialize();
+    }
 }
 
 /**

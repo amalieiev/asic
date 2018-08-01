@@ -1,3 +1,5 @@
+import { Component } from '../src/index'
+
 @Component({
     template: `
 <div>
@@ -5,13 +7,10 @@
     <button (click)="increment()">click</button>
 </div>`
 })
-class Events {
-    initialize() {
-        this.count = 0;
-    }
+export class Events {
+    count = 0;
+
     increment() {
         this.count++;
     }
 }
-
-export { Events }

@@ -86,122 +86,98 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./samples/BasicUsage.js":
+/***/ "./samples/BasicUsage.ts":
 /*!*******************************!*\
-  !*** ./samples/BasicUsage.js ***!
+  !*** ./samples/BasicUsage.ts ***!
   \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.BasicUsage = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar BasicUsage = (_dec = Component({\n  template: \"\\n<div>\\n    <p>My Component</p>\\n    <p>{{ text }}</p>\\n</div>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function BasicUsage() {\n    _classCallCheck(this, BasicUsage);\n  }\n\n  _createClass(BasicUsage, [{\n    key: \"initialize\",\n    value: function initialize() {\n      this.text = 'Some Text';\n    }\n  }]);\n\n  return BasicUsage;\n}()) || _class);\nexports.BasicUsage = BasicUsage;\n\n//# sourceURL=webpack:///./samples/BasicUsage.js?");
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nexports.__esModule = true;\nvar index_1 = __webpack_require__(/*! ../src/index */ \"./src/index.js\");\nvar BasicUsage = /** @class */ (function () {\n    function BasicUsage() {\n        this.text = 'Some Text';\n    }\n    BasicUsage = __decorate([\n        index_1.Component({\n            template: \"\\n<div>\\n    <p>My Component</p>\\n    <p>{{ text }}</p>\\n</div>\"\n        })\n    ], BasicUsage);\n    return BasicUsage;\n}());\nexports.BasicUsage = BasicUsage;\n\n\n//# sourceURL=webpack:///./samples/BasicUsage.ts?");
 
 /***/ }),
 
-/***/ "./samples/ComplexComponent.js":
-/*!*************************************!*\
-  !*** ./samples/ComplexComponent.js ***!
-  \*************************************/
+/***/ "./samples/Props.ts":
+/*!**************************!*\
+  !*** ./samples/Props.ts ***!
+  \**************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.ComplexComponent = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar ComplexComponent = (_dec = Component({\n  template: \"\\n<div>\\n    <p>{{ text }}</p>\\n    <SimpleText></SimpleText>\\n</div>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function ComplexComponent() {\n    _classCallCheck(this, ComplexComponent);\n  }\n\n  _createClass(ComplexComponent, [{\n    key: \"initialize\",\n    value: function initialize() {\n      this.text = 'Parent component';\n    }\n  }]);\n\n  return ComplexComponent;\n}()) || _class);\nexports.ComplexComponent = ComplexComponent;\n\n//# sourceURL=webpack:///./samples/ComplexComponent.js?");
+eval("\nvar __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {\n    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;\n    if (typeof Reflect === \"object\" && typeof Reflect.decorate === \"function\") r = Reflect.decorate(decorators, target, key, desc);\n    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;\n    return c > 3 && r && Object.defineProperty(target, key, r), r;\n};\nexports.__esModule = true;\nvar index_1 = __webpack_require__(/*! ../src/index */ \"./src/index.js\");\nvar Props = /** @class */ (function () {\n    function Props() {\n        this.text = 'text';\n        this.foo = 'foo';\n    }\n    Props = __decorate([\n        index_1.Component({\n            template: \"\\n<div>\\n    <p>Props</p>\\n    <p>{{ foo }}</p>\\n    <p>{{ text }}</p>\\n</div>\"\n        })\n    ], Props);\n    return Props;\n}());\nexports.Props = Props;\n\n\n//# sourceURL=webpack:///./samples/Props.ts?");
 
 /***/ }),
 
-/***/ "./samples/Events.js":
+/***/ "./samples/index.ts":
+/*!**************************!*\
+  !*** ./samples/index.ts ***!
+  \**************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\nexports.__esModule = true;\nvar BasicUsage_1 = __webpack_require__(/*! ./BasicUsage */ \"./samples/BasicUsage.ts\");\nvar Props_1 = __webpack_require__(/*! ./Props */ \"./samples/Props.ts\");\nconsole.log(BasicUsage_1.BasicUsage, Props_1.Props);\n\n\n//# sourceURL=webpack:///./samples/index.ts?");
+
+/***/ }),
+
+/***/ "./src/decorators.js":
 /*!***************************!*\
-  !*** ./samples/Events.js ***!
+  !*** ./src/decorators.js ***!
   \***************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Events = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Events = (_dec = Component({\n  template: \"\\n<div>\\n    <p>Clicks counter: {{ count }}</p>\\n    <button (click)=\\\"increment()\\\">click</button>\\n</div>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function Events() {\n    _classCallCheck(this, Events);\n  }\n\n  _createClass(Events, [{\n    key: \"initialize\",\n    value: function initialize() {\n      this.count = 0;\n    }\n  }, {\n    key: \"increment\",\n    value: function increment() {\n      this.count++;\n    }\n  }]);\n\n  return Events;\n}()) || _class);\nexports.Events = Events;\n\n//# sourceURL=webpack:///./samples/Events.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Component = Component;\n\nvar _services = __webpack_require__(/*! ./services */ \"./src/services.js\");\n\nfunction Component(_ref) {\n  var template = _ref.template;\n  return function (target) {\n    _services.$components[target.name] = {\n      target: target,\n      template: template\n    };\n  };\n}\n\n//# sourceURL=webpack:///./src/decorators.js?");
 
 /***/ }),
 
-/***/ "./samples/InnerLoops.js":
-/*!*******************************!*\
-  !*** ./samples/InnerLoops.js ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.InnerLoops = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar InnerLoops = (_dec = Component({\n  template: \"\\n<div>\\n    <p>Active skill: <strong>{{ activeSkill }}</strong></p>\\n    <ul>\\n        <li *for=\\\"item in items\\\">\\n            <span>{{ item.name }} skills: <strong *for=\\\"skill in item.skills\\\" (click)=\\\"setActive(skill)\\\">{{ skill }} </strong></span>\\n            <SimpleText></SimpleText>\\n        </li>\\n    </ul>\\n</div>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function InnerLoops() {\n    _classCallCheck(this, InnerLoops);\n  }\n\n  _createClass(InnerLoops, [{\n    key: \"initialize\",\n    value: function initialize() {\n      this.activeSkill = '';\n      this.items = [{\n        name: 'John',\n        skills: ['javascript', 'java']\n      }, {\n        name: 'Adam',\n        skills: ['python', 'ruby', 'html']\n      }];\n    }\n  }, {\n    key: \"setActive\",\n    value: function setActive(skill) {\n      this.activeSkill = skill;\n    }\n  }]);\n\n  return InnerLoops;\n}()) || _class);\nexports.InnerLoops = InnerLoops;\n\n//# sourceURL=webpack:///./samples/InnerLoops.js?");
-
-/***/ }),
-
-/***/ "./samples/Lifecycle.js":
-/*!******************************!*\
-  !*** ./samples/Lifecycle.js ***!
-  \******************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Lifecycle = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Lifecycle = (_dec = Component({\n  template: \"<p>Value: {{ count }}</p>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function Lifecycle() {\n    _classCallCheck(this, Lifecycle);\n  }\n\n  _createClass(Lifecycle, [{\n    key: \"initialize\",\n    value: function initialize() {\n      var _this = this;\n\n      this.count = 0;\n      setInterval(function () {\n        _this.increment();\n      }, 1000);\n    }\n  }, {\n    key: \"increment\",\n    value: function increment() {\n      this.count++;\n    }\n  }]);\n\n  return Lifecycle;\n}()) || _class);\nexports.Lifecycle = Lifecycle;\n\n//# sourceURL=webpack:///./samples/Lifecycle.js?");
-
-/***/ }),
-
-/***/ "./samples/Loops.js":
+/***/ "./src/functions.js":
 /*!**************************!*\
-  !*** ./samples/Loops.js ***!
+  !*** ./src/functions.js ***!
   \**************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Loops = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Loops = (_dec = Component({\n  template: \"\\n<ul>\\n    <li *for=\\\"item in items\\\">\\n        {{ item }}\\n    </li>\\n</ul>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function Loops() {\n    _classCallCheck(this, Loops);\n  }\n\n  _createClass(Loops, [{\n    key: \"initialize\",\n    value: function initialize() {\n      this.items = ['javascript', 'python', 'ruby'];\n    }\n  }]);\n\n  return Loops;\n}()) || _class);\nexports.Loops = Loops;\n\n//# sourceURL=webpack:///./samples/Loops.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.$replaceEvents = $replaceEvents;\nexports.$replaceInterpolations = $replaceInterpolations;\nexports.$replaceFor = $replaceFor;\nexports.$replicateFor = $replicateFor;\nexports.$transform = $transform;\nexports.$render = $render;\nexports.$initialize = $initialize;\nexports.$exec = $exec;\nexports.$bootstrap = $bootstrap;\n\nvar _services = __webpack_require__(/*! ./services */ \"./src/services.js\");\n\nfunction _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }\n\nfunction _nonIterableSpread() { throw new TypeError(\"Invalid attempt to spread non-iterable instance\"); }\n\nfunction _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === \"[object Arguments]\") return Array.from(iter); }\n\nfunction _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n/**\n * Replaces '(click)=\"foo()\"' with 'asic-event=\"click\" asic-event-expression=\"foo()\"'\n * And puts event name to $events variable\n * @param {string} template\n */\nfunction $replaceEvents(template) {\n  var eventRe = /(?:\\()(.+?)(?:\\)=)/g;\n  return template.replace(eventRe, function (match, eventName) {\n    _services.$events[eventName] = true;\n    return \"asic-event=\\\"\".concat(eventName, \"\\\" asic-event-expression=\");\n  });\n}\n/**\n * Replaces '{{ paramName }}' with '<span asic-bind-expression=\"paramName\"></span>'\n * @param {string} template\n */\n\n\nfunction $replaceInterpolations(template) {\n  var re = /(?:\\{\\{)(.*?)(?:\\}\\})/g;\n  template = template.replace(re, function (fullMatch, match) {\n    return \"<span asic-bind-expression=\\\"\".concat(match, \"\\\"></span>\");\n  });\n  var div = document.createElement('div');\n  div.innerHTML = template;\n  div.querySelectorAll('[asic-bind-expression]').forEach(function (element) {\n    if (element.parentElement.getAttribute('asic-event')) {\n      element.setAttribute('asic-event', element.parentElement.getAttribute('asic-event'));\n      element.setAttribute('asic-event-expression', element.parentElement.getAttribute('asic-event-expression'));\n    }\n  });\n  return div.innerHTML;\n}\n/**\n * Replaces '*for=item in items' with 'asic-for=item' 'asic-for-in=items'\n * @param {string} template\n */\n\n\nfunction $replaceFor(template) {\n  var forRe = /\\*for=\".*?\"/g;\n  return template.replace(forRe, function (match) {\n    var name = match.match(/(?:\\*for=\")(.*)(?: in)/)[1];\n    var data = match.match(/(?: in )(.*)(?:\")/)[1];\n    return \"asic-for=\\\"\".concat(name, \"\\\" asic-for-data=\\\"\").concat(data, \"\\\" asic-for-todo=\\\"true\\\"\");\n  });\n}\n/**\n * Replicates iterateble parts.\n * @param template\n */\n\n\nfunction $replicateFor(template, context) {\n  var div = document.createElement('div');\n  div.innerHTML = template;\n  var element = div.querySelector('[asic-for][asic-for-todo]');\n\n  if (!element) {\n    return template;\n  }\n\n  var name = element.getAttribute('asic-for');\n  var data = element.getAttribute('asic-for-data');\n  var outerHTML = element.outerHTML;\n  element.removeAttribute('asic-for-todo');\n  var resultHTML = '';\n\n  var _loop = function _loop(index) {\n    var partHTML = element.outerHTML.replace(RegExp(\"\\\\b\".concat(name, \"\\\\b\"), 'g'), function (match) {\n      return \"\".concat(data, \"[\").concat(index, \"]\");\n    });\n    resultHTML += partHTML;\n  };\n\n  for (var index = 0; index < $exec('return ' + data, context).length; index++) {\n    _loop(index);\n  }\n\n  template = template.replace(outerHTML, resultHTML);\n  return $replicateFor(template, context);\n}\n/**\n * Makes template transformations.\n * @param template\n */\n\n\nfunction $transform(template, context) {\n  template = $normalize(template);\n  template = $replaceEvents(template);\n  template = $replaceFor(template);\n  template = $replicateFor(template, context);\n  template = $replaceInterpolations(template);\n  return template;\n}\n/**\n * Replaces '<SomeComponent></SomeComponent>' with '<somecomponent></somecomponent>'\n * @param template\n */\n\n\nfunction $normalize(template) {\n  for (var componentName in _services.$components) {\n    template = template.replace(RegExp(\"<\".concat(componentName), 'g'), \"<\".concat(componentName.toLowerCase()));\n    template = template.replace(RegExp(\"</\".concat(componentName), 'g'), \"</\".concat(componentName.toLowerCase()));\n  }\n\n  return template;\n}\n\nfunction $render(element, component, parentProxy) {\n  if (element.innerHTML) {} else {\n    var template = _services.$components[component].template;\n    var Component = _services.$components[component].target;\n    var proxy = new Proxy(new Component(), {\n      set: function set(target, property, value) {\n        target[property] = value;\n        element.querySelectorAll('[asic-bind-expression]').forEach(function (el) {\n          var expression = el.getAttribute('asic-bind-expression'); //TODO: find correct solution\n\n          try {\n            el.innerHTML = $exec('return ' + expression, proxy);\n          } catch (err) {}\n        });\n        return true;\n      }\n    });\n    $initialize(proxy, element, parentProxy);\n    element.innerHTML = $transform(template, proxy);\n    element.querySelectorAll('[asic-bind-expression]').forEach(function (el) {\n      var expression = el.getAttribute('asic-bind-expression');\n      el.innerHTML = $exec('return ' + expression, proxy);\n    });\n    element.querySelectorAll('[asic-event]').forEach(function (el) {\n      var eventName = el.getAttribute('asic-event');\n      var expression = el.getAttribute('asic-event-expression');\n      el.$asic = {\n        events: _defineProperty({}, eventName, expression),\n        context: proxy\n      };\n    });\n\n    var _loop2 = function _loop2(key) {\n      element.querySelectorAll(key).forEach(function (el) {\n        $render(el, key);\n      });\n    };\n\n    for (var key in _services.$components) {\n      _loop2(key);\n    }\n  }\n}\n\nfunction $initialize(proxy, element, parentProxy) {\n  if (!proxy.initialize) return;\n  var initializeString = proxy.initialize.toString();\n  var params = initializeString.slice(initializeString.indexOf('(') + 1, initializeString.indexOf(')')).split(',').map(function (v) {\n    return v.trim();\n  });\n  var values = params.map(function (param) {\n    var value = element.getAttribute(param);\n    var expression = element.getAttribute(\"[\".concat(param, \"]\"));\n\n    if (value !== null) {\n      return value;\n    } else if (expression !== null) {\n      return $exec('return ' + expression, parentProxy);\n    }\n  });\n  proxy.initialize.apply(proxy, _toConsumableArray(values));\n}\n/**\n * Evaluates an expression in provided context.\n * @param { string } expression\n * @param { Object } context\n */\n\n\nfunction $exec(expression, context, args) {\n  if (!context) context = window;\n  var parts = expression.match(/[a-zA-Z0-9_]+/g);\n  parts.forEach(function (name) {\n    if (name in context) {\n      expression = expression.replace(RegExp(\"\\\\b\".concat(name, \"\\\\b\")), function (match) {\n        return 'this.' + match;\n      });\n    }\n  });\n  return Function(expression).apply(context, args);\n}\n/**\n * Cleans asic related things form markup\n */\n\n\nfunction $cleanUp() {\n  ['asic-event', 'asic-event-expression', // 'asic-bind-expression',\n  'asic-for', 'asic-for-data'].forEach(function (value) {\n    document.querySelectorAll(\"[\".concat(value, \"]\")).forEach(function (element) {\n      element.removeAttribute(value);\n    });\n  });\n}\n/**\n * Bootstraps an application.\n */\n\n\nfunction $bootstrap() {\n  window.addEventListener('load', function () {\n    var _loop3 = function _loop3(key) {\n      var component = _services.$components[key];\n      document.querySelectorAll(component.target.name).forEach(function (element) {\n        $render(element, component.target.name);\n      });\n    };\n\n    for (var key in _services.$components) {\n      _loop3(key);\n    }\n\n    var _loop4 = function _loop4(eventName) {\n      document.addEventListener(eventName, function (event) {\n        var target = arguments[0].target;\n\n        if (target.$asic) {\n          $exec(target.$asic.events[eventName], target.$asic.context);\n        }\n      });\n    };\n\n    for (var eventName in _services.$events) {\n      _loop4(eventName);\n    }\n\n    $cleanUp();\n  });\n}\n\n//# sourceURL=webpack:///./src/functions.js?");
 
 /***/ }),
 
-/***/ "./samples/Props.js":
-/*!**************************!*\
-  !*** ./samples/Props.js ***!
-  \**************************/
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.Props = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Props = (_dec = Component({\n  template: \"\\n<div>\\n    <p>Props</p>\\n    <p>{{ foo }}</p>\\n    <p>{{ text }}</p>\\n</div>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function Props() {\n    _classCallCheck(this, Props);\n  }\n\n  _createClass(Props, [{\n    key: \"initialize\",\n    value: function initialize(foo, bar) {\n      this.text = bar;\n      this.foo = foo;\n    }\n  }]);\n\n  return Props;\n}()) || _class);\nexports.Props = Props;\n\n//# sourceURL=webpack:///./samples/Props.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nObject.defineProperty(exports, \"Component\", {\n  enumerable: true,\n  get: function get() {\n    return _decorators.Component;\n  }\n});\n\nvar _decorators = __webpack_require__(/*! ./decorators */ \"./src/decorators.js\");\n\nvar _functions = __webpack_require__(/*! ./functions */ \"./src/functions.js\");\n\nif (window) {\n  window.Component = _decorators.Component;\n}\n\n(0, _functions.$bootstrap)();\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
-/***/ "./samples/SimpleText.js":
-/*!*******************************!*\
-  !*** ./samples/SimpleText.js ***!
-  \*******************************/
+/***/ "./src/services.js":
+/*!*************************!*\
+  !*** ./src/services.js ***!
+  \*************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.SimpleText = void 0;\n\nvar _dec, _class;\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar SimpleText = (_dec = Component({\n  template: \"\\n<div>\\n    <p>Inner component</p>\\n    <p>{{ text }}</p>\\n</div>\"\n}), _dec(_class =\n/*#__PURE__*/\nfunction () {\n  function SimpleText() {\n    _classCallCheck(this, SimpleText);\n  }\n\n  _createClass(SimpleText, [{\n    key: \"initialize\",\n    value: function initialize() {\n      this.text = 'Simple text';\n    }\n  }]);\n\n  return SimpleText;\n}()) || _class);\nexports.SimpleText = SimpleText;\n\n//# sourceURL=webpack:///./samples/SimpleText.js?");
-
-/***/ }),
-
-/***/ "./samples/index.js":
-/*!**************************!*\
-  !*** ./samples/index.js ***!
-  \**************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-eval("\n\nvar _BasicUsage = __webpack_require__(/*! ./BasicUsage */ \"./samples/BasicUsage.js\");\n\nvar _Props = __webpack_require__(/*! ./Props */ \"./samples/Props.js\");\n\nvar _ComplexComponent = __webpack_require__(/*! ./ComplexComponent */ \"./samples/ComplexComponent.js\");\n\nvar _Events = __webpack_require__(/*! ./Events */ \"./samples/Events.js\");\n\nvar _InnerLoops = __webpack_require__(/*! ./InnerLoops */ \"./samples/InnerLoops.js\");\n\nvar _Lifecycle = __webpack_require__(/*! ./Lifecycle */ \"./samples/Lifecycle.js\");\n\nvar _Loops = __webpack_require__(/*! ./Loops */ \"./samples/Loops.js\");\n\nvar _SimpleText = __webpack_require__(/*! ./SimpleText */ \"./samples/SimpleText.js\");\n\n//# sourceURL=webpack:///./samples/index.js?");
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.$events = exports.$components = void 0;\nvar $components = {};\nexports.$components = $components;\nvar $events = {};\nexports.$events = $events;\n\n//# sourceURL=webpack:///./src/services.js?");
 
 /***/ }),
 
 /***/ 2:
 /*!********************************!*\
-  !*** multi ./samples/index.js ***!
+  !*** multi ./samples/index.ts ***!
   \********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__(/*! ./samples/index.js */\"./samples/index.js\");\n\n\n//# sourceURL=webpack:///multi_./samples/index.js?");
+eval("module.exports = __webpack_require__(/*! ./samples/index.ts */\"./samples/index.ts\");\n\n\n//# sourceURL=webpack:///multi_./samples/index.ts?");
 
 /***/ })
 

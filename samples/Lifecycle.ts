@@ -1,9 +1,11 @@
+import { Component } from '../src/index'
+
 @Component({
     template: `<p>Value: {{ count }}</p>`
 })
-class Lifecycle {
+export class Lifecycle {
+    count = 0;
     initialize() {
-        this.count = 0;
         setInterval(() => {
             this.increment();
         }, 1000);
@@ -12,5 +14,3 @@ class Lifecycle {
         this.count++;
     }
 }
-
-export { Lifecycle }

@@ -1,3 +1,5 @@
+import { Component } from '../src/index'
+
 @Component({
     template:`
 <section class="main-content">
@@ -8,11 +10,7 @@
 </section>
     `
 })
-class Footer {
-    constructor() {
-        this.title = 'Asic';
-        this.author = 'amalieiev'
-    }
+export class Footer {
+    public title = 'Asic';
+    public author = 'amalieiev';
 }
-
-export { Footer }

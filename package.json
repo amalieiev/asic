@@ -39,6 +39,8 @@
     "html-loader": "^0.5.5",
     "raw-loader": "^0.5.1",
     "scss-loader": "0.0.1",
-    "style-loader": "^0.21.0"
+    "style-loader": "^0.21.0",
+    "ts-loader": "^4.4.2",
+    "typescript": "^3.0.1"
   }
 }

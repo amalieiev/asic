@@ -14,6 +14,10 @@ module.exports = {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/'
     },
+    resolve: {
+        // Add `.ts` and `.tsx` as a resolvable extension.
+        extensions: [".ts", ".tsx", ".js"]
+    },
     module: {
         rules: [
             {
@@ -30,6 +34,10 @@ module.exports = {
             {
                 test: /\.css$/,
                 loaders: 'style-loader!css-loader'
+            },
+            {
+                test: /\.tsx?$/,
+                loader: "ts-loader"
             }
         ]
     },
