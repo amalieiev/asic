@@ -6,6 +6,7 @@ import { InnerLoops } from './InnerLoops';
 import { Lifecycle } from './Lifecycle';
 import { Loops } from './Loops';
 import { SimpleText } from './SimpleText';
+import { TodoList } from './TodoList';
 
 export {
     BasicUsage,
@@ -15,5 +16,6 @@ export {
     InnerLoops,
     Lifecycle,
     Loops,
-    SimpleText
+    SimpleText,
+    TodoList
 }

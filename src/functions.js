@@ -17,6 +17,13 @@ export function $replaceEvents(template) {
     });
 }
 
+export function $replaceRefs(template) {
+    return template.replace(/#ref/g, function (match, refName) {
+
+        return `asic-ref`;
+    });
+}
+
 /**
  * Replaces '{{ paramName }}' with '<span asic-bind-expression="paramName"></span>'
  * @param {string} template
@@ -100,6 +107,7 @@ export function $replicateFor(template, context) {
 export function $transform(template, context, element) {
     template = $normalize(template);
     template = $replaceEvents(template);
+    template = $replaceRefs(template);
     template = $replaceFor(template);
     template = $replicateFor(template, context);
     template = $replaceInterpolations(template);
@@ -134,6 +142,8 @@ export function $render(element, component, parentProxy) {
         const cmp = new Component();
 
         $applyProps(element, props, cmp, parentProxy);
+        $transform(template, cmp, element);
+        $applyRefs(element, cmp);
 
         const proxy = new Proxy(cmp, {
             set(target, property, value) {
@@ -143,21 +153,63 @@ export function $render(element, component, parentProxy) {
                 $interpolateExpressions(element, proxy);
                 $bindEvents(element, proxy);
 
+                $renderInnerComponents(element);
+
                 return true;
+            }
+        });
+
+        Object.getOwnPropertyNames(proxy).forEach(property => {
+            // is Array
+            if (proxy[property].splice) {
+                [
+                    'pop',
+                    'push',
+                    'reverse',
+                    'shift',
+                    'unshift',
+                    'sort',
+                    'splice'
+                ].forEach(methodName => {
+                    proxy[property][methodName] = new Proxy(proxy[property][methodName], {
+                        apply(target, thisArg, argumentsList) {
+                            const result =  target.apply(thisArg, argumentsList);
+
+                            $transform(template, proxy, element);
+                            $interpolateExpressions(element, proxy);
+                            $bindEvents(element, proxy);
+
+                            $renderInnerComponents(element);
+
+                            return result;
+                        }
+                    });
+                });
             }
         });
 
         $initialize(proxy);
 
-        $transform(template, proxy, element);
         $interpolateExpressions(element, proxy);
         $bindEvents(element, proxy);
 
-        for (let key in $components) {
-            element.querySelectorAll(key).forEach(el => {
-                $render(el, key);
-            })
-        }
+        $renderInnerComponents(element);
+    }
+}
+
+export function $applyRefs(element, context) {
+    element.querySelectorAll('[asic-ref]').forEach(el => {
+        const refName = el.getAttribute('asic-ref');
+
+        context[refName] = el;
+    });
+}
+
+export function $renderInnerComponents(element) {
+    for (let componentName in $components) {
+        element.querySelectorAll(componentName).forEach(el => {
+            $render(el, componentName);
+        })
     }
 }
 
@@ -229,6 +281,7 @@ export function $exec(expression, context, args) {
 function $cleanUp () {
     [
         'asic-event',
+        'asic-ref',
         'asic-event-expression',
         // 'asic-bind-expression',
         'asic-for',
@@ -245,18 +298,13 @@ function $cleanUp () {
  */
 export function $bootstrap() {
     window.addEventListener('load', () => {
-        for (let key in $components) {
-            let component = $components[key];
-            document.querySelectorAll(component.target.name).forEach(element => {
-                $render(element, component.target.name);
-            })
-        }
+        $renderInnerComponents(document);
 
         for (let eventName in $events) {
             document.addEventListener(eventName, function (event) {
                 const target = arguments[0].target;
 
-                if (target.$asic) {
+                if (target.$asic && target.$asic.events[eventName]) {
                     $exec(target.$asic.events[eventName], target.$asic.context);
                 }
             });

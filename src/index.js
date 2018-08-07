@@ -3,14 +3,14 @@ import {
     Input
 } from './decorators'
 
-import { $bootstrap } from './functions'
+import {$bootstrap} from './functions'
 
 if (window) {
     window.Component = Component;
     window.Input = Input;
 }
 
-$bootstrap()
+$bootstrap();
 
 export {
     Component,
