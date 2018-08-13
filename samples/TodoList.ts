@@ -1,35 +1,32 @@
-import { Component, Input } from '../src/index'
+import { Component, Input, Ref } from '../src/index'
 
 @Component({
     template: `
 <div>
     <p>{{ title }}</p>
-    <input type="text" (input)="onChange()" #ref="input">
+    <input type="text" #ref="input">
     <button (click)="addItem()">Add</button>
     <ul>
         <li *for="item in items">
             <button (click)="removeItem(item)">remove</button>{{ item.name }}
         </li>
     </ul>
+    <SimpleText></SimpleText>
 </div>`
 })
 export class TodoList {
     @Input title;
-    input;
+    @Ref input;
 
     items = [
         {name: 'Improve Asic', done: false}
     ];
 
     addItem() {
-        this.items.push({name: 'New Item', done: false});
+        this.items.push({name: this.input.value, done: false});
     }
 
     removeItem(item) {
         this.items.splice(this.items.indexOf(item), 1);
-    }
-
-    onChange() {
-        console.log(this.input.value);
     }
 }

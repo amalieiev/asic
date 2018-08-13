@@ -6,7 +6,7 @@ import { Component } from '../src/index'
     <p>Active skill: <strong>{{ activeSkill }}</strong></p>
     <ul>
         <li *for="item in items">
-            <span>{{ item.name }} skills: <strong *for="skill in item.skills" (click)="setActive(skill)">{{ skill }} </strong></span>
+            <span>{{ item.name }} skills:</span><button *for="skill in item.skills" (click)="setActive(skill)">{{ skill }}</button>
             <SimpleText></SimpleText>
         </li>
     </ul>

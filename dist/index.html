@@ -121,6 +121,12 @@
                         </h4>
                     </li>
                     
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#TodoList" aria-hidden="true"><span class="octicon octicon-link">Todo List</span></a>
+                        </h4>
+                    </li>
+                    
                 </ul>
             </div>
         </div>
@@ -366,20 +372,24 @@ export class ComplexComponent {
                         <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component } from &#39;asic&#39;
+import { Component, Ref } from &#39;asic&#39;
 
 @Component({
     template: `
 &lt;div&gt;
     &lt;p&gt;Clicks counter: {{ count }}&lt;/p&gt;
+    &lt;p&gt;{{ login.value }}&lt;/p&gt;
+    &lt;input type=&quot;text&quot; #ref=&quot;login&quot; (input)=&quot;increment()&quot;&gt;
     &lt;button (click)=&quot;increment()&quot;&gt;click&lt;/button&gt;
 &lt;/div&gt;`
 })
 export class Events {
+    @Ref login;
     count = 0;
 
     increment() {
         this.count++;
+        console.log(this.login.value);
     }
 }
                     </code></pre>
@@ -529,7 +539,7 @@ import { Component } from &#39;asic&#39;
     &lt;p&gt;Active skill: &lt;strong&gt;{{ activeSkill }}&lt;/strong&gt;&lt;/p&gt;
     &lt;ul&gt;
         &lt;li *for=&quot;item in items&quot;&gt;
-            &lt;span&gt;{{ item.name }} skills: &lt;strong *for=&quot;skill in item.skills&quot; (click)=&quot;setActive(skill)&quot;&gt;{{ skill }} &lt;/strong&gt;&lt;/span&gt;
+            &lt;span&gt;{{ item.name }} skills:&lt;/span&gt;&lt;button *for=&quot;skill in item.skills&quot; (click)=&quot;setActive(skill)&quot;&gt;{{ skill }}&lt;/button&gt;
             &lt;SimpleText&gt;&lt;/SimpleText&gt;
         &lt;/li&gt;
     &lt;/ul&gt;
@@ -558,6 +568,71 @@ export class InnerLoops {
 
             
 
+            <div class="row">
+                <div class="col-sm">
+                    <h3>
+                        <a id="TodoList" class="anchor" href="#TodoList" aria-hidden="true"><span class="octicon octicon-link"></span></a>Todo List
+                    </h3>
+                    <p>Todo list example</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <label class="label">TodoList</label>
+
+                    <TodoList title="Todo List"></TodoList>
+                </div>
+                <div class="col-sm-8">
+                    <label class="label">Code Sample</label>
+
+                    <div class="show-language">
+                        <div class="show-language-label">TypeScript</div>
+                    </div>
+                    <pre><code class="javascript">
+import { Component, Input, Ref } from &#39;asic&#39;
+
+@Component({
+    template: `
+&lt;div&gt;
+    &lt;p&gt;{{ title }}&lt;/p&gt;
+    &lt;input type=&quot;text&quot; #ref=&quot;input&quot;&gt;
+    &lt;button (click)=&quot;addItem()&quot;&gt;Add&lt;/button&gt;
+    &lt;ul&gt;
+        &lt;li *for=&quot;item in items&quot;&gt;
+            &lt;button (click)=&quot;removeItem(item)&quot;&gt;remove&lt;/button&gt;{{ item.name }}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;SimpleText&gt;&lt;/SimpleText&gt;
+&lt;/div&gt;`
+})
+export class TodoList {
+    @Input title;
+    @Ref input;
+
+    items = [
+        {name: &#39;Improve Asic&#39;, done: false}
+    ];
+
+    addItem() {
+        this.items.push({name: this.input.value, done: false});
+    }
+
+    removeItem(item) {
+        this.items.splice(this.items.indexOf(item), 1);
+    }
+}
+                    </code></pre>
+                    <div class="show-language">
+                        <div class="show-language-label">HTML</div>
+                    </div>
+                    <pre><code class="html">
+&lt;TodoList title=&quot;Todo List&quot;&gt;&lt;/TodoList&gt;
+                    </code></pre>
+                </div>
+            </div>
+
+            
+
         </div>
         <!-- Main content end -->
 
@@ -567,5 +642,5 @@ export class InnerLoops {
 
 <Footer></Footer>
 
-<script type="text/javascript" src="asic.js?ce23981be8c7d5bad8a1"></script><script type="text/javascript" src="docs.js?ce23981be8c7d5bad8a1"></script><script type="text/javascript" src="samples.js?ce23981be8c7d5bad8a1"></script></body>
+<script type="text/javascript" src="asic.js?cb2c1e76301c35253b4f"></script><script type="text/javascript" src="docs.js?cb2c1e76301c35253b4f"></script><script type="text/javascript" src="samples.js?cb2c1e76301c35253b4f"></script></body>
 </html>

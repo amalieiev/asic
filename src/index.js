@@ -1,6 +1,7 @@
 import {
     Component,
-    Input
+    Input,
+    Ref
 } from './decorators'
 
 import {$bootstrap} from './functions'
@@ -14,5 +15,6 @@ $bootstrap();
 
 export {
     Component,
-    Input
+    Input,
+    Ref
 }

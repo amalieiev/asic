@@ -9,6 +9,7 @@ export function Component({template}) {
         }
     }
 }
+
 export function Input(target, property) {
     const component = target.constructor.name;
 
@@ -24,4 +25,8 @@ export function Input(target, property) {
             props: [property]
         };
     }
+}
+
+export function Ref(target, property) {
+    console.log(target, property);
 }
