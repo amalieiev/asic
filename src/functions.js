@@ -239,7 +239,7 @@ export function $interpolateExpressions(element, proxy) {
             el.innerHTML = $exec('return ' + expression, proxy);
         });
     } catch (err) {
-        console.log(err);
+        // console.log(err);
     }
 
     $bindEvents(element, proxy);
