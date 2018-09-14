@@ -180,6 +180,7 @@ npm i asic --save
 import { Component } from &#39;asic&#39;
 
 @Component({
+    element: &#39;BasicUsage&#39;,
     template: `
 &lt;div&gt;
     &lt;p&gt;My Component&lt;/p&gt;
@@ -231,6 +232,7 @@ export class BasicUsage {
 import { Component } from &#39;asic&#39;
 
 @Component({
+    element: &#39;SimpleText&#39;,
     template: `
 &lt;div&gt;
     &lt;p&gt;Inner component&lt;/p&gt;
@@ -278,6 +280,7 @@ export class SimpleText {
 import { Component, Input } from &#39;asic&#39;
 
 @Component({
+    element: &#39;Props&#39;,
     template: `
 &lt;div&gt;
     &lt;p&gt;{{ title }}&lt;/p&gt;
@@ -328,6 +331,7 @@ export class Props {
 import { Component } from &#39;asic&#39;
 
 @Component({
+    element: &#39;ComplexComponent&#39;,
     template: `
 &lt;div&gt;
     &lt;p&gt;{{ text }}&lt;/p&gt;
@@ -375,6 +379,7 @@ export class ComplexComponent {
 import { Component, Ref } from &#39;asic&#39;
 
 @Component({
+    element: &#39;Events&#39;,
     template: `
 &lt;div&gt;
     &lt;p&gt;Clicks counter: {{ count }}&lt;/p&gt;
@@ -430,6 +435,7 @@ export class Events {
 import { Component } from &#39;asic&#39;
 
 @Component({
+    element: &#39;Loops&#39;,
     template: `
 &lt;ul&gt;
     &lt;li *for=&quot;item in items&quot;&gt;
@@ -479,6 +485,7 @@ export class Loops {
 import { Component } from &#39;asic&#39;
 
 @Component({
+    element: &#39;Lifecycle&#39;,
     template: `&lt;p&gt;Value: {{ count }}&lt;/p&gt;`
 })
 export class Lifecycle {
@@ -534,6 +541,7 @@ export class Lifecycle {
 import { Component } from &#39;asic&#39;
 
 @Component({
+    element: &#39;InnerLoops&#39;,
     template: `
 &lt;div&gt;
     &lt;p&gt;Active skill: &lt;strong&gt;{{ activeSkill }}&lt;/strong&gt;&lt;/p&gt;
@@ -592,6 +600,7 @@ export class InnerLoops {
 import { Component, Input, Ref } from &#39;asic&#39;
 
 @Component({
+    element: &#39;TodoList&#39;,
     template: `
 &lt;div&gt;
     &lt;p&gt;{{ title }}&lt;/p&gt;
@@ -642,5 +651,5 @@ export class TodoList {
 
 <Footer></Footer>
 
-<script type="text/javascript" src="asic.js?cb2c1e76301c35253b4f"></script><script type="text/javascript" src="docs.js?cb2c1e76301c35253b4f"></script><script type="text/javascript" src="samples.js?cb2c1e76301c35253b4f"></script></body>
+<script type="text/javascript" src="asic.js?0256544203bfc7822c78"></script><script type="text/javascript" src="docs.js?0256544203bfc7822c78"></script><script type="text/javascript" src="samples.js?0256544203bfc7822c78"></script></body>
 </html>
