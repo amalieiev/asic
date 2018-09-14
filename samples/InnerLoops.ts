@@ -1,6 +1,7 @@
 import { Component } from '../src/index'
 
 @Component({
+    element: 'InnerLoops',
     template: `
 <div>
     <p>Active skill: <strong>{{ activeSkill }}</strong></p>

@@ -1,6 +1,7 @@
 import { Component } from '../src/index'
 
 @Component({
+    element: 'ComplexComponent',
     template: `
 <div>
     <p>{{ text }}</p>

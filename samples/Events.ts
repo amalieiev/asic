@@ -1,6 +1,7 @@
 import { Component, Ref } from '../src/index'
 
 @Component({
+    element: 'Events',
     template: `
 <div>
     <p>Clicks counter: {{ count }}</p>

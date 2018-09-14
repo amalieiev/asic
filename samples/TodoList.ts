@@ -1,6 +1,7 @@
 import { Component, Input, Ref } from '../src/index'
 
 @Component({
+    element: 'TodoList',
     template: `
 <div>
     <p>{{ title }}</p>

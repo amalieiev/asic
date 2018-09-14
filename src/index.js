@@ -4,7 +4,7 @@ import {
     Ref
 } from './decorators'
 
-import {$bootstrap} from './functions'
+import { $bootstrap } from './functions'
 
 if (window) {
     window.Component = Component;

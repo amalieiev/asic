@@ -1,6 +1,7 @@
 import { Component } from '../src/index'
 
 @Component({
+    element: 'SimpleText',
     template: `
 <div>
     <p>Inner component</p>

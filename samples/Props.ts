@@ -1,6 +1,7 @@
 import { Component, Input } from '../src/index'
 
 @Component({
+    element: 'Props',
     template: `
 <div>
     <p>{{ title }}</p>

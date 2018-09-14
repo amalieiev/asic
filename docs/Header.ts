@@ -1,6 +1,7 @@
 import { Component } from '../src/index'
 
 @Component({
+    element: 'Header',
     template:`
 <section class="page-header">
     <h1 class="project-name">Asic</h1>

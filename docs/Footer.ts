@@ -1,6 +1,7 @@
 import { Component } from '../src/index'
 
 @Component({
+    element: 'Footer',
     template:`
 <section class="main-content">
     <footer class="site-footer">

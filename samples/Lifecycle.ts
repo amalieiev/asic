@@ -1,6 +1,7 @@
 import { Component } from '../src/index'
 
 @Component({
+    element: 'Lifecycle',
     template: `<p>Value: {{ count }}</p>`
 })
 export class Lifecycle {

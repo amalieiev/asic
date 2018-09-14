@@ -159,7 +159,7 @@ export function $render(element, component, parentProxy) {
     } else {
         const template = $components[component].template;
         const Component = $components[component].target;
-        const props = $components[component].props || [];
+        const props = Component.props || [];
         const cmp = new Component();
 
         const proxy = new Proxy(cmp, {
