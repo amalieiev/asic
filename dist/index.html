@@ -277,7 +277,7 @@ export class SimpleText {
                         <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component, Input } from &#39;asic&#39;
+import { Component, Attr } from &#39;asic&#39;
 
 @Component({
     element: &#39;Props&#39;,
@@ -290,8 +290,8 @@ import { Component, Input } from &#39;asic&#39;
 &lt;/div&gt;`
 })
 export class Props {
-    @Input items;
-    @Input title;
+    @Attr items;
+    @Attr title;
 }
                     </code></pre>
                     <div class="show-language">
@@ -597,7 +597,7 @@ export class InnerLoops {
                         <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component, Input, Ref } from &#39;asic&#39;
+import { Component, Attr, Ref } from &#39;asic&#39;
 
 @Component({
     element: &#39;TodoList&#39;,
@@ -615,7 +615,7 @@ import { Component, Input, Ref } from &#39;asic&#39;
 &lt;/div&gt;`
 })
 export class TodoList {
-    @Input title;
+    @Attr title;
     @Ref input;
 
     items = [
@@ -651,5 +651,5 @@ export class TodoList {
 
 <Footer></Footer>
 
-<script type="text/javascript" src="asic.js?0256544203bfc7822c78"></script><script type="text/javascript" src="docs.js?0256544203bfc7822c78"></script><script type="text/javascript" src="samples.js?0256544203bfc7822c78"></script></body>
+<script type="text/javascript" src="asic.js?5a38a53d310fc1d9d9c7"></script><script type="text/javascript" src="docs.js?5a38a53d310fc1d9d9c7"></script><script type="text/javascript" src="samples.js?5a38a53d310fc1d9d9c7"></script></body>
 </html>

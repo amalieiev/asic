@@ -10,7 +10,7 @@ export function Component({ template, element }) {
     }
 }
 
-export function Input(target, property) {
+export function Attr(target, property) {
     if (!target.constructor.props) {
         target.constructor.props = [];
     }
