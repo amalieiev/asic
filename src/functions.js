@@ -18,9 +18,9 @@ export function $replaceEvents(template) {
 }
 
 export function $replaceRefs(template) {
-    return template.replace(/#ref/g, function (match, refName) {
-
-        return `asic-ref`;
+    return template.replace(/#([A-Za-z])+/g, function (match) {
+        const refName = match.replace('#', '');
+        return `asic-ref=${refName}`;
     });
 }
 

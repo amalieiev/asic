@@ -5,7 +5,7 @@ import { Component, Attr, Ref } from '../src/index'
     template: `
 <div>
     <p>{{ title }}</p>
-    <input type="text" #ref="input">
+    <input type="text" #input>
     <button (click)="addItem()">Add</button>
     <ul>
         <li *for="item in items">

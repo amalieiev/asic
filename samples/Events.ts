@@ -6,7 +6,7 @@ import { Component, Ref } from '../src/index'
 <div>
     <p>Clicks counter: {{ count }}</p>
     <p>{{ login.value }}</p>
-    <input type="text" #ref="login" (input)="increment()">
+    <input type="text" #login (input)="increment()">
     <button (click)="increment()">click</button>
 </div>`
 })
