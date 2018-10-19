@@ -99,6 +99,12 @@
                     
                     <li>
                         <h4>
+                            <a class="anchor" href="#CustomEvents" aria-hidden="true"><span class="octicon octicon-link">CustomEvents</span></a>
+                        </h4>
+                    </li>
+                    
+                    <li>
+                        <h4>
                             <a class="anchor" href="#Loops" aria-hidden="true"><span class="octicon octicon-link">Loops</span></a>
                         </h4>
                     </li>
@@ -277,7 +283,7 @@ export class SimpleText {
                         <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component, Attr } from &#39;asic&#39;
+import { Component, Input } from &#39;asic&#39;
 
 @Component({
     element: &#39;Props&#39;,
@@ -290,8 +296,8 @@ import { Component, Attr } from &#39;asic&#39;
 &lt;/div&gt;`
 })
 export class Props {
-    @Attr items;
-    @Attr title;
+    @Input items;
+    @Input title;
 }
                     </code></pre>
                     <div class="show-language">
@@ -394,7 +400,6 @@ export class Events {
 
     increment() {
         this.count++;
-        console.log(this.login.value);
     }
 }
                     </code></pre>
@@ -403,6 +408,75 @@ export class Events {
                     </div>
                     <pre><code class="html">
 &lt;Events&gt;&lt;/Events&gt;
+                    </code></pre>
+                </div>
+            </div>
+
+            
+
+            <div class="row">
+                <div class="col-sm">
+                    <h3>
+                        <a id="CustomEvents" class="anchor" href="#CustomEvents" aria-hidden="true"><span class="octicon octicon-link"></span></a>CustomEvents
+                    </h3>
+                    <p>
+            With <strong>@Output</strong> you can add custom events on any your component. It will be function which you can call with payload.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <label class="label">CustomEvents</label>
+
+                    <CustomEvents></CustomEvents>
+                </div>
+                <div class="col-sm-8">
+                    <label class="label">Code Sample</label>
+
+                    <div class="show-language">
+                        <div class="show-language-label">TypeScript</div>
+                    </div>
+                    <pre><code class="javascript">
+import { Component, Ref, Output } from &#39;asic&#39;
+
+@Component({
+    element: &#39;CustomEvents&#39;,
+    template: `
+&lt;div&gt;
+    &lt;p&gt;{{ title }}&lt;/p&gt;
+    &lt;MyComponent (data)=&quot;onData($event)&quot;&gt;&lt;/MyComponent&gt;
+&lt;/div&gt;`
+})
+export class CustomEvents {
+    title = &#39;Custom Events &#39;;
+
+    onData(data) {
+        this.title += data;
+    }
+}
+
+
+@Component({
+    element: &#39;MyComponent&#39;,
+    template: `
+&lt;div&gt;
+    &lt;p&gt;My Component&lt;/p&gt;
+    &lt;button (click)=&quot;onClick()&quot;&gt;Fire Event&lt;/button&gt;
+&lt;/div&gt;`
+})
+export class MyComponent {
+    @Output data;
+
+    onClick() {
+        this.data(&#39;hello world!&#39;);
+    }
+}
+                    </code></pre>
+                    <div class="show-language">
+                        <div class="show-language-label">HTML</div>
+                    </div>
+                    <pre><code class="html">
+&lt;CustomEvents&gt;&lt;/CustomEvents&gt;
                     </code></pre>
                 </div>
             </div>
@@ -597,7 +671,7 @@ export class InnerLoops {
                         <div class="show-language-label">TypeScript</div>
                     </div>
                     <pre><code class="javascript">
-import { Component, Attr, Ref } from &#39;asic&#39;
+import { Component, Input, Ref } from &#39;asic&#39;
 
 @Component({
     element: &#39;TodoList&#39;,
@@ -615,7 +689,7 @@ import { Component, Attr, Ref } from &#39;asic&#39;
 &lt;/div&gt;`
 })
 export class TodoList {
-    @Attr title;
+    @Input title;
     @Ref input;
 
     items = [
@@ -651,5 +725,5 @@ export class TodoList {
 
 <Footer></Footer>
 
-<script type="text/javascript" src="asic.js?771d710305b2c15b7bdd"></script><script type="text/javascript" src="docs.js?771d710305b2c15b7bdd"></script><script type="text/javascript" src="samples.js?771d710305b2c15b7bdd"></script></body>
+<script type="text/javascript" src="/asic.js?54276b790b552de5a91b"></script><script type="text/javascript" src="/docs.js?54276b790b552de5a91b"></script><script type="text/javascript" src="/samples.js?54276b790b552de5a91b"></script></body>
 </html>

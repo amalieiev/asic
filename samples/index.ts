@@ -2,6 +2,7 @@ import { BasicUsage } from './BasicUsage';
 import { Props } from './Props';
 import { ComplexComponent } from './ComplexComponent';
 import { Events } from './Events';
+import { CustomEvents } from './CustomEvents';
 import { InnerLoops } from './InnerLoops';
 import { Lifecycle } from './Lifecycle';
 import { Loops } from './Loops';
@@ -13,6 +14,7 @@ export {
     Props,
     ComplexComponent,
     Events,
+    CustomEvents,
     InnerLoops,
     Lifecycle,
     Loops,

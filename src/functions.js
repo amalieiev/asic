@@ -160,6 +160,7 @@ export function $render(element, component, parentProxy) {
         const template = $components[component].template;
         const Component = $components[component].target;
         const props = Component.props || [];
+        const outputs = Component.outputs || [];
         const cmp = new Component();
 
         const proxy = new Proxy(cmp, {
@@ -190,6 +191,7 @@ export function $render(element, component, parentProxy) {
         });
 
         $applyProps(element, props, cmp, parentProxy);
+        $applyOutputs(element, outputs, cmp, parentProxy);
         $transform(template, cmp, element);
         $bindRefs(element, cmp);
 
@@ -274,6 +276,14 @@ export function $applyProps(element, props, context, parentContext) {
         } else if (expression !== null) {
             context[param] = $exec('return ' + expression, parentContext);
         }
+    });
+}
+
+export function $applyOutputs(target, outputs, context, parentContext) {
+    outputs.map(eventName => {
+        context[eventName] = (...args) => {
+            $exec(`[$event] = arguments; ` + target.$asic.events[eventName], target.$asic.context, args);
+        };
     });
 }
 

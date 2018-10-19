@@ -1,6 +1,7 @@
 import {
     Component,
-    Attr,
+    Input,
+    Output,
     Ref
 } from './decorators'
 
@@ -8,7 +9,8 @@ import { $bootstrap } from './functions'
 
 if (window) {
     window.Component = Component;
-    window.Attr = Attr;
+    window.Input = Input;
+    window.Output = Output;
     window.Ref = Ref;
 }
 
@@ -16,6 +18,7 @@ $bootstrap();
 
 export {
     Component,
-    Attr,
+    Input,
+    Output,
     Ref
 }

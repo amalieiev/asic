@@ -16,6 +16,5 @@ export class Events {
 
     increment() {
         this.count++;
-        console.log(this.login.value);
     }
 }

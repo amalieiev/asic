@@ -1,4 +1,4 @@
-import { Component, Attr } from '../src/index'
+import { Component, Input } from '../src/index'
 
 @Component({
     element: 'Props',
@@ -11,6 +11,6 @@ import { Component, Attr } from '../src/index'
 </div>`
 })
 export class Props {
-    @Attr items;
-    @Attr title;
+    @Input items;
+    @Input title;
 }

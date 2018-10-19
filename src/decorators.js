@@ -10,7 +10,7 @@ export function Component({ template, element }) {
     }
 }
 
-export function Attr(target, property) {
+export function Input(target, property) {
     if (!target.constructor.props) {
         target.constructor.props = [];
     }
@@ -20,4 +20,12 @@ export function Attr(target, property) {
 
 export function Ref(target, property) {
 
+}
+
+export function Output(target, property) {
+    if (!target.constructor.outputs) {
+        target.constructor.outputs = [];
+    }
+
+    target.constructor.outputs.push(property);
 }

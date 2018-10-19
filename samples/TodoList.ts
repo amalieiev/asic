@@ -1,4 +1,4 @@
-import { Component, Attr, Ref } from '../src/index'
+import { Component, Input, Ref } from '../src/index'
 
 @Component({
     element: 'TodoList',
@@ -16,7 +16,7 @@ import { Component, Attr, Ref } from '../src/index'
 </div>`
 })
 export class TodoList {
-    @Attr title;
+    @Input title;
     @Ref input;
 
     items = [
