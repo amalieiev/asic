@@ -1,34 +1,24 @@
 import { Component, Ref, Output } from '../src/index'
 
 @Component({
-    element: 'CustomEvents',
-    template: `
-<div>
-    <p>{{ title }}</p>
-    <MyComponent (data)="onData($event)"></MyComponent>
-</div>`
+    element: 'MyComponent',
+    template: `<button (click)="onClick()">Fire Event</button>`
 })
-export class CustomEvents {
-    title = 'Custom Events ';
+export class MyComponent {
+    @Output myCustomEvent;
 
-    onData(data) {
-        this.title += data;
+    onClick() {
+        this.myCustomEvent('some event payload');
     }
 }
 
-
 @Component({
-    element: 'MyComponent',
+    element: 'CustomEvents',
     template: `
 <div>
-    <p>My Component</p>
-    <button (click)="onClick()">Fire Event</button>
+    <p>Custom Events</p>
+    <MyComponent (myCustomEvent)="alert($event)"></MyComponent>
 </div>`
 })
-export class MyComponent {
-    @Output data;
-
-    onClick() {
-        this.data('hello world!');
-    }
+export class CustomEvents {
 }

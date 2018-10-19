@@ -4,10 +4,9 @@ import { Component } from '../src/index'
     element: 'ComplexComponent',
     template: `
 <div>
-    <p>{{ text }}</p>
+    <p>Container</p>
     <SimpleText></SimpleText>
 </div>`
 })
 export class ComplexComponent {
-    text = 'Parent component';
 }

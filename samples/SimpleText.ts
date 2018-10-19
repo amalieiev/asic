@@ -2,11 +2,7 @@ import { Component } from '../src/index'
 
 @Component({
     element: 'SimpleText',
-    template: `
-<div>
-    <p>Inner component</p>
-    <p>{{ text }}</p>
-</div>`
+    template: `<p>{{ text }}</p>`
 })
 export class SimpleText {
     text = 'Simple Text';
