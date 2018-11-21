@@ -6,14 +6,19 @@ import { $events } from './services';
  * And puts event name to $events variable
  * @param {string} template
  */
-export function $replaceEvents(template) {
-    const eventRe = /(?:\()(.+?)(?:\)=)/g;
+export function $replaceEvents(template, element) {
+    const eventRe = /(?:\()(\S+?)(?:\)=)/g;
+    if (!element.$asicEvents) {
+        element.$asicEvents = [];
+    }
 
     return template.replace(eventRe, function (match, eventName) {
 
         $events[eventName] = true;
 
-        return `asic-event="${eventName}" asic-event-expression=`;
+        element.$asicEvents.push(eventName);
+
+        return `asic-event-${eventName}=`;
     });
 }
 
@@ -127,7 +132,7 @@ export function $replicateFor(template, context) {
  */
 export function $transform(template, context, element) {
     template = $normalize(template);
-    template = $replaceEvents(template);
+    template = $replaceEvents(template, element);
     template = $replaceRefs(template);
     template = $replaceFor(template);
     // template = $replicateFor(template, context);
@@ -218,16 +223,24 @@ export function $renderInnerComponents(element) {
 }
 
 export function $bindEvents(element, context) {
-    element.querySelectorAll('[asic-event]').forEach(el => {
-        const eventName = el.getAttribute('asic-event');
-        const expression = el.getAttribute('asic-event-expression');
+    element.$asicEvents.forEach(eventName => {
+        element.querySelectorAll(`[asic-event-${eventName}]`).forEach(el => {
+            const expression = el.getAttribute(`asic-event-${eventName}`);
 
-        el.$asic = {
-            events: {
-                [eventName]: expression
-            },
-            context
-        };
+            if (el.$asic) {
+                el.$asic.events = {
+                    ...el.$asic.events,
+                    [eventName]: expression
+                };
+            } else {
+                el.$asic = {
+                    events: {
+                        [eventName]: expression
+                    },
+                    context
+                };
+            }
+        });
     });
 }
 
@@ -319,9 +332,7 @@ export function $exec(expression, context, args) {
  */
 function $cleanUp () {
     [
-        'asic-event',
         'asic-ref',
-        'asic-event-expression',
         // 'asic-bind-expression',
         'asic-for',
         'asic-for-data',
@@ -330,6 +341,12 @@ function $cleanUp () {
             element.removeAttribute(value);
         });
     });
+
+    for (let eventName in $events) {
+        document.querySelectorAll(`[asic-event-${eventName}]`).forEach(element => {
+            element.removeAttribute(`asic-event-${eventName}`);
+        });
+    }
 }
 
 /**

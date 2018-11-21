@@ -7,7 +7,7 @@ import { Component, Ref } from '../src/index'
     <p>Clicks counter: {{ count }}</p>
     <p>{{ login.value }}</p>
     <input type="text" #login (input)="increment()">
-    <button (click)="increment()">click</button>
+    <button (click)="increment()" (mouseover)="log()">click</button>
 </div>`
 })
 export class Events {
@@ -16,5 +16,9 @@ export class Events {
 
     increment() {
         this.count++;
+    }
+
+    log() {
+        console.log('mouseover');
     }
 }
