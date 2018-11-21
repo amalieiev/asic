@@ -81,12 +81,6 @@
                     
                     <li>
                         <h4>
-                            <a class="anchor" href="#Props" aria-hidden="true"><span class="octicon octicon-link">Props</span></a>
-                        </h4>
-                    </li>
-                    
-                    <li>
-                        <h4>
                             <a class="anchor" href="#ComplexComponent" aria-hidden="true"><span class="octicon octicon-link">Composition</span></a>
                         </h4>
                     </li>
@@ -99,7 +93,13 @@
                     
                     <li>
                         <h4>
-                            <a class="anchor" href="#CustomEvents" aria-hidden="true"><span class="octicon octicon-link">CustomEvents</span></a>
+                            <a class="anchor" href="#Props" aria-hidden="true"><span class="octicon octicon-link">Inputs</span></a>
+                        </h4>
+                    </li>
+                    
+                    <li>
+                        <h4>
+                            <a class="anchor" href="#CustomEvents" aria-hidden="true"><span class="octicon octicon-link">Outputs</span></a>
                         </h4>
                     </li>
                     
@@ -239,11 +239,7 @@ import { Component } from &#39;asic&#39;
 
 @Component({
     element: &#39;SimpleText&#39;,
-    template: `
-&lt;div&gt;
-    &lt;p&gt;Inner component&lt;/p&gt;
-    &lt;p&gt;{{ text }}&lt;/p&gt;
-&lt;/div&gt;`
+    template: `&lt;p&gt;{{ text }}&lt;/p&gt;`
 })
 export class SimpleText {
     text = &#39;Simple Text&#39;;
@@ -263,10 +259,116 @@ export class SimpleText {
             <div class="row">
                 <div class="col-sm">
                     <h3>
-                        <a id="Props" class="anchor" href="#Props" aria-hidden="true"><span class="octicon octicon-link"></span></a>Props
+                        <a id="ComplexComponent" class="anchor" href="#ComplexComponent" aria-hidden="true"><span class="octicon octicon-link"></span></a>Composition
                     </h3>
                     <p>
-            Properties is a way how to pass data inside component.</p>
+            You can put one component into another.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <label class="label">ComplexComponent</label>
+
+                    <ComplexComponent></ComplexComponent>
+                </div>
+                <div class="col-sm-8">
+                    <label class="label">Code Sample</label>
+
+                    <div class="show-language">
+                        <div class="show-language-label">TypeScript</div>
+                    </div>
+                    <pre><code class="javascript">
+import { Component } from &#39;asic&#39;
+
+@Component({
+    element: &#39;ComplexComponent&#39;,
+    template: `
+&lt;div&gt;
+    &lt;p&gt;Container&lt;/p&gt;
+    &lt;SimpleText&gt;&lt;/SimpleText&gt;
+&lt;/div&gt;`
+})
+export class ComplexComponent {
+}
+                    </code></pre>
+                    <div class="show-language">
+                        <div class="show-language-label">HTML</div>
+                    </div>
+                    <pre><code class="html">
+&lt;ComplexComponent&gt;&lt;/ComplexComponent&gt;
+                    </code></pre>
+                </div>
+            </div>
+
+            
+
+            <div class="row">
+                <div class="col-sm">
+                    <h3>
+                        <a id="Events" class="anchor" href="#Events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events
+                    </h3>
+                    <p>
+            You can add mouse events on any HTML element.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+
+                    <label class="label">Events</label>
+
+                    <Events></Events>
+                </div>
+                <div class="col-sm-8">
+                    <label class="label">Code Sample</label>
+
+                    <div class="show-language">
+                        <div class="show-language-label">TypeScript</div>
+                    </div>
+                    <pre><code class="javascript">
+import { Component, Ref } from &#39;asic&#39;
+
+@Component({
+    element: &#39;Events&#39;,
+    template: `
+&lt;div&gt;
+    &lt;p&gt;Clicks counter: {{ count }}&lt;/p&gt;
+    &lt;p&gt;{{ login.value }}&lt;/p&gt;
+    &lt;input type=&quot;text&quot; #login (input)=&quot;increment()&quot;&gt;
+    &lt;button (click)=&quot;increment()&quot; (mouseover)=&quot;log()&quot;&gt;click&lt;/button&gt;
+&lt;/div&gt;`
+})
+export class Events {
+    @Ref login;
+    count = 0;
+
+    increment() {
+        this.count++;
+    }
+
+    log() {
+        console.log(&#39;mouseover&#39;);
+    }
+}
+                    </code></pre>
+                    <div class="show-language">
+                        <div class="show-language-label">HTML</div>
+                    </div>
+                    <pre><code class="html">
+&lt;Events&gt;&lt;/Events&gt;
+                    </code></pre>
+                </div>
+            </div>
+
+            
+
+            <div class="row">
+                <div class="col-sm">
+                    <h3>
+                        <a id="Props" class="anchor" href="#Props" aria-hidden="true"><span class="octicon octicon-link"></span></a>Inputs
+                    </h3>
+                    <p>
+            To pass data inside component use <strong>@Input</strong> decorator and pass data via component attributes.</p>
                 </div>
             </div>
             <div class="row">
@@ -314,110 +416,7 @@ export class Props {
             <div class="row">
                 <div class="col-sm">
                     <h3>
-                        <a id="ComplexComponent" class="anchor" href="#ComplexComponent" aria-hidden="true"><span class="octicon octicon-link"></span></a>Composition
-                    </h3>
-                    <p>
-            You can put one component into another.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-
-                    <label class="label">ComplexComponent</label>
-
-                    <ComplexComponent></ComplexComponent>
-                </div>
-                <div class="col-sm-8">
-                    <label class="label">Code Sample</label>
-
-                    <div class="show-language">
-                        <div class="show-language-label">TypeScript</div>
-                    </div>
-                    <pre><code class="javascript">
-import { Component } from &#39;asic&#39;
-
-@Component({
-    element: &#39;ComplexComponent&#39;,
-    template: `
-&lt;div&gt;
-    &lt;p&gt;{{ text }}&lt;/p&gt;
-    &lt;SimpleText&gt;&lt;/SimpleText&gt;
-&lt;/div&gt;`
-})
-export class ComplexComponent {
-    text = &#39;Parent component&#39;;
-}
-                    </code></pre>
-                    <div class="show-language">
-                        <div class="show-language-label">HTML</div>
-                    </div>
-                    <pre><code class="html">
-&lt;ComplexComponent&gt;&lt;/ComplexComponent&gt;
-                    </code></pre>
-                </div>
-            </div>
-
-            
-
-            <div class="row">
-                <div class="col-sm">
-                    <h3>
-                        <a id="Events" class="anchor" href="#Events" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events
-                    </h3>
-                    <p>
-            You can add mouse events on any HTML element.</p>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-
-                    <label class="label">Events</label>
-
-                    <Events></Events>
-                </div>
-                <div class="col-sm-8">
-                    <label class="label">Code Sample</label>
-
-                    <div class="show-language">
-                        <div class="show-language-label">TypeScript</div>
-                    </div>
-                    <pre><code class="javascript">
-import { Component, Ref } from &#39;asic&#39;
-
-@Component({
-    element: &#39;Events&#39;,
-    template: `
-&lt;div&gt;
-    &lt;p&gt;Clicks counter: {{ count }}&lt;/p&gt;
-    &lt;p&gt;{{ login.value }}&lt;/p&gt;
-    &lt;input type=&quot;text&quot; #login (input)=&quot;increment()&quot;&gt;
-    &lt;button (click)=&quot;increment()&quot;&gt;click&lt;/button&gt;
-&lt;/div&gt;`
-})
-export class Events {
-    @Ref login;
-    count = 0;
-
-    increment() {
-        this.count++;
-    }
-}
-                    </code></pre>
-                    <div class="show-language">
-                        <div class="show-language-label">HTML</div>
-                    </div>
-                    <pre><code class="html">
-&lt;Events&gt;&lt;/Events&gt;
-                    </code></pre>
-                </div>
-            </div>
-
-            
-
-            <div class="row">
-                <div class="col-sm">
-                    <h3>
-                        <a id="CustomEvents" class="anchor" href="#CustomEvents" aria-hidden="true"><span class="octicon octicon-link"></span></a>CustomEvents
+                        <a id="CustomEvents" class="anchor" href="#CustomEvents" aria-hidden="true"><span class="octicon octicon-link"></span></a>Outputs
                     </h3>
                     <p>
             With <strong>@Output</strong> you can add custom events on any your component. It will be function which you can call with payload.</p>
@@ -440,36 +439,26 @@ export class Events {
 import { Component, Ref, Output } from &#39;asic&#39;
 
 @Component({
-    element: &#39;CustomEvents&#39;,
-    template: `
-&lt;div&gt;
-    &lt;p&gt;{{ title }}&lt;/p&gt;
-    &lt;MyComponent (data)=&quot;onData($event)&quot;&gt;&lt;/MyComponent&gt;
-&lt;/div&gt;`
+    element: &#39;MyComponent&#39;,
+    template: `&lt;button (click)=&quot;onClick()&quot;&gt;Fire Event&lt;/button&gt;`
 })
-export class CustomEvents {
-    title = &#39;Custom Events &#39;;
+export class MyComponent {
+    @Output myCustomEvent;
 
-    onData(data) {
-        this.title += data;
+    onClick() {
+        this.myCustomEvent(&#39;some event payload&#39;);
     }
 }
 
-
 @Component({
-    element: &#39;MyComponent&#39;,
+    element: &#39;CustomEvents&#39;,
     template: `
 &lt;div&gt;
-    &lt;p&gt;My Component&lt;/p&gt;
-    &lt;button (click)=&quot;onClick()&quot;&gt;Fire Event&lt;/button&gt;
+    &lt;p&gt;Custom Events&lt;/p&gt;
+    &lt;MyComponent (myCustomEvent)=&quot;alert($event)&quot;&gt;&lt;/MyComponent&gt;
 &lt;/div&gt;`
 })
-export class MyComponent {
-    @Output data;
-
-    onClick() {
-        this.data(&#39;hello world!&#39;);
-    }
+export class CustomEvents {
 }
                     </code></pre>
                     <div class="show-language">
@@ -725,5 +714,5 @@ export class TodoList {
 
 <Footer></Footer>
 
-<script type="text/javascript" src="asic.js?54276b790b552de5a91b"></script><script type="text/javascript" src="docs.js?54276b790b552de5a91b"></script><script type="text/javascript" src="samples.js?54276b790b552de5a91b"></script></body>
+<script type="text/javascript" src="asic.js?87c87af9cb05c442e5a7"></script><script type="text/javascript" src="docs.js?87c87af9cb05c442e5a7"></script><script type="text/javascript" src="samples.js?87c87af9cb05c442e5a7"></script></body>
 </html>
